@@ -30,4 +30,17 @@ class CardController extends Controller
             "data"=>$card,
         ]);
     }
+
+    function deleteCards(Request $request)
+    {
+        $card = Card::where([
+            ['card_id', '=', $request->card_id],
+            ['categories_id', '=', $request->categories_id],
+        ])->delete();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$card,
+        ]);
+    }
 }
