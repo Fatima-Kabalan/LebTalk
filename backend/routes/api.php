@@ -12,5 +12,6 @@ Route::group(["prefix"=> "v1"], function(){
 
     // Route::group(["middleware" => "auth:api"], function(){
         Route::get("/getCategories", [CategoryController::class, "getCategories"])->name("getCategories"); 
+        Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
     // });
 });
