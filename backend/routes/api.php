@@ -1,11 +1,16 @@
 <?php
-
 use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\AuthController;
+use App\Http\Controllers\UserController;
 
-Route::controller(AuthController::class)->group(function () {
-    Route::post('login', 'login');
-    Route::post('register', 'register');
-    Route::post('logout', 'logout');
+Route::post("/login", [AuthController::class, "login"])->name("login");
+Route::post("/register", [AuthController::class, "register"])->name("register"); 
+
+Route::group(["prefix"=> "v1"], function(){
+
+    Route::group(["middleware" => "auth:api"], function(){
+        Route::post("/getCategories", [CategoryController::class, "getCategories"])->name("getCategories"); 
+    });
+
 });
