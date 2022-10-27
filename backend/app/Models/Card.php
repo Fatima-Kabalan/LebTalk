@@ -13,7 +13,8 @@ class Card extends Model
         'id',
         'card_image',
         'voice_note',
-        'text',
+        'english_text',
+        'arabic_text',
         'categories_id',
     ];
 }

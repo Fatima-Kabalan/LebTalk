@@ -12,7 +12,8 @@ return new class extends Migration
             $table->id();
             $table->string('card_image');
             $table->string('voice_note');
-            $table->string('text');
+            $table->string('english_text');
+            $table->string('arabic_text');
             $table->integer('categories_id');
             $table->timestamps();
         });
