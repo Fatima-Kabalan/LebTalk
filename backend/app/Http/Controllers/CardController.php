@@ -34,10 +34,25 @@ class CardController extends Controller
     function deleteCards(Request $request)
     {
         $card = Card::where([
-            ['card_id', '=', $request->card_id],
+            ['cards_id', '=', $request->id],
             ['categories_id', '=', $request->categories_id],
         ])->delete();
 
+        return response()->json([
+            "status"=>"success",
+            "data"=>$card,
+        ]);
+    }
+
+    function favCard(Request $request)
+    {
+        $card = Card::create($request->all(), [
+            'card_image',
+            'voice_note',
+            'english_text',
+            'arabic_text',
+            'categories_id',
+        ]);
         return response()->json([
             "status"=>"success",
             "data"=>$card,
