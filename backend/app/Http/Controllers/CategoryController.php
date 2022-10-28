@@ -15,4 +15,16 @@ class CategoryController extends Controller
             "data"=>$category,
         ]);
     }
+
+    function addCategories(Request $request)
+    {
+        $category = Category::create($request->all(), [
+            'category_name',
+            'admin_id',
+        ]);
+        return response()->json([
+            "status"=>"success",
+            "data"=>$category,
+        ]);
+    }
 }
