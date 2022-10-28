@@ -23,5 +23,15 @@ class QuizController extends Controller
         ]);
     }
 
+    function getQuiz(Request $request)
+    {
+        $quiz = Quiz::select("*")->get();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$quiz,
+        ]);
+    }
+
     
 }
