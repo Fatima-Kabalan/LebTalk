@@ -31,4 +31,17 @@ class QuestionController extends Controller
             "data"=>$quiz,
         ]);
     }
+
+    function deleteQuestion(Request $request)
+    {
+        $question = Question::where([
+            ['title', '=', $request->title],
+            ['quizzes_id', '=', $request->quizzes_id],
+        ])->delete();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$question,
+        ]);
+    }
 }
