@@ -16,35 +16,35 @@ class DatabaseSeeder extends Seeder
         // \App\Models\User::factory(10)->create();
         User::create([
             'name' => 'fatima1',
-            'email' => 'fatima22@fatima.com',
+            'email' => 'fatima9@fatima.com',
             'password' => '1234567',
             'phone_number' => '70456311',
             'user_roles_id' => '1'
         ]);
         User::create([
             'name' => 'Ahmad2',
-            'email' => 'ahmad22@ahmad.com',
+            'email' => 'ahmad8@ahmad.com',
             'password' => '12345678',
             'phone_number' => '70987123',
             'user_roles_id' => '1'
         ]);
         User::create([
-            'name' => 'karem2',
-            'email' => 'karem@karem42.com',
+            'name' => 'karem',
+            'email' => 'karem@karem33.com',
             'password' => '123456789',
             'phone_number' => '70987654',
             'user_roles_id' => '3'
         ]);
         User::create([
             'name' => 'nour2',
-            'email' => 'nour@nour23.com',
+            'email' => 'nour@nour93.com',
             'password' => '123456898',
             'phone_number' => '70123654',
             'user_roles_id' => '2'
         ]);
         User::create([
             'name' => 'souraya1',
-            'email' => 'souraya@souraya23.com',
+            'email' => 'souraya@souraya25.com',
             'password' => '9876543',
             'phone_number' => '70123554',
             'user_roles_id' => '3'
@@ -67,12 +67,12 @@ class DatabaseSeeder extends Seeder
         ]);
 
         Category::create([
-            'name' => 'food1',
+            'category_name' => 'food1',
             'admin_id' => '1',
         ]);
 
         Category::create([
-            'name' => 'sport',
+            'category_name' => 'sport',
             'admin_id' => '2',
         ]);
     }
