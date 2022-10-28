@@ -46,7 +46,7 @@ class CardController extends Controller
 
     function favCard(Request $request)
     {
-        $card = Card::create($request->all(), [
+        $favcard = Favorite::create($request->all(), [
             'card_image',
             'voice_note',
             'english_text',
@@ -55,7 +55,7 @@ class CardController extends Controller
         ]);
         return response()->json([
             "status"=>"success",
-            "data"=>$card,
+            "data"=>$favcard,
         ]);
     }
 }
