@@ -57,4 +57,16 @@ class CardController extends Controller
         ]);
     }
 
+    function unFavCards(Request $request)
+    {
+        $card = Favorite::where([
+            ['cards_id', '=', $request->cards_id],
+            ['users_id', '=', $request->users_id],
+        ])->delete();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$card,
+        ]);
+    }
 }
