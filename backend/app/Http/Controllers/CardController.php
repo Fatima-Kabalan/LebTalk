@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 use App\Models\Card;
+use App\Models\Favorite;
 use Illuminate\Http\Request;
 
 class CardController extends Controller
@@ -44,18 +45,16 @@ class CardController extends Controller
         ]);
     }
 
-    function favCard(Request $request)
+    function favCards(Request $request)
     {
         $favcard = Favorite::create($request->all(), [
-            'card_image',
-            'voice_note',
-            'english_text',
-            'arabic_text',
-            'categories_id',
+            'users_id',
+            'cards_id',
         ]);
         return response()->json([
             "status"=>"success",
             "data"=>$favcard,
         ]);
     }
+
 }

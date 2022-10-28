@@ -17,5 +17,7 @@ Route::group(["prefix"=> "v1"], function(){
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
         Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
         Route::post("/deleteCards", [CardController::class, "deleteCards"])->name("deleteCards"); 
+        Route::post("/favCards", [CardController::class, "favCards"])->name("favCards"); 
+        Route::post("/unFavCards", [CardController::class, "unFavCards"])->name("unFavCards"); 
     // });
 });
