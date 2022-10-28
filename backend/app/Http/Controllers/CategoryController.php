@@ -27,4 +27,17 @@ class CategoryController extends Controller
             "data"=>$category,
         ]);
     }
+
+    function deleteCategories(Request $request)
+    {
+        $category = Category::where([
+            ['category_name', '=', $request->category_name],
+            ['admin_id', '=', $request->admin_id],
+        ])->delete();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$category,
+        ]);
+    }
 }
