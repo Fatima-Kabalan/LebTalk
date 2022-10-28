@@ -45,5 +45,4 @@ class QuizController extends Controller
             "data"=>$quiz,
         ]);
     }
-    
 }
