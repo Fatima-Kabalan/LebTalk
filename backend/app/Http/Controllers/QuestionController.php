@@ -15,4 +15,20 @@ class QuestionController extends Controller
             "data"=>$question,
         ]);
     } 
+
+    function addQuestion(Request $request)
+    {
+        $quiz = Question::create($request->all(), [
+            'title',
+            'quizzes_id',
+            'question',
+            'time_out',
+            'time_delivered',
+            'status',
+        ]);
+        return response()->json([
+            "status"=>"success",
+            "data"=>$quiz,
+        ]);
+    }
 }
