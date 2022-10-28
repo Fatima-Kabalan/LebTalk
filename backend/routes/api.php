@@ -18,6 +18,7 @@ Route::group(["prefix"=> "v1"], function(){
         Route::post("/addCategories", [CategoryController::class, "addCategories"])->name("addCategories"); 
         Route::post("/deleteCategories", [CategoryController::class, "deleteCategories"])->name("deleteCategories"); 
         Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
+        Route::post("/getQuiz", [QuizController::class, "getQuiz"])->name("getQuiz"); 
 
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
         Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
