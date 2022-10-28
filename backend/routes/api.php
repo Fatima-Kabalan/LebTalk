@@ -20,7 +20,6 @@ Route::group(["prefix"=> "v1"], function(){
         Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
         Route::get("/getQuiz", [QuizController::class, "getQuiz"])->name("getQuiz"); 
         Route::post("/deleteQuiz", [QuizController::class, "deleteQuiz"])->name("deleteQuiz"); 
-
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
         Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
         Route::post("/deleteCards", [CardController::class, "deleteCards"])->name("deleteCards"); 

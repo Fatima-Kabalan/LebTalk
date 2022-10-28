@@ -10,6 +10,7 @@ class Quiz extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'title',
         'question',
         'users_id',
