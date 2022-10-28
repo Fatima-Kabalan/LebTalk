@@ -5,6 +5,7 @@ use App\Http\Controllers\AuthController;
 use App\Http\Controllers\UserController;
 use App\Http\Controllers\CategoryController;
 use App\Http\Controllers\CardController;
+use App\Http\Controllers\QuizController;
 
 
 Route::post("/login", [AuthController::class, "login"])->name("login");
@@ -16,6 +17,7 @@ Route::group(["prefix"=> "v1"], function(){
         Route::get("/getCategories", [CategoryController::class, "getCategories"])->name("getCategories"); 
         Route::post("/addCategories", [CategoryController::class, "addCategories"])->name("addCategories"); 
         Route::post("/deleteCategories", [CategoryController::class, "deleteCategories"])->name("deleteCategories"); 
+        Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
 
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
         Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
