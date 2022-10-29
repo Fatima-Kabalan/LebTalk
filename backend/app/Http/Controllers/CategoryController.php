@@ -40,10 +40,10 @@ class CategoryController extends Controller
 
     function deleteCategories(Request $request)
     {
-        $category = Category::where([
-            ['category_name', '=', $request->category_name],
-            ['admin_id', '=', $request->admin_id],
-        ])->delete();
+        $category_id = $request->category_id;
+        $category = Category::where(
+            "id" , $category_id
+        )->delete();
 
         return response()->json([
             "status"=>"success",
