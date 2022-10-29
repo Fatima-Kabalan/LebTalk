@@ -34,10 +34,10 @@ class QuestionController extends Controller
 
     function deleteQuestion(Request $request)
     {
-        $question = Question::where([
-            ['title', '=', $request->title],
-            ['quizzes_id', '=', $request->quizzes_id],
-        ])->delete();
+        $question_id = $request->question_id;
+        $question = Question::where(
+            "id" , $question_id
+        )->delete();
 
         return response()->json([
             "status"=>"success",
