@@ -35,10 +35,10 @@ class QuizController extends Controller
 
     function deleteQuiz(Request $request)
     {
-        $quiz = Quiz::where([
-            ['categories_id', '=', $request->categories_id],
-            ['users_id', '=', $request->users_id],
-        ])->delete();
+        $quiz_id = $request->quiz_id;
+        $quiz = Quiz::where(
+            "id" , $quiz_id
+        )->delete();
 
         return response()->json([
             "status"=>"success",
