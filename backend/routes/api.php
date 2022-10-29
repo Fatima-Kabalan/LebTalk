@@ -14,9 +14,11 @@ Route::post("/register", [AuthController::class, "register"])->name("register");
 
 Route::group(["prefix"=> "v1"], function(){
 
-    // Route::group(["middleware" => "auth:api"], function(){
+    Route::group(["middleware" => ["admin.type"]], function(){
+Route::post("/addCategory", [CategoryController::class, "addCategory"])->name("addCategory"); 
+    });
         Route::get("/getCategory/{id}", [CategoryController::class, "getCategory"])->name("getCategory"); 
-        Route::post("/addCategory", [CategoryController::class, "addCategory"])->name("addCategory"); 
+        
         Route::post("/deleteCategory", [CategoryController::class, "deleteCategory"])->name("deleteCategory"); 
         Route::get("/getAllCategories", [CategoryController::class, "getALlCategories"])->name("getALlCategories"); 
 

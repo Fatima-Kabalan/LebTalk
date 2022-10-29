@@ -8,17 +8,12 @@ class CategoryController extends Controller
 {
     function getCategory($id)
     {
-        
-        try {
-            $category = Category::find($id);
+        $category = Category::find($id);
 
         return response()->json([
             "status"=>"success",
             "data"=>$category,
         ]);
-        }catch(Exception $e){
-            return response()->json($e);
-        }
     }
 
     function getAllCategories(Request $request)
