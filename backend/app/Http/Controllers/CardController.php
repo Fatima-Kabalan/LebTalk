@@ -17,7 +17,7 @@ class CardController extends Controller
         ]);
     }
 
-    function addCards(Request $request)
+    function addCard(Request $request)
     {
         $card = Card::create($request->all(), [
             'card_image',
@@ -32,7 +32,7 @@ class CardController extends Controller
         ]);
     }
 
-    function deleteCards(Request $request)
+    function deleteCard(Request $request)
     {
         $card_id = $request->card_id;
         $card = Card::where(
@@ -45,7 +45,7 @@ class CardController extends Controller
         ]);
     }
 
-    function favCards(Request $request)
+    function favCard(Request $request)
     {
         $favcard = Favorite::create($request->all(), [
             'users_id',
@@ -57,7 +57,7 @@ class CardController extends Controller
         ]);
     }
 
-    function unFavCards(Request $request)
+    function unFavCard(Request $request)
     {
         $card = Favorite::where([
             ['cards_id', '=', $request->cards_id],

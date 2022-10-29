@@ -6,14 +6,19 @@ use Illuminate\Http\Request;
 
 class CategoryController extends Controller
 {
-    function getCategories(Request $request)
+    function getCategory($id)
     {
-        $category = Category::select("name")->get();
+        
+        try {
+            $category = Category::find($id);
 
         return response()->json([
             "status"=>"success",
             "data"=>$category,
         ]);
+        }catch(Exception $e){
+            return response()->json($e);
+        }
     }
 
     function getAllCategories(Request $request)
@@ -26,7 +31,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    function addCategories(Request $request)
+    function addCategory(Request $request)
     {
         $category = Category::create($request->all(), [
             'category_name',
@@ -38,7 +43,7 @@ class CategoryController extends Controller
         ]);
     }
 
-    function deleteCategories(Request $request)
+    function deleteCategory(Request $request)
     {
         $category_id = $request->category_id;
         $category = Category::where(

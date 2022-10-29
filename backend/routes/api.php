@@ -15,9 +15,9 @@ Route::post("/register", [AuthController::class, "register"])->name("register");
 Route::group(["prefix"=> "v1"], function(){
 
     // Route::group(["middleware" => "auth:api"], function(){
-        Route::get("/getCategories", [CategoryController::class, "getCategories"])->name("getCategories"); 
-        Route::post("/addCategories", [CategoryController::class, "addCategories"])->name("addCategories"); 
-        Route::post("/deleteCategories", [CategoryController::class, "deleteCategories"])->name("deleteCategories"); 
+        Route::get("/getCategory/{id}", [CategoryController::class, "getCategory"])->name("getCategory"); 
+        Route::post("/addCategory", [CategoryController::class, "addCategory"])->name("addCategory"); 
+        Route::post("/deleteCategory", [CategoryController::class, "deleteCategory"])->name("deleteCategory"); 
         Route::get("/getAllCategories", [CategoryController::class, "getALlCategories"])->name("getALlCategories"); 
 
         Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
@@ -29,10 +29,10 @@ Route::group(["prefix"=> "v1"], function(){
         Route::post("/deleteQuestion", [QuestionController::class, "deleteQuestion"])->name("deleteQuestion"); 
 
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
-        Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
-        Route::post("/deleteCards", [CardController::class, "deleteCards"])->name("deleteCards"); 
+        Route::post("/addCard", [CardController::class, "addCard"])->name("addCard"); 
+        Route::post("/deleteCard", [CardController::class, "deleteCard"])->name("deleteCard"); 
 
-        Route::post("/favCards", [CardController::class, "favCards"])->name("favCards"); 
-        Route::post("/unFavCards", [CardController::class, "unFavCards"])->name("unFavCards"); 
+        Route::post("/favCard", [CardController::class, "favCard"])->name("favCard"); 
+        Route::post("/unFavCard", [CardController::class, "unFavCard"])->name("unFavCard"); 
     // });
 });
