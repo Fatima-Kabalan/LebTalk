@@ -11,7 +11,6 @@ use App\Http\Controllers\QuestionController;
 
 Route::post("/login", [AuthController::class, "login"])->name("login");
 Route::post("/register", [AuthController::class, "register"])->name("register"); 
-Route::post('/logout', [AuthController::class, 'logout']);
 
 Route::group(["prefix"=> "v1"], function(){
 
@@ -19,9 +18,12 @@ Route::group(["prefix"=> "v1"], function(){
         Route::get("/getCategories", [CategoryController::class, "getCategories"])->name("getCategories"); 
         Route::post("/addCategories", [CategoryController::class, "addCategories"])->name("addCategories"); 
         Route::post("/deleteCategories", [CategoryController::class, "deleteCategories"])->name("deleteCategories"); 
+        Route::get("/getAllCategories", [CategoryController::class, "getALlCategories"])->name("getALlCategories"); 
+
         Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
         Route::get("/getQuiz", [QuizController::class, "getQuiz"])->name("getQuiz"); 
         Route::post("/deleteQuiz", [QuizController::class, "deleteQuiz"])->name("deleteQuiz"); 
+
         Route::get("/getQuestion", [QuestionController::class, "getQuestion"])->name("getQuestion"); 
         Route::post("/addQuestion", [QuestionController::class, "addQuestion"])->name("addQuestion"); 
         Route::post("/deleteQuestion", [QuestionController::class, "deleteQuestion"])->name("deleteQuestion"); 
@@ -29,6 +31,7 @@ Route::group(["prefix"=> "v1"], function(){
         Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
         Route::post("/addCards", [CardController::class, "addCards"])->name("addCards"); 
         Route::post("/deleteCards", [CardController::class, "deleteCards"])->name("deleteCards"); 
+
         Route::post("/favCards", [CardController::class, "favCards"])->name("favCards"); 
         Route::post("/unFavCards", [CardController::class, "unFavCards"])->name("unFavCards"); 
     // });

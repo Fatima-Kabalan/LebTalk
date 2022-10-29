@@ -16,6 +16,16 @@ class CategoryController extends Controller
         ]);
     }
 
+    function getAllCategories(Request $request)
+    {
+        $category = Category::all();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$category,
+        ]);
+    }
+
     function addCategories(Request $request)
     {
         $category = Category::create($request->all(), [
