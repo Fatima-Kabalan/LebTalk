@@ -5,6 +5,9 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Logo/>
+      <View>
+        <Text>Hello</Text>
+      </View>
     </View>
   );
 }
@@ -12,8 +15,9 @@ export default function App() {
 const styles = StyleSheet.create({
   container: {
     flex: 1,
-    backgroundColor: 'green',
+    flexDirection:'column',
+    backgroundColor: '#A42E2C',
     alignItems: 'center',
-    justifyContent: 'center',
+    // justifyContent: 'center',
   },
 });
