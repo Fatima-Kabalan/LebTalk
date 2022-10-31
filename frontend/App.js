@@ -5,8 +5,11 @@ export default function App() {
   return (
     <View style={styles.container}>
       <Logo/>
+      <Text style={styles.lebText}>
+          Leb<Text style={styles.talkText}>Talk</Text>
+      </Text>
       <View>
-        <Text>Hello</Text>
+          
       </View>
     </View>
   );
@@ -19,5 +22,15 @@ const styles = StyleSheet.create({
     backgroundColor: '#A42E2C',
     alignItems: 'center',
     // justifyContent: 'center',
+  },
+  lebText:{
+    fontWeight:'bold',
+    fontSize:30,
+    color:'white',
+  },
+  talkText:{
+    fontWeight: 'bold',
+    fontSize:30,
+    color:'#E1943C',
   },
 });
