@@ -10,14 +10,13 @@ export default function Logo() {
     </View>
   );
 }
-
 const styles = StyleSheet.create({
     logoContainer: {
         flexDirection:'column',
         justifyContent:'center',
         alignItems:'center',
         paddingTop:30,
-        height:'30%',
+        height:'25%',
         width:'100%',
     },
     MediumLogo: {
