@@ -7,8 +7,7 @@ import LandingPage from './Pages/LandingPage';
 export default function App() {
   return (
     <View style={styles.container}>
-      <LandingPage>
-      </LandingPage>
+      <LandingPage />
     </View>
   );
 }
