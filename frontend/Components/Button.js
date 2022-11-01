@@ -11,8 +11,8 @@ export default function Button({text}) {
 }
 const styles = StyleSheet.create({
     button:{
-        backgroundColor:'green',
+        backgroundColor:'#F29D38',
         margin:20,
+
     },
-    
 });
