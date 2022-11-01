@@ -14,13 +14,10 @@ export default function LandingPage() {
           Leb<Text style={styles.talkText}>Talk</Text>
       </Text>
       <View style={styles.boxContainer}>
-      <Input/>
-      <Text style={styles.question}>Forgot password?</Text>
-      <Button text={"LogIn"}/>
-      
+        <Input/>
+        <Text style={styles.question}>Forgot password?</Text>
+        <Button text={"Login"}/>
       </View>
-      
-      
     </View>
   );
 }
@@ -51,7 +48,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:50,
   },
   question:{
-    marginBottom:240,
+    marginBottom:220,
     textAlign:'right',
     color:'#BB271A',
     fontSize:13,

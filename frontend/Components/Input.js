@@ -20,20 +20,21 @@ const styles = StyleSheet.create({
     inputContainer:{
         flex:1,
         flexDirection:'column',
-        height:'70%',
+        height:'60%',
         width:'100%',
         backgroundColor:'#fff',
         borderTopRightRadius:50,
         borderTopLeftRadius:50,
     },
     input: {
-        margin:10,
-        width:'95%',
+        width:'96%',
+        paddingLeft:8,
     },
     inputIcon:{
         borderBottomWidth:1,
         borderColor:'#A42E2C',
         flexDirection:'row',
         alignItems:'center',
+        marginBottom:12,
     }
 });

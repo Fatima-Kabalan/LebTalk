@@ -11,15 +11,15 @@ export default function Button({text}) {
 }
 const styles = StyleSheet.create({
     button:{
-        backgroundColor:'#F29D38',
-        margin:20,
-        
+      backgroundColor:'#F29D38',
+      borderRadius:30,
+      marginBottom:70,
     },
     loginText:{
       color:'white',
       textAlign:'center',
-      padding:7,
+      padding:6,
       fontSize:18,
       fontWeight:'bold',
-    }
+    },
 });
