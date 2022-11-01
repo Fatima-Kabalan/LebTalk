@@ -1,6 +1,8 @@
 import { StyleSheet, Text, View } from 'react-native';
+import Button from '../Components/Button';
 import Input from '../Components/Input';
 import  Logo from '../Components/Logo';
+
 
 
 
@@ -13,7 +15,10 @@ export default function LandingPage() {
       </Text>
       <View style={styles.boxContainer}>
         <Input/>
+<Button text={"LogIn"}/>
       </View>
+      
+      
     </View>
   );
 }

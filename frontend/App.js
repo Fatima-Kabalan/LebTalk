@@ -1,5 +1,5 @@
 import { StyleSheet, View ,Text } from 'react-native';
-import Input from './Components/Input';
+import Button from './Components/Button';
 import LandingPage from './Pages/LandingPage';
 
 
@@ -8,6 +8,7 @@ export default function App() {
   return (
     <View style={styles.container}>
       <LandingPage />
+     
     </View>
   );
 }

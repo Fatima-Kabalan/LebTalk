@@ -7,7 +7,7 @@ export default function Input() {
     <View style={styles.inputContainer}>
         <View style={styles.inputIcon}>
          <MaterialCommunityIcons name="email" size={20} color="#BD4543" />
-         <TextInput style={styles.input} type='email' placeholder='email'></TextInput>
+         <TextInput style={styles.input} type='email' placeholder='Email'></TextInput>
         </View>
         <View style={styles.inputIcon}>
             <MaterialCommunityIcons name="lock" size={20} color="#BD4543" />
@@ -27,7 +27,6 @@ const styles = StyleSheet.create({
         borderTopLeftRadius:50,
     },
     input: {
-        
         margin:10,
         width:'95%',
     },
