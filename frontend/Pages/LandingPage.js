@@ -16,7 +16,8 @@ export default function LandingPage() {
       <View style={styles.boxContainer}>
         <Input/>
         <Text style={styles.question}>Forgot password?</Text>
-        <Button text={"Login"}/>
+          <Button text={"Login"}/>
+          <Text style={styles.signupText}>Don’t have an account?<Text style={styles.redText}>Create one</Text></Text>
       </View>
     </View>
   );
@@ -48,10 +49,18 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:50,
   },
   question:{
-    marginBottom:220,
+    marginBottom:190,
     textAlign:'right',
     color:'#BB271A',
-    fontSize:13,
+    fontSize:14,
+  },
+  signupText:{
+    marginBottom:60,
+    textAlign:'center',
+    fontSize:14,
+  },
+  redText:{
+    color:'#A42E2C',
   }
 });
 
