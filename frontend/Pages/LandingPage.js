@@ -1,4 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
+import Input from '../Components/Input';
 import  Logo from '../Components/Logo';
 
 
@@ -10,7 +11,8 @@ export default function LandingPage() {
       <Text style={styles.lebText}>
           Leb<Text style={styles.talkText}>Talk</Text>
       </Text>
-      <View style={styles.inputContainer}>
+      <View style={styles.boxContainer}>
+        <Input/>
       </View>
     </View>
   );
@@ -33,7 +35,7 @@ const styles = StyleSheet.create({
     fontSize:30,
     color:'#E1943C',
   },
-  inputContainer:{
+  boxContainer:{
     height:'70%',
     width:'100%',
     padding:30,
