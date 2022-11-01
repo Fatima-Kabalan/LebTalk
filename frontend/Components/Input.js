@@ -18,7 +18,6 @@ export default function Input() {
 }
 const styles = StyleSheet.create({
     inputContainer:{
-       
         flex:1,
         flexDirection:'column',
         height:'70%',
@@ -28,13 +27,13 @@ const styles = StyleSheet.create({
         borderTopLeftRadius:50,
     },
     input: {
-        // borderBottomWidth:1,
-        borderColor:'#A42E2C',
+        
         margin:10,
         width:'95%',
     },
     inputIcon:{
         borderBottomWidth:1,
+        borderColor:'#A42E2C',
         flexDirection:'row',
         alignItems:'center',
     }
