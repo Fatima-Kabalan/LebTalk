@@ -1,14 +1,26 @@
+import { NavigationContainer } from '@react-navigation/native';
+import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View ,Text } from 'react-native';
-import Button from './Components/Button';
 import LandingPage from './Pages/LandingPage';
+import SignupPage from './Pages/SignupPage';
 
-
+const Stack = createNativeStackNavigator();
 
 export default function App() {
   return (
-    <View style={styles.container}>
-      <LandingPage />
-    </View>
+    <NavigationContainer>  
+      <Stack.Navigator 
+        screenOptions={{
+          headerShown: false
+        }}
+      >
+        <Stack.Screen
+          name="Login"
+          component={LandingPage}
+        />
+        <Stack.Screen name="Signup" component={SignupPage} />
+      </Stack.Navigator>
+    </NavigationContainer>
   );
 }
 
