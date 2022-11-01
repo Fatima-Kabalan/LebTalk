@@ -1,18 +1,12 @@
-import { StyleSheet, Text, View } from 'react-native';
-import  Logo from './Components/Logo';
-import  Input  from './Components/Input';
+import { StyleSheet, View } from 'react-native';
+import LandingPage from './Pages/LandingPage';
+
 
 
 export default function App() {
   return (
     <View style={styles.container}>
-      <Logo/>
-      <Text style={styles.lebText}>
-          Leb<Text style={styles.talkText}>Talk</Text>
-      </Text>
-      <View style={styles.inputContainer}>
-        <Input/>
-      </View>
+      <LandingPage/>
     </View>
   );
 }
@@ -22,27 +16,6 @@ const styles = StyleSheet.create({
     flex: 1,
     flexDirection:'column',
     backgroundColor: '#A42E2C',
-    alignItems: 'center',
   },
-  lebText:{
-    fontWeight:'bold',
-    fontSize:30,
-    color:'white',
-  },
-
-  talkText:{
-    fontWeight: 'bold',
-    fontSize:30,
-    color:'#E1943C',
-  },
-  inputContainer:{
-    height:'70%',
-    width:'100%',
-    padding:30,
-    backgroundColor:'#fff',
-    borderTopRightRadius:50,
-    borderTopLeftRadius:50,
-  },
-  
 });
 
