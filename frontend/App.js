@@ -1,5 +1,6 @@
 import { StyleSheet, Text, View } from 'react-native';
 import  Logo from './Components/Logo';
+import  Input  from './Components/Input';
 
 
 export default function App() {
@@ -10,6 +11,7 @@ export default function App() {
           Leb<Text style={styles.talkText}>Talk</Text>
       </Text>
       <View style={styles.inputContainer}>
+        <Input/>
       </View>
     </View>
   );
