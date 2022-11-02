@@ -1,11 +1,12 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Button from '../Components/Button';
+import Button from '../Components/Button/TextButton';
+import TextButton from '../Components/Button/TextButton';
 import EmailInput from '../Components/Input/EmailInput';
 import PasswordInput from '../Components/Input/PasswordInput';
 import  Logo from '../Components/Logo';
 
 
-export default function SignupPage() {
+export default function SignupPage({navigation }) {
   return (
     <View style={styles.container}>
       <Logo/>
@@ -17,7 +18,7 @@ export default function SignupPage() {
         <PasswordInput />
         <EmailInput />
         <PasswordInput />
-        <Button text={"Signup"}/>
+        <TextButton text={'Signup'} onPress={() => navigation.navigate('Login')}  />
       </View>
     </View>
   );
@@ -42,6 +43,11 @@ const styles = StyleSheet.create({
     backgroundColor:'#fff',
     borderTopRightRadius:50,
     borderTopLeftRadius:50,
+  },
+  button1:{
+    backgroundColor:'green',
+    borderRadius:30,
+    marginBottom:20,
   },
   
 })
