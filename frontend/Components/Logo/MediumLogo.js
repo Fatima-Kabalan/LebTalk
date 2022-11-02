@@ -5,7 +5,7 @@ export default function Logo() {
     <View style={styles.logoContainer}>
        <Image
           style={styles.MediumLogo}
-          source={require('../assets/tarboush.jpg')}
+          source={require('../../assets/tarboush.jpg')}
         />
     </View>
   );

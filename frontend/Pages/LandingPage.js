@@ -1,5 +1,5 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import  Logo from '../Components/Logo';
+import  Logo from '../Components/Logo/MediumLogo';
 import TextButton from '../Components/Button/TextButton';
 import EmailInput from '../Components/Input/EmailInput';
 import PasswordInput from '../Components/Input/PasswordInput';

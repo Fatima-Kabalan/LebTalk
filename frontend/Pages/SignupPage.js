@@ -5,7 +5,7 @@ import EmailInput from '../Components/Input/EmailInput';
 import NameInput from '../Components/Input/NameInput';
 import PasswordInput from '../Components/Input/PasswordInput';
 import PhoneInput from '../Components/Input/PhoneInput';
-import  Logo from '../Components/Logo';
+import  Logo from '../Components/Logo/MediumLogo';
 
 
 export default function SignupPage({navigation }) {
