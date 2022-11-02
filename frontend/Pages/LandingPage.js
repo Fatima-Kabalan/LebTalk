@@ -1,11 +1,12 @@
 import { StyleSheet, Text, TouchableOpacity, View } from 'react-native';
-import Button from '../Components/Button';
+import Button from '../Components/Button/TextButton';
 import  Logo from '../Components/Logo';
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import TextButton from '../Components/Button/TextButton';
 import EmailInput from '../Components/Input/EmailInput';
 import PasswordInput from '../Components/Input/PasswordInput';
+import ContainedButton from '../Components/Button/ContainedButton';
 
 
 export default function LandingPage({navigation}) {
@@ -21,9 +22,9 @@ export default function LandingPage({navigation}) {
           <PasswordInput />
         </View>
         <Text style={styles.question}>Forgot password?</Text>
-        <Button text={"Login"} />
+        <ContainedButton text={"Login"}  textStyle={styles.signupText} buttonStyle={styles.button}/>
           <Text style={styles.signupText}>Don’t have an account?</Text>
-          <TextButton onPress={() => navigation.navigate('Signup')} title={"Create one"} styles={styles}/>
+          <TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} />
       </View>
     </View>
   );
@@ -35,6 +36,11 @@ const styles = StyleSheet.create({
     flexDirection:'column',
     backgroundColor: '#A42E2C',
     alignItems: 'center',
+  },
+  button:{
+    backgroundColor:'#F29D38',
+    borderRadius:30,
+    marginBottom:20,
   },
   lebText:{
     fontWeight:'bold',
