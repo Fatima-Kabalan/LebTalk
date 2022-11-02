@@ -22,9 +22,9 @@ export default function LandingPage({navigation}) {
           <PasswordInput />
         </View>
         <Text style={styles.question}>Forgot password?</Text>
-        <ContainedButton text={"Login"}  textStyle={styles.signupText} buttonStyle={styles.button}/>
-          <Text style={styles.signupText}>Don’t have an account?</Text>
-          <TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} />
+        <ContainedButton text={"Login"}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+        <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
+        
       </View>
     </View>
   );
@@ -41,6 +41,13 @@ const styles = StyleSheet.create({
     backgroundColor:'#F29D38',
     borderRadius:30,
     marginBottom:20,
+  },
+  btnText:{
+    color:'white',
+    textAlign:'center',
+    padding:6,
+    fontSize:18,
+    fontWeight:'bold',
   },
   lebText:{
     fontWeight:'bold',
@@ -61,7 +68,7 @@ const styles = StyleSheet.create({
     borderTopLeftRadius:50,
   },
   question:{
-    marginBottom:190,
+    marginBottom:180,
     textAlign:'right',
     color:'#BB271A',
     fontSize:14,
@@ -73,7 +80,6 @@ const styles = StyleSheet.create({
   },
   redText:{
     color:'#A42E2C',
-    justifyContent:'center',
   },
   inputContainer:{
     flex:1,
