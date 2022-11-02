@@ -1,6 +1,5 @@
 import { StyleSheet, Text, View } from 'react-native';
-import Button from '../Components/Button/TextButton';
-import TextButton from '../Components/Button/TextButton';
+import ContainedButton from '../Components/Button/ContainedButton';
 import ConfirmPassInput from '../Components/Input/ConfirmPassInput';
 import EmailInput from '../Components/Input/EmailInput';
 import NameInput from '../Components/Input/NameInput';
@@ -22,7 +21,7 @@ export default function SignupPage({navigation }) {
         <PasswordInput />
         <ConfirmPassInput />
         <PhoneInput />
-        <TextButton text={'Signup'} onPress={() => navigation.navigate('Login')}  />
+        <ContainedButton text={'Signup'} onPress={() => navigation.navigate('Login')} textStyle={styles.btnText} buttonStyle={styles.button} />
       </View>
     </View>
   );
@@ -48,10 +47,17 @@ const styles = StyleSheet.create({
     borderTopRightRadius:50,
     borderTopLeftRadius:50,
   },
-  button1:{
-    backgroundColor:'green',
+  button:{
+    backgroundColor:'#F29D38',
     borderRadius:30,
+    marginTop:70,
     marginBottom:20,
   },
-  
+  btnText:{
+    color:'white',
+    textAlign:'center',
+    padding:6,
+    fontSize:18,
+    fontWeight:'bold',
+  },
 })
