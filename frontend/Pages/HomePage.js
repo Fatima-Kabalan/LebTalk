@@ -2,7 +2,7 @@ import { StyleSheet, View ,Text ,Image ,ImageBackground} from 'react-native';
 import { useFonts } from 'expo-font';
 import * as Font from 'expo-font';
 import Logo from '../Components/Logo/SmallLogo';
-
+import Card from '../Components/Card/CircularCard';
 
 export default function HomePage() {
   return (
@@ -15,6 +15,7 @@ export default function HomePage() {
                 ― Phil Collins</Text>
             </View>
             </ImageBackground>
+            <Card source={require('../assets/lebanon.jpg')}/>
         </View>
   );
 }
