@@ -1,4 +1,4 @@
-import { StyleSheet, View ,Text ,ImageBackground} from 'react-native';
+import { StyleSheet, View ,Text ,Image ,ImageBackground} from 'react-native';
 import { useFonts } from 'expo-font';
 import * as Font from 'expo-font';
 import Logo from '../Components/Logo/SmallLogo';
@@ -7,18 +7,14 @@ import Logo from '../Components/Logo/SmallLogo';
 export default function HomePage() {
   return (
         <View style={styles.container}>
-            <View >
-                <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
-                    <View styles={styles.logoBar}> 
-                        <Logo/>
-                        {/* <Text style={styles.lebText}>
-                            Leb<Text style={styles.talkText}>Talk</Text>
-                        </Text> */}
-                    </View>
-                <View style={styles.textContainer}><Text style={styles.imgText}> “In learning you will teach, and in teaching you will learn.”
-                    ― Phil Collins</Text></View>
-                </ImageBackground>
+            <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
+            <View styles={styles.logoBar}> 
+                  <Logo/>
             </View>
+            <View style={styles.textContainer}><Text style={styles.imgText}> “In learning you will teach, and in teaching you will learn.”
+                ― Phil Collins</Text>
+            </View>
+            </ImageBackground>
         </View>
   );
 }
@@ -27,19 +23,19 @@ const styles = StyleSheet.create({
     container: {
         flex: 1,
         flexDirection:'column',
-        backgroundColor: '#A42E2C',
+        backgroundColor: 'white',
     },
     img:{
         width: '100%',
-        height: '75%',
-        opacity:0.8,
+        height: '60%',
+        opacity:0.9,
     },
     textContainer:{
         position: 'absolute',
         top: 0, 
         left: 0, 
         right: 0,
-        bottom: 55, 
+        bottom: 99, 
         justifyContent: 'center',
         alignItems: 'center',
     },
@@ -64,5 +60,13 @@ const styles = StyleSheet.create({
     },
     logoBar:{
         flexDirection:'column'
-    }
+    },
+    boxContainer:{
+        height:'40%',
+        width:'100%',
+        // padding:30,
+        backgroundColor:'#fff',
+        borderTopRightRadius:50,
+        borderTopLeftRadius:50,
+    },
 });
