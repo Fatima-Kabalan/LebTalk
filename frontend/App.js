@@ -1,6 +1,7 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View ,Text } from 'react-native';
+import CongratsPage from './Pages/CongratsPage';
 import HomePage from './Pages/HomePage';
 import LandingPage from './Pages/LandingPage';
 import SignupPage from './Pages/SignupPage';
@@ -23,6 +24,10 @@ export default function App() {
         <Stack.Screen
           name="Home"
           component={HomePage}
+        />
+        <Stack.Screen
+          name="Congrats"
+          component={CongratsPage}
         />
       </Stack.Navigator>
     </NavigationContainer>
