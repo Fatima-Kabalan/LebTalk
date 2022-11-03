@@ -22,12 +22,12 @@ export default function HomePage() {
                 <Text style={styles.courseText}>Courses</Text>
                 <View style={styles.buttom}>
                 <View style={styles.cardFlex}>  
-                    <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.animals}/>
-                    <Card source={require('../assets/fam.jpg')} text={'Family'} textStyle={styles.animals}/>
+                    <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} />
+                    <Card source={require('../assets/fam.jpg')} text={'Family'}  />
                 </View>
                 <View style={styles.cardFlex}>
-                        <Card source={require('../assets/dog.jpg')}  text={'Animals'} textStyle={styles.animals} />
-                        <Card source={require('../assets/sports.jpg')} text={'Sports'} textStyle={styles.animals} />
+                    <Card source={require('../assets/dog.jpg')}  text={'Animals'}  />
+                    <Card source={require('../assets/sports.jpg')} text={'Sports'} />
                 </View>
             </View>
             </ScrollView>
@@ -108,21 +108,11 @@ const styles = StyleSheet.create({
         justifyContent:'space-around',
         alignItems:'center',
     },
-    boxContainer:{
-        height:'40%',
-        width:'100%',
-        // padding:30,
-        backgroundColor:'#fff',
-        borderTopRightRadius:50,
-        borderTopLeftRadius:50,
-    },
     courseText:{
-        paddingLeft:50,
+        paddingLeft:45,
         textAlign:"left",
         fontWeight:'bold',
         fontSize:20,
         paddingTop:10,
-
-
     }
 });
