@@ -5,6 +5,7 @@ import CongratsPage from './Pages/CongratsPage';
 import HomePage from './Pages/HomePage';
 import LandingPage from './Pages/LandingPage';
 import SignupPage from './Pages/SignupPage';
+import FailedPage from './Pages/FailedPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -29,6 +30,11 @@ export default function App() {
           name="Congrats"
           component={CongratsPage}
         />
+        <Stack.Screen
+          name="Failed"
+          component={FailedPage}
+        />
+        
       </Stack.Navigator>
     </NavigationContainer>
   );

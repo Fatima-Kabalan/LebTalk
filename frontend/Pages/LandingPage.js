@@ -19,7 +19,7 @@ export default function LandingPage({navigation}) {
           <PasswordInput />
         </View>
         <Text style={styles.question}>Forgot password?</Text>
-        <ContainedButton text={"Login"} onPress={() => navigation.navigate('Congrats')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+        <ContainedButton text={"Login"} onPress={() => navigation.navigate('Failed')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
         <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
       </View>
     </View>
