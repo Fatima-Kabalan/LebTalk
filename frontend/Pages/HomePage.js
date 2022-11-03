@@ -19,10 +19,10 @@ export default function HomePage() {
                 </ImageBackground>
             </View>
             <ScrollView >
-                <Text>Courses</Text>
+                <Text style={styles.courseText}>Courses</Text>
                 <View style={styles.buttom}>
                 <View style={styles.cardFlex}>  
-                    <Card source={require('../assets/lebanon.jpg')} text={'hi'}/>
+                    <Card source={require('../assets/lebanon.jpg')} text={'hi'} />
                     <Card source={require('../assets/lebanon.jpg')} />
                 </View>
                 <View style={styles.cardFlex}>
@@ -117,4 +117,13 @@ const styles = StyleSheet.create({
         borderTopRightRadius:50,
         borderTopLeftRadius:50,
     },
+    courseText:{
+        paddingLeft:50,
+        textAlign:"left",
+        fontWeight:'bold',
+        fontSize:20,
+        paddingTop:10,
+
+
+    }
 });
