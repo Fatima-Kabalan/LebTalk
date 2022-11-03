@@ -22,12 +22,12 @@ export default function HomePage() {
                 <Text style={styles.courseText}>Courses</Text>
                 <View style={styles.buttom}>
                 <View style={styles.cardFlex}>  
-                    <Card source={require('../assets/lebanon.jpg')} text={'hi'} />
-                    <Card source={require('../assets/lebanon.jpg')} />
+                    <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.animals}/>
+                    <Card source={require('../assets/fam.jpg')} text={'Family'} textStyle={styles.animals}/>
                 </View>
                 <View style={styles.cardFlex}>
-                        <Card source={require('../assets/lebanon.jpg')}  />
-                        <Card source={require('../assets/lebanon.jpg')} />
+                        <Card source={require('../assets/dog.jpg')}  text={'Animals'} textStyle={styles.animals} />
+                        <Card source={require('../assets/sports.jpg')} text={'Sports'} textStyle={styles.animals} />
                 </View>
             </View>
             </ScrollView>
@@ -63,7 +63,6 @@ const styles = StyleSheet.create({
     cards:{
         marginButtom:70,
         paddingTop:20,
-        backgroundColor:'green'
         
     },
     container: {
