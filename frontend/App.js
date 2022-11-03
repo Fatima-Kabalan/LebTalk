@@ -6,6 +6,7 @@ import HomePage from './Pages/HomePage';
 import LandingPage from './Pages/LandingPage';
 import SignupPage from './Pages/SignupPage';
 import FailedPage from './Pages/FailedPage';
+import FoodPage from './Pages/FoodPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -33,6 +34,10 @@ export default function App() {
         <Stack.Screen
           name="Failed"
           component={FailedPage}
+        />
+        <Stack.Screen
+          name="Food"
+          component={FoodPage}
         />
         
       </Stack.Navigator>
