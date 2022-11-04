@@ -2,7 +2,7 @@ import { StyleSheet, View ,Image } from 'react-native';
 
 export default function Logo() {
   return (
-    <View style={styles.logoContainer}>
+    <View >
        <Image
           style={styles.SmallLogo}
           source={require('../../assets/tarboush.jpg')}
@@ -11,12 +11,12 @@ export default function Logo() {
   );
 }
 const styles = StyleSheet.create({
-    logoContainer: {
-        flexDirection:'column',
-        justifyContent:'center',
-        alignItems:'center',
-        paddingTop:30,
-    },
+    // logoContainer: {
+    //     flexDirection:'column',
+    //     justifyContent:'center',
+    //     alignItems:'center',
+    //     paddingTop:30,
+    // },
     SmallLogo: {
         width: 40,
         height: 40,
