@@ -25,7 +25,7 @@ class QuizController extends Controller
 
     function getQuiz(Request $request)
     {
-        $quiz = Quiz::select("*")->get();
+        $quiz = Quiz::all();
 
         return response()->json([
             "status"=>"success",
