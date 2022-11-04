@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, View ,Text ,Image ,ImageBackground ,ScrollView} from 'react-native';
+import ContainedButton from '../Components/Button/ContainedButton';
 import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
 
@@ -13,9 +14,16 @@ export default function FoodPage() {
             </ImageBackground>
         </View>
         <ScrollView >
-            <Text style={styles.foodText}>Food</Text>
+            <View style={styles.flexRow}>
+                <Text style={styles.foodText}>Food</Text>
+                <ContainedButton text={"NEXT:SPORTS"} buttonStyle={styles.button} textStyle={styles.btnText}/>
+            </View>
             <View style={styles.flatCards}>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} />
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
+                <FlatCard source={require('../assets/fatoush.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
+
             </View>   
         </ScrollView>
     </View>
@@ -23,20 +31,47 @@ export default function FoodPage() {
 }
 
 const styles = StyleSheet.create({
-
+// button:{
+//     backgroundColor:'#F29D38',
+//     borderRadius:30,
+//     width:'90%',
+// },
+// btnText:{
+//     textAlign:'center',
+//     color:'white',
+//     fontSize:17,
+//     fontWeight:'bold'
+// },
+button:{
+    backgroundColor:'#F29D38',
+    borderRadius:30,
+    marginTop:9,
+    paddingLeft:12,
+    paddingRight:12,
+    marginRight:30
+  },
+  btnText:{
+    color:'white',
+    textAlign:'center',
+    padding:10,
+    fontSize:18,
+    fontWeight:'bold',
+  },
+flexRow:{
+    justifyContent:'space-between',
+    flexDirection:'row',
+},
 top:{
     width:'100%',
     height:'40%'
 },
-
 container: {
     flex: 1,
     flexDirection:'column',
     backgroundColor: 'white',
 },
 flatCards:{
-   justifyContent:'center',
-   alignItems:'center'
+   alignItems:'center',
 },
 img:{
     width: '100%',
@@ -45,10 +80,11 @@ img:{
     
 },
 foodText:{
-    paddingLeft:45,
+    paddingLeft:30,
     textAlign:"left",
     fontWeight:'bold',
-    fontSize:20,
+    fontSize:30,
+    color:'#F29D38',
     paddingTop:10,
 }
 });
