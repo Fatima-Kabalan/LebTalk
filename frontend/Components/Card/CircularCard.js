@@ -3,15 +3,15 @@ import TextButton from '../Button/TextButton';
 
 export default function CircularCard({source,text,onPress,textStyle}) {
   return (
-    <View><TouchableOpacity    onPress={onPress}>
-      <ImageBackground style={styles.category}  
-      imageStyle={{ borderRadius: 80}}
-      
-        source={source} >
+    <View><TouchableOpacity  onPress={onPress}>
+        <ImageBackground 
+            style={styles.category}  
+            imageStyle={{ borderRadius: 80}}
+            source={source} 
+        >
         <Text  style={textStyle}>{text}</Text>
-      </ImageBackground>
-      </TouchableOpacity>
-    
+        </ImageBackground>
+        </TouchableOpacity>
     </View>
   );
 }
