@@ -2,7 +2,7 @@ import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from '
 import { MaterialIcons } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-export default function FlatCard({source,text,onPress,textStyle}) {
+export default function FlatCard({source,text1,text2,onPress,textStyle}) {
     return (
       <View style={styles.FlatCardContainer}>
         <Image 
@@ -12,16 +12,16 @@ export default function FlatCard({source,text,onPress,textStyle}) {
         <View  style={styles.row} >
             <View style={styles.bar1}>
                 <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
-                <Text style={styles.text}>Fatoush</Text>
+                <Text style={styles.text}>{text1}</Text>
                 <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
             </View>
             <View style={styles.bar1}>
                 <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
-                <Text style={styles.text}>Fatoush</Text>
+                <Text style={styles.text}>{text2}</Text>
                 <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
             </View>
         </View>
-        <View style={styles.bar}> 
+        <View style={styles.bar}>
           <MaterialIcons name="audiotrack" size={24} color="white" />
           <FontAwesome name="heart-o" size={24} color="white" />
         </View>
@@ -34,19 +34,21 @@ const styles = StyleSheet.create({
         borderRadius:30,
         backgroundColor:'#BD4543',
         height:195,
-        width:330
+        width:330,
+        margin:20
     },
     imageCard:{
         borderRadius:30,
         height:120,
-        width:330
+        width:330,
+        
     },
     row:{
         flexDirection:'row',
         justifyContent:'space-between',
         paddingLeft:10,
         paddingRight:10,
-        
+      
         paddingTop:2,
     },
     bar:{
