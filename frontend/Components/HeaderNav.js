@@ -10,7 +10,6 @@ export default function HeaderNav({text}){
                 <Text style={styles.text}>{text}</Text>   
                 <Logo/>
             </View>
-          
         </View>
         );
     
@@ -21,7 +20,7 @@ const styles = StyleSheet.create({
         justifyContent:'center',
         backgroundColor:'#BD4543',
         width:'100%',
-        height:'10%',
+        height:'11%',
     },
     text:{
         fontSize:24,
@@ -29,9 +28,10 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
     },
     flex:{
-        flex:1,
+        // flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-        padding:20
+        padding:30,
+      
     },
 });

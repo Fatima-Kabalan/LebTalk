@@ -1,5 +1,6 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { StyleSheet, View ,Text ,Image ,ImageBackground ,ScrollView} from 'react-native';
+import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
 
 
@@ -8,16 +9,14 @@ export default function FoodPage() {
     <View style={styles.container}>
         <HeaderNav text={'Food'}/>
         <View style={styles.top}> 
-            
             <ImageBackground  source={require('../assets/food.png')} style={styles.img}>
-           
             </ImageBackground>
         </View>
         <ScrollView >
             <Text style={styles.foodText}>Food</Text>
-            <View style={styles.buttom}>
-
-            </View>
+            <View style={styles.flatCards}>
+                <FlatCard source={require('../assets/Kibbeh.jpg')} />
+            </View>   
         </ScrollView>
     </View>
 );
@@ -26,28 +25,24 @@ export default function FoodPage() {
 const styles = StyleSheet.create({
 
 top:{
-    height:'40%',
     width:'100%',
+    height:'40%'
 },
-buttom:{
-    height:'60%',
-    width:'100%',
-    flexDirection:'column',
-    borderTopLeftRadius:50,
-    borderTopRightRadius:50,
-    alignItems:'center',
-    justifyContent:'space-evenly',
-},
+
 container: {
     flex: 1,
     flexDirection:'column',
     backgroundColor: 'white',
-   
+},
+flatCards:{
+   justifyContent:'center',
+   alignItems:'center'
 },
 img:{
     width: '100%',
     height: '100%',
     opacity:0.9,
+    
 },
 foodText:{
     paddingLeft:45,
