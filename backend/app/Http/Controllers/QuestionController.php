@@ -8,7 +8,7 @@ class QuestionController extends Controller
 {
     function getQuestion(Request $request)
     {
-        $question = Question::select("*")->get();
+        $question = Question::all();
 
         return response()->json([
             "status"=>"success",
