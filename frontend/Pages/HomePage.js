@@ -3,6 +3,7 @@ import { useFonts } from 'expo-font';
 import * as Font from 'expo-font';
 import Logo from '../Components/Logo/SmallLogo';
 import Card from '../Components/Card/CircularCard';
+import CongratsPage from '../Pages/CongratsPage';
 
 export default function HomePage({navigation}) {
   return (

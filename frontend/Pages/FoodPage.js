@@ -19,51 +19,53 @@ export default function FoodPage() {
                 <ContainedButton text={"NEXT:SPORTS"} buttonStyle={styles.button} textStyle={styles.btnText}/>
             </View>
             <View style={styles.flatCards}>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'}  text2={'فتوش'}/>
                 <FlatCard source={require('../assets/fatoush.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} text2={'فتوش'}/>
-
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'}  text2={'فتوش'}/>
+                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'}  text2={'فتوش'}/>
             </View>   
+            <View style={styles.testContainer}>
+                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} />
+            </View>
         </ScrollView>
     </View>
 );
 }
 
 const styles = StyleSheet.create({
-// button:{
-//     backgroundColor:'#F29D38',
-//     borderRadius:30,
-//     width:'90%',
-// },
-// btnText:{
-//     textAlign:'center',
-//     color:'white',
-//     fontSize:17,
-//     fontWeight:'bold'
-// },
 button:{
     backgroundColor:'#F29D38',
     borderRadius:30,
     marginTop:9,
     paddingLeft:12,
     paddingRight:12,
-    marginRight:30
-  },
-  btnText:{
+    marginRight:30,
+    marginButtom:20
+},
+testButton:{
+    backgroundColor:'#F29D38',
+    borderRadius:30,
+    marginLeft:18,
+    marginTop:12,
+    width:'90%',
+},
+testContainer:{
+    marginBottom:100,
+},
+btnText:{
     color:'white',
     textAlign:'center',
     padding:10,
-    fontSize:18,
+    fontSize:19,
     fontWeight:'bold',
-  },
+},
 flexRow:{
     justifyContent:'space-between',
     flexDirection:'row',
 },
 top:{
     width:'100%',
-    height:'40%'
+    height:'40%',
 },
 container: {
     flex: 1,
@@ -83,7 +85,7 @@ foodText:{
     paddingLeft:30,
     textAlign:"left",
     fontWeight:'bold',
-    fontSize:30,
+    fontSize:28,
     color:'#F29D38',
     paddingTop:10,
 }
