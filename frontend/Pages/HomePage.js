@@ -4,7 +4,7 @@ import * as Font from 'expo-font';
 import Logo from '../Components/Logo/SmallLogo';
 import Card from '../Components/Card/CircularCard';
 
-export default function HomePage() {
+export default function HomePage({navigation}) {
   return (
         <View style={styles.container}>
             <View style={styles.top}>
@@ -22,7 +22,7 @@ export default function HomePage() {
                 <Text style={styles.courseText}>Courses</Text>
                 <View style={styles.buttom}>
                 <View style={styles.cardFlex}>  
-                    <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} />
+                    <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} onPress={()=>navigation.navigate('Congrats')} />
                     <Card source={require('../assets/fam.jpg')} text={'Family'}  />
                 </View>
                 <View style={styles.cardFlex}>
