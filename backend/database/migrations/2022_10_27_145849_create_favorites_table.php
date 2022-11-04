@@ -12,8 +12,7 @@ return new class extends Migration
             $table->id();
             $table->integer('users_id');
             $table->integer('cards_id');
-            // $table->foreign('users_id')->references('id')->on('users');
-            // $table->foreign('cards_id')->references('id')->on('cards');
+
             $table->timestamps();
         });
     }
