@@ -17,10 +17,12 @@ export default function LandingPage({navigation}) {
         <View style={styles.inputContainer}>
           <EmailInput />
           <PasswordInput />
-        </View>
         <Text style={styles.question}>Forgot password?</Text>
-        <ContainedButton text={"Login"} onPress={() => navigation.navigate('Food')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
-        <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
+        </View>
+        <View>        
+          <ContainedButton text={"Login"} onPress={() => navigation.navigate('Home')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+          <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
+        </View>
       </View>
     </View>
   );
