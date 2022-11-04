@@ -1,20 +1,26 @@
-import { StyleSheet, View ,Image, ImageBackground} from 'react-native';
+import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import TextButton from '../Button/TextButton';
 
 export default function CircularCard({source,text,onPress,textStyle}) {
   return (
-    <View>
+    <View><TouchableOpacity    onPress={onPress}>
       <ImageBackground style={styles.category}  
-    //   imageStyle={{ borderRadius: 80}}
-        source={source}>
-            <TextButton text={text} onPress={onPress} style={textStyle}></TextButton>
+      imageStyle={{ borderRadius: 80}}
+      
+        source={source} >
+        <Text  style={textStyle}>{text}</Text>
       </ImageBackground>
+      </TouchableOpacity>
+    
     </View>
   );
 }
 const styles = StyleSheet.create({
    category:{
         backgroundColor:'black',
+        flex:1,
+        justifyContent:'center',
+        alignItems:'center',
         height:150,
         width:150,
         opacity:0.7,
