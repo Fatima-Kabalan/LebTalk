@@ -7,6 +7,7 @@ import LandingPage from './Pages/LandingPage';
 import SignupPage from './Pages/SignupPage';
 import FailedPage from './Pages/FailedPage';
 import FoodPage from './Pages/FoodPage';
+import QuizPage from './Pages/QuizPage';
 
 const Stack = createNativeStackNavigator();
 
@@ -38,6 +39,10 @@ export default function App() {
         <Stack.Screen
           name="Food"
           component={FoodPage}
+        />
+        <Stack.Screen
+          name="Quiz"
+          component={QuizPage}
         />
         
       </Stack.Navigator>

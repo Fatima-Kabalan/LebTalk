@@ -1,16 +1,19 @@
 import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import ContainedButton from '../Button/ContainedButton';
-
+import { Entypo } from '@expo/vector-icons'; 
 
 export default function CircularCard({questionNum,question}) {
   return (
     <View style={styles.container}>
-        <View>
+        <View style={styles.btnFlex}>
             <Text style={styles.questionNum}>{questionNum}</Text>
-            <Text style={styles.questionText}>{question}</Text>
+            <Entypo name="chevron-small-right" size={24} color="black" />    
+        </View> 
+        <View>
+             <Text style={styles.questionText}>{question}</Text>
         </View>
-       
-        <View style={styles.btnFlex}> 
+        <View style={styles.btnFlex}>  
+           
             <ContainedButton buttonStyle={styles.button}/>
             <ContainedButton buttonStyle={styles.button}/>
             <ContainedButton buttonStyle={styles.statusButton} textStyle={styles.statusText} text={'Answered'}/>
@@ -28,7 +31,7 @@ container:{
     paddingLeft:20,
     height:114,
     width:330,
-    backgroundColor:'#909090',
+    backgroundColor:'#dcdcdc',
 
 },
 questionNum:{
