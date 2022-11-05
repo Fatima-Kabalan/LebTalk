@@ -35,7 +35,7 @@ const styles = StyleSheet.create({
         backgroundColor:'#BD4543',
         height:195,
         width:330,
-        margin:20
+       margin:20
     },
     imageCard:{
         borderRadius:30,
