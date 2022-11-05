@@ -15,25 +15,24 @@ export default function HeaderNav({text}){
 };
 
 const styles = StyleSheet.create({
-    leftIcon:{
-        marginButtom:70
-    },
-    container:{
-        // flex:1,
-        justifyContent:'center',
-        backgroundColor:'#BD4543',
-        height:'13%',
-    },
-    text:{
-        fontSize:24,
-        color:'white',
-        fontWeight:'bold',
-    },
-    flex:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        paddingTop:20,
-        paddingLeft:10,
-        paddingRight:20
-    },
+leftIcon:{
+    marginButtom:70
+},
+container:{
+    justifyContent:'center',
+    backgroundColor:'#BD4543',
+    height:'13%',
+},
+text:{
+    fontSize:24,
+    color:'white',
+    fontWeight:'bold',
+},
+flex:{
+    flexDirection:'row',
+    justifyContent:'space-between',
+    paddingTop:20,
+    paddingLeft:10,
+    paddingRight:20
+},
 });

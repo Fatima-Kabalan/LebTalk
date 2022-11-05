@@ -1,19 +1,21 @@
 import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import ContainedButton from '../Button/ContainedButton';
 import { Entypo } from '@expo/vector-icons'; 
+import TextButton from '../Button/TextButton';
 
-export default function CircularCard({questionNum,question}) {
+export default function CircularCard({questionNum,question,onPress}) {
   return (
     <View style={styles.container}>
         <View style={styles.btnFlex}>
             <Text style={styles.questionNum}>{questionNum}</Text>
-            <Entypo name="chevron-small-right" size={24} color="black" />    
+            <TouchableOpacity onPress={onPress}>
+                <Entypo name="chevron-small-right" size={28} color="black" /> 
+            </TouchableOpacity>
         </View> 
         <View>
              <Text style={styles.questionText}>{question}</Text>
         </View>
         <View style={styles.btnFlex}>  
-           
             <ContainedButton buttonStyle={styles.button}/>
             <ContainedButton buttonStyle={styles.button}/>
             <ContainedButton buttonStyle={styles.statusButton} textStyle={styles.statusText} text={'Answered'}/>
