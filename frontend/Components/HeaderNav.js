@@ -9,11 +9,9 @@ export default function HeaderNav({text}){
                 <AntDesign name="left" size={23} color="white" />
                 <Text style={styles.text}>{text}</Text>   
                 <Logo/>
-            </View>
-           
+            </View>  
         </View>
-        );
-    
+    );
 };
 
 const styles = StyleSheet.create({
@@ -21,9 +19,9 @@ const styles = StyleSheet.create({
         marginButtom:70
     },
     container:{
+        // flex:1,
         justifyContent:'center',
         backgroundColor:'#BD4543',
-       
         height:'13%',
     },
     text:{
@@ -32,12 +30,10 @@ const styles = StyleSheet.create({
         fontWeight:'bold',
     },
     flex:{
-        // flex:1,
         flexDirection:'row',
         justifyContent:'space-between',
-        paddingTop:30,
+        paddingTop:20,
         paddingLeft:10,
         paddingRight:20
-      
     },
 });
