@@ -22,28 +22,35 @@ const styles = StyleSheet.create({
         height:'25%',
         width:'90%',
         backgroundColor:'#f5deb3',
+        marginTop:20,
+        marginLeft:20,
+        
     },
     pic:{
         borderRadius:50,
-        height:'80%',
-        width:'20%',
+        height:'90%',
+        width:'40%',
         backgroundColor:'black',
-        marginRight:10
+        marginRight:10,
+        marginLeft:10,
     },
     picContainer:{
         flexDirection:'row',
-        justifyContent:'center',
+        justifyContent:'space-between',
         height:'50%',
-        marginTop:20
+        marginTop:10,
+        paddingLeft:20,
+        paddingRight:80,
+       paddingTop:10
     },
     btn:{
-        height:'50%',
-        width:'50%',
+        height:'45%',
+        width:'90%',
         backgroundColor:'red',
         marginTop:20,
         justifyContent:'center',
         alignItems:'center',
-        marginLeft:90,
+        marginLeft:20,
         backgroundColor:'#F29D38',
         borderRadius:30
     },

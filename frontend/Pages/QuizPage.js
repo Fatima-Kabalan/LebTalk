@@ -12,26 +12,21 @@ export default function QuizPage() {
         <QuestionCard questionNum={'Question1'} question={'What is the name of this meal?'}/>
         <QuestionCard questionNum={'Question1'} question={'What is the name of this meal?'}/>
       </View>
-
     </View>
   );
 }
 
 const styles = StyleSheet.create({
-    container:{
-      flex: 1,
-      flexDirection:'column',
-      backgroundColor: 'white',
-     
-    },
-    questionContainer:{
-      flexDirection:'column',
-      justifyContent:'center',
-      alignItems:'center',
-      padding:20,
-    },
-    questionCard:{
-
-    }
-  
+  container:{
+    flex: 1,
+    flexDirection:'column',
+    backgroundColor: 'white',
+    
+  },
+  questionContainer:{
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    padding:20,
+  },
 });

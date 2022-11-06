@@ -34,7 +34,6 @@ container:{
     height:114,
     width:330,
     backgroundColor:'#dcdcdc',
-
 },
 questionNum:{
     color:'#BB271A',
