@@ -121,6 +121,23 @@ function UserProfileScreen() {
   );
 }
 
+
+const InstuctorStack = createNativeStackNavigator();
+      
+function InstuctorChatStackScreen() {
+  return (
+    <InstuctorStack.Navigator
+      screenOptions={{
+      headerShown: false
+    }}>
+    <InstuctorStack.Screen 
+      name="InstructorChatPage" 
+      component={InstructorChatPage} 
+    />
+    </InstuctorStack.Navigator>
+  );
+}
+
 const Tab = createBottomTabNavigator();
 
 const TabStack = () => {
@@ -138,7 +155,11 @@ const TabStack = () => {
           iconName = focused 
           ? 'person'
           : 'person';
-        }
+        } else if (route.name === 'Instructor') {
+          iconName = focused 
+          ? 'people'
+          : 'people';
+        };
         // You can return any component that you like here!
         return <Ionicons name={iconName} size={size} color={color} />;
       },
@@ -148,6 +169,7 @@ const TabStack = () => {
       headerShown: false
       })}>
       <Tab.Screen name="Home" component={HomeStackScreen} />
+      <Tab.Screen name="Instructor" component={InstuctorChatStackScreen} />
       <Tab.Screen name="Profile" component={UserProfileScreen}/>
     </Tab.Navigator>
   )
