@@ -3,15 +3,14 @@ import ContainedButton from '../Button/ContainedButton';
 import { Entypo } from '@expo/vector-icons'; 
 import TextButton from '../Button/TextButton';
 
-export default function ChatCard({onPress}) {
+export default function ChatCard({username,source}) {
   return (
     <View style={styles.container}>
         <View style={styles.picContainer}>
-            <Image style={styles.pic}></Image>
-            <Text style={styles.text}>Username</Text> 
-            
+            <Image style={styles.pic} source={source}></Image>
+            <Text style={styles.text}>{username}</Text> 
         </View>
-      <ContainedButton buttonStyle={styles.btn} textStyle={styles.btnText} text='hello'/> 
+      <ContainedButton buttonStyle={styles.btn} textStyle={styles.btnText} text='Connect' /> 
     </View>
   );
 }
@@ -26,14 +25,14 @@ const styles = StyleSheet.create({
     },
     pic:{
         borderRadius:50,
-        height:'100%',
+        height:'80%',
         width:'20%',
         backgroundColor:'black',
-
+        marginRight:10
     },
     picContainer:{
         flexDirection:'row',
-        justifyContent:'space-evenly',
+        justifyContent:'center',
         height:'50%',
         marginTop:20
     },
@@ -46,9 +45,15 @@ const styles = StyleSheet.create({
         alignItems:'center',
         marginLeft:90,
         backgroundColor:'#F29D38',
+        borderRadius:30
     },
     text:{
         textAlign:'center',
         paddingTop:25
+    },
+    btnText:{
+        fontWeight:'bold',
+        color:'white',
+        fontSize: 18
     }
 });
