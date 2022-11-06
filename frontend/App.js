@@ -13,6 +13,7 @@ import UserProfile from './Pages/UserProfile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Ionicons';
+import InstructorChatPage from './Pages/InstructorChatPage';
 
 
 
@@ -94,7 +95,7 @@ function HomeStackScreen() {
       headerShown: false
     }}>
     <HomeStack.Screen  
-      name="Home"
+      name="HomePage"
       component={HomePage} 
     />
     <HomeStack.Screen 
@@ -214,7 +215,6 @@ const TabStack = () => {
           component={UserProfile}
         />
         <Stack.Screen 
-          
           name="Home" 
           component={TabStack}
         />
