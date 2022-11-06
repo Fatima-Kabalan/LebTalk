@@ -14,7 +14,7 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import Feather from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
-
+import { StatusBar } from 'react-native';
 
 
 // export default function App() {
@@ -87,13 +87,14 @@ export default function App() {
 const Stack = createNativeStackNavigator();
 
 const HomeStack = createNativeStackNavigator();
-      
+
 function HomeStackScreen() {
   return (
     <HomeStack.Navigator
       screenOptions={{
       headerShown: false
-    }}>
+    }}
+    >
     <HomeStack.Screen  
       name="HomePage"
       component={HomePage} 
