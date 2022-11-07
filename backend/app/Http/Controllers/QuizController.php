@@ -11,7 +11,7 @@ class QuizController extends Controller
         $quiz = Quiz::create($request->all(), [
             'title',
             'question',
-            'user_id',
+            'users_id',
             'categories_id',
             'time_out',
             'time_delivered',
