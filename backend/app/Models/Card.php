@@ -17,4 +17,9 @@ class Card extends Model
         'arabic_text',
         'categories_id',
     ];
+
+    function category(){
+        return $this->belongsTo(Category::class);
+    }    
 }
+
