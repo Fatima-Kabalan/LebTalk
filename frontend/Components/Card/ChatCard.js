@@ -41,7 +41,7 @@ const styles = StyleSheet.create({
         marginTop:10,
         paddingLeft:20,
         paddingRight:80,
-       paddingTop:10
+        paddingTop:10
     },
     btn:{
         height:'45%',
