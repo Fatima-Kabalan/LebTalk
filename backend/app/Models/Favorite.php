@@ -13,4 +13,12 @@ class Favorite extends Model
         'cards_id',
         'users_id',
     ];
+
+    function card(){
+        return $this->hasMany(Card::class);
+    }    
+
+    function users(){
+        return $this->hasMany(User::class);
+    }    
 }
