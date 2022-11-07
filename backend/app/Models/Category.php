@@ -12,6 +12,11 @@ class Category extends Model
     protected $fillable = [
         'id',
         'category_name',
+        'category_image',
         'admin_id',
     ];
+
+    function users(){
+        return $this->belongsTo(User::class);
+    }    
 }
