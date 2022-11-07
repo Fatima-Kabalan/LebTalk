@@ -20,3 +20,9 @@ class Quiz extends Model
         'status'
     ];
 }
+function users(){
+    return $this->belongsTo(User::class);
+}
+function categories(){
+    return $this->belongsTo(Category::class);
+}
