@@ -7,7 +7,7 @@ use Illuminate\Http\Request;
 
 class CardController extends Controller
 {
-    function getCards(Request $request)
+    function getCards()
     {
         $card = Card::select("*")->get();
 
