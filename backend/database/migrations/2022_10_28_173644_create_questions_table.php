@@ -13,6 +13,7 @@ return new class extends Migration
             $table->string('title');
             $table->integer('quizzes_id');
             $table->string('question');
+            $table->string('question_image');
             $table->string('status');
             $table->time('time_out');
             $table->time('time_delivered');
