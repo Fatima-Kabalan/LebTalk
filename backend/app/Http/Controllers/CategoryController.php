@@ -30,6 +30,7 @@ class CategoryController extends Controller
     {
         $category = Category::create($request->all(), [
             'category_name',
+            'category_image',
             'admin_id',
         ]);
         return response()->json([
