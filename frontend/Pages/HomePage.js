@@ -24,11 +24,10 @@ export default function HomePage({navigation}) {
                 </ImageBackground>
             </View>
             <ScrollView >
-                
                 {/* <Text style={styles.courseText}>Courses</Text> */}
                 <View style={styles.buttom}>
                     <View style={styles.cardFlex}>  
-                        <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.cardText} onPress={()=>navigation.navigate('Congrats')} />
+                        <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.cardText} onPress={()=>navigation.navigate('Food')} />
                         <Card source={require('../assets/fam.jpg')} text={'Family'}  textStyle={styles.cardText} />
                     </View>
                     <View style={styles.cardFlex}>
