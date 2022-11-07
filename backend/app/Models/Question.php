@@ -15,12 +15,13 @@ class Question extends Model
         'quizzes_id',
         'title',
         'question',
+        'question_image',
         'time_out',
         'time_delivered',
         'status'
     ];
 
-    function quiz() {
-        return $this->belongsTo(Quiz::class);
-    }
+    function quiz(){
+        return $this->hasMany(Quiz::class);
+    }     
 }
