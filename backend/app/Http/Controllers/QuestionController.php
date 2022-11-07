@@ -6,7 +6,7 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
-    function getQuestion(Request $request)
+    function getQuestion()
     {
         $question = Question::all();
 
@@ -22,6 +22,7 @@ class QuestionController extends Controller
             'title',
             'quizzes_id',
             'question',
+            'question_image',
             'time_out',
             'time_delivered',
             'status',
