@@ -41,10 +41,10 @@ const styles = StyleSheet.create({
     },
     image:{
         height:'30%',
-        width:'90%', 
+        width:' 90%', 
         borderRadius:30,
-        marginLeft:10,
-        marginRight:10
+        marginLeft:15,
+        marginRight:20
     },
     questionNum:{
         color:'#BB271A',
