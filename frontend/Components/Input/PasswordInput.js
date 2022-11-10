@@ -6,7 +6,7 @@ export default function PasswordInput() {
   return (
         <View style={styles.inputIcon}>
             <MaterialCommunityIcons name="lock" size={20} color="#BD4543" />
-            <TextInput style={styles.input} type='password' placeholder='Password'></TextInput>
+            <TextInput style={styles.input} type='password' placeholder='Password' ></TextInput>
         </View>
   );
 }
