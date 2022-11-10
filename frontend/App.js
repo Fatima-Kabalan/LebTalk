@@ -3,7 +3,7 @@ import { createNativeStackNavigator } from '@react-navigation/native-stack';
 import { StyleSheet, View ,Text } from 'react-native';
 import CongratsPage from './Pages/CongratsPage';
 import HomePage from './Pages/HomePage';
-import LandingPage from './Pages/LandingPage';
+import Login from './Pages/Login';
 import SignupPage from './Pages/SignupPage';
 import FailedPage from './Pages/FailedPage';
 import FoodPage from './Pages/FoodPage';
@@ -16,71 +16,6 @@ import Feather from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
 import { StatusBar } from 'react-native';
 
-
-// export default function App() {
-//   return (
-
-//     <NavigationContainer>  
-//       <Stack.Navigator 
-//         screenOptions={{
-//           headerShown: false
-//         }}
-//       >
-//         <Stack.Screen
-//           name="Login"
-//           component={LandingPage}
-//         />
-//         <Stack.Screen name="Signup" component={SignupPage} />
-//         <Stack.Screen
-//           name="Home"
-//           component={HomePage}
-//         />
-//         <Stack.Screen
-//           name="Congrats"
-//           component={CongratsPage}
-//         />
-//         <Stack.Screen
-//           name="Failed"
-//           component={FailedPage}
-//         />
-//         <Stack.Screen
-//           name="Food"
-//           component={FoodPage}
-//         />
-//         <Stack.Screen
-//           name="Quiz"
-//           component={QuizPage}
-//         />
-//         <Stack.Screen
-//           name="Question"
-//           component={QuestionPage}
-//         />
-//         <Stack.Screen
-//           name="UserProfile"
-//           component={UserProfile}
-//         />
-        
-//       </Stack.Navigator>
-    
-      
-//     </NavigationContainer>
-      
-    
-   
-//   );
-// }
-// const SettingsStack = createNativeStackNavigator();
-
-// function SettingsStackScreen() {
-//   return (
-//     <SettingsStack.Navigator
-//     screenOptions={{
-//       headerShown: false
-//     }}>
-//       <SettingsStack.Screen name="Settings" component={LandingPage} />
-//     </SettingsStack.Navigator>
-//   );
-// }
 
 export default function App() {
   
@@ -185,7 +120,8 @@ const TabStack = () => {
         >
         <Stack.Screen
           name="Login"
-          component={LandingPage}
+          component={Login}
+         
         />
         <Stack.Screen 
           name="Signup" 
