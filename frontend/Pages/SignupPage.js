@@ -7,9 +7,9 @@ import PasswordInput from '../Components/Input/PasswordInput';
 import PhoneInput from '../Components/Input/PhoneInput';
 import  Logo from '../Components/Logo/MediumLogo';
 
-
 export default function SignupPage({navigation }) {
   return (
+    
     <View style={styles.container}>
       <Logo/>
       <Text style={styles.lebText}>
