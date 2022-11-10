@@ -6,7 +6,7 @@ export default function EmailInput() {
   return (
         <View style={styles.inputIcon}>
             <MaterialCommunityIcons name="email" size={20} color="#BD4543" />
-            <TextInput style={styles.input} type='email' placeholder='Email'></TextInput>
+            <TextInput style={styles.input} type='email' placeholder='Email' ></TextInput>
         </View>
   );
 }
