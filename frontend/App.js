@@ -12,9 +12,9 @@ import QuestionPage from './Pages/QuestionPage';
 import UserProfile from './Pages/UserProfile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
-import Feather from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
-import { StatusBar } from 'react-native';
+import SportsPage from './Pages/SportsPage';
+
 
 
 export default function App() {
@@ -142,6 +142,10 @@ const TabStack = () => {
         <Stack.Screen
           name="Quiz"
           component={QuizPage}
+        />
+        <Stack.Screen
+          name="Sports"
+          component={SportsPage}
         />
         <Stack.Screen
           name="Question"
