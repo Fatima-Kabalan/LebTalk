@@ -1,8 +1,9 @@
 import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
-import { MaterialIcons } from '@expo/vector-icons'; 
 import { FontAwesome } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-export default function FlatCard({source,text1,text2,onPress,textStyle}) {
+import { MaterialIcons } from '@expo/vector-icons'; 
+
+export default function FlatCard({source,text1,text2,onPress,textStyle,name,sportname}) {
     return (
       <View style={styles.FlatCardContainer}>
         <Image 
@@ -11,14 +12,12 @@ export default function FlatCard({source,text1,text2,onPress,textStyle}) {
         ></Image>
         <View  style={styles.row} >
             <View style={styles.bar1}>
-                <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
+                <MaterialCommunityIcons name={name} size={24} color="white" />
                 <Text style={styles.text}>{text1}</Text>
-                <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
             </View>
             <View style={styles.bar1}>
-                <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
                 <Text style={styles.text}>{text2}</Text>
-                <MaterialCommunityIcons name="food-fork-drink" size={24} color="white" />
+                <MaterialCommunityIcons name={name} size={24} color="white" />
             </View>
         </View>
         <View style={styles.bar}>
