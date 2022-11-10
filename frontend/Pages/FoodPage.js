@@ -7,13 +7,17 @@ import HeaderNav from '../Components/HeaderNav';
 
 export default function FoodPage() {
   return (
-    <View style={styles.container}>
-        <HeaderNav text={'Food'}/>
-        <View style={styles.top}> 
-            <ImageBackground  source={require('../assets/food.png')} style={styles.img}>
-            </ImageBackground>
-        </View>
-        <ScrollView >
+    <View style={styles.container}> 
+   
+        <HeaderNav text={'Food'}/> 
+        <Image  source={require('../assets/food.png')} style={styles.img}>
+            </Image>
+        <ScrollView style={styles.scroll}>
+            
+        {/* <View style={styles.top}>  */}
+            
+        {/* </View>
+        */}
             <View style={styles.flexRow}>
                 <Text style={styles.foodText}>Food</Text>
                 <ContainedButton text={"NEXT:SPORTS"} buttonStyle={styles.button} textStyle={styles.btnText}/>
@@ -33,6 +37,7 @@ export default function FoodPage() {
 }
 
 const styles = StyleSheet.create({
+    
 button:{
     backgroundColor:'#F29D38',
     borderRadius:30,
@@ -77,9 +82,8 @@ flatCards:{
 },
 img:{
     width: '100%',
-    height: '100%',
+    height: '30%',
     opacity:0.9,
-    
 },
 foodText:{
     paddingLeft:30,
