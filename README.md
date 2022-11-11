@@ -29,7 +29,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Home/Search  |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/tree/develop/readme/figma/Signin.png) | ![Home/Search](https://github.com/Fatima-Kabalan/LebTalk/tree/develop/readme/figma/Home.png) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home/Search](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
 
 | Artists results  | Artist's Albums  |
 | -----------------| -----|
