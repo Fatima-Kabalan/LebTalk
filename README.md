@@ -27,13 +27,13 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-| Landing  | Home/Search  |
+| Landing  | Home  |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home/Search](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
 
-| Artists results  | Artist's Albums  |
+| Food Category  | Connecting to Instructors  |
 | -----------------| -----|
-| ![Artists results](https://github.com/julescript/spotifyndr/blob/master/demo/Artists_Page.jpg) | ![Artist's Albums](https://github.com/julescript/spotifyndr/blob/master/demo/Albums_Page.jpg) |
+| ![Artists results](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.png) | ![Artist's Albums](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Instructors.png) |
 
 
 <br><br>
