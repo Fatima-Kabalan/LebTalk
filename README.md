@@ -69,28 +69,62 @@ To get a local copy up and running follow these simple example steps.
 
 ### Prerequisites
 
-This is an example of how to list things you need to use the software and how to install them.
+Download and Install <a href="https://nodejs.org/en/">Node.js</a>
+
+Download and Install <a href="https://getcomposer.org/download/">Composer</a>
+
+Download and Install <a href="https://www.apachefriends.org/download.html">XAMPP</a>
+
 * npm
   ```sh
   npm install npm@latest -g
+  ```
+* Expo Cli
+  ```sh
+  npm install --global expo-cli
   ```
 
 ### Installation
 
 _Below is an example of how you can instruct your audience on installing and setting up your app. This template doesn't rely on any external dependencies or services._
 
-1. Get a free API Key at [https://example.com](https://example.com)
-2. Clone the repo
+1. Clone the repo
    ```sh
-   git clone https://github.com/your_username_/Project-Name.git
+   git clone https://github.com/Fatima-Kabalan/LebTalk.git
    ```
-3. Install NPM packages
+-To Run The Mobile App
+
+1. Navigate to the Frontend folder then ReactNative folder and install dependencies
    ```sh
-   npm install
+    cd LebTalk/frontend/
+    npm install
    ```
-4. Enter your API in `config.js`
-   ```js
-   const API_KEY = 'ENTER YOUR API';
-   ```
+2. Run the start up command
+    ```sh
+        expo start
+    ```
+3. Scan the generated QR code with your camera (ios) or through the Expo Go application (android)
 
+-To Run Laravel Server on your machine
 
+1. Create a database locally named lebtalkdb
+
+2. Navigate to the backend folder
+    ```sh
+        cd LebTalk/backend
+    ```
+3. Inside the .env file in your backend folder
+   Insert the db name as follow -> DB_DATABASE= -> DB_DATABASE=lebtalkdb
+
+4. Run migration
+    ```sh
+        php artisan migrate
+    ```
+5. Run the seeder
+    ```sh
+        php artisan db:seed
+    ```
+6. Start the Server
+    ```sh
+        php artisan serve
+    ```
