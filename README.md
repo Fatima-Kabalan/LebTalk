@@ -96,3 +96,7 @@ _Below is an example of how you can instruct your audience on installing and set
    ```
 
 
+<<<<<<< HEAD
+=======
+
+>>>>>>> e1c2fda3908b0a832c340dc46e0850ef8c0a3b23
