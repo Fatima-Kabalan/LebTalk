@@ -4,7 +4,7 @@ import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
 
 
-export default function SportsPage() {
+export default function SportsPage({navigation}) {
   return (
     <View style={styles.container}> 
         <HeaderNav text={'Sports'}/> 
@@ -13,7 +13,7 @@ export default function SportsPage() {
         <ScrollView>
             <View style={styles.flexRow}>
                 <Text style={styles.foodText}>Sports</Text>
-                <ContainedButton text={"NEXT:Family"} buttonStyle={styles.button} textStyle={styles.btnText}/>
+                <ContainedButton text={"NEXT:Family"} buttonStyle={styles.button} onPress={() => navigation.navigate('Fam')} textStyle={styles.btnText}/>
             </View>
             <View style={styles.flatCards}>
                 <FlatCard source={require('../assets/RAFTASSI_large.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>

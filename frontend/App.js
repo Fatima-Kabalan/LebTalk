@@ -14,6 +14,8 @@ import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
 import SportsPage from './Pages/SportsPage';
+import FamPage from './Pages/FamPage';
+import AnimalsPage from './Pages/AnimalsPage';
 
 
 
@@ -138,6 +140,14 @@ const TabStack = () => {
         <Stack.Screen
           name="Food"
           component={FoodPage}
+        />
+        <Stack.Screen
+          name="Fam"
+          component={FamPage}
+        />
+        <Stack.Screen
+          name="Animals"
+          component={AnimalsPage}
         />
         <Stack.Screen
           name="Quiz"
