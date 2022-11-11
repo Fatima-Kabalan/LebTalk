@@ -31,9 +31,13 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | -----------------| -----|
 | ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
 
-| Food Category  | Connecting to Instructors  |
+| Food Category  | Question Page  |
 | -----------------| -----|
-| ![Artists results](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.png) | ![Artist's Albums](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Instructors.png) |
+| ![Artists results](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.png) | ![Artist's Albums](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
+
+| Connect to instructors  |   
+| -----------------|
+| ![Artists results](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Istructors.png) | 
 
 
 <br><br>
