@@ -35,9 +35,6 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 | -----------------| -----|
 | ![Food Category](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.png) | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
 
-| Connect to instructors  |   
-| -----------------|
-| ![Connect to instructors](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Istructors.png) | 
 
 
 <br><br>
@@ -47,8 +44,10 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 Here's a brief high-level overview of the tech stack the Well app uses:
 
 -Frontend: This project uses the <a href="https://reactnative.dev/">React Native framework</a> for the mobile application along side with ReactJS for the desktop app. React (also known as React.js or ReactJS) is a free and open-source front-end JavaScript library for building user interfaces based on UI components. while React Native is used to develop applications for Android, Android TV, iOS, macOS, tvOS, Web, Windows and UWP by enabling developers to use the React framework along with native platform capabilities. For the development environment, Expo CLI was used.
--The backend is implemented using Laravel which is a free and open-source PHP web framework, intended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony.
--For persistent storage (database), the app uses MySQL. MySQL is a relational database management system based on SQL – Structured Query Language.
+
+-The backend is implemented using <a href="https://laravel.com/">Laravel</a> which is a free and open-source PHP web framework, intended for the development of web applications following the model–view–controller (MVC) architectural pattern and based on Symfony.
+
+-For persistent storage (database), the app uses <a href="https://www.mysql.com/">MySQL</a>. MySQL is a relational database management system based on SQL – Structured Query Language.
 
 
 <br><br>
