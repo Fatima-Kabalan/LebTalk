@@ -57,7 +57,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Landing  | Home/Search  |
 | -----------------| -----|
-| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/) |
+| ![Landing](https://github.com/julescript/spotifyndr/blob/master/demo/) | ![Home/Search](https://github.com/julescript/spotifyndr/blob/master/demo/Search_Page.jpg) |
 
 
 <br><br>
