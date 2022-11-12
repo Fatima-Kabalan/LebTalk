@@ -2,10 +2,11 @@ import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from '
 import { FontAwesome } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import { MaterialIcons } from '@expo/vector-icons'; 
-import { Audio } from 'react-native-audio-recorder-player';
+// import { Audio } from 'react-native-audio-recorder-player';
+
 
 export default function FlatCard({source,text1,text2,onPress,textStyle,name}) {
-    const audio = new Audio('Transformation-sound-effect.mp3')
+    // const audio = new Audio('Transformation-sound-effect.mp3')
     return (
       <View style={styles.FlatCardContainer}>
         <Image 
@@ -23,7 +24,7 @@ export default function FlatCard({source,text1,text2,onPress,textStyle,name}) {
             </View>
         </View>
         <View style={styles.bar}>
-            <TouchableOpacity onPress={()=>{audio.play}}>
+            <TouchableOpacity >
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
       
