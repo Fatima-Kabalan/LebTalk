@@ -16,6 +16,7 @@ import InstructorChatPage from './Pages/InstructorChatPage';
 import SportsPage from './Pages/SportsPage';
 import FamPage from './Pages/FamPage';
 import AnimalsPage from './Pages/AnimalsPage';
+import Voice from './Pages/Voice';
 
 
 
@@ -149,6 +150,10 @@ const TabStack = () => {
           name="Animals"
           component={AnimalsPage}
         />
+        {/* <Stack.Screen
+          name="Voice"
+          component={Voice}
+        /> */}
         <Stack.Screen
           name="Quiz"
           component={QuizPage}
