@@ -6,4 +6,5 @@ export default function UserProfile() {
     <View >
         <Text>HI</Text>
     </View>
-  );}
+  )
+}
