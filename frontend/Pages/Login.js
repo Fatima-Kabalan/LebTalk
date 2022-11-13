@@ -9,36 +9,35 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
 
 
-// const { navigate } = this.props.data;
-
-const baseURL = "http://192.168.16.111:80/api"
+// const baseURL = "http://192.168.16.111/api"
 
 export default function Login({navigation}) {
-  const [email , setEmail] = useState();
-  const [password , setPassword] = useState();
- 
-  const signin = async () => {
-    const config = {
-      method: "post",
-      data:JSON.stringify({
-        email:email,
-        password:password,
-      }),
-      
-    }
-    try{
-      const res =  axios.post(`${baseURL}/login`,config,{headers:{"Content-Type" : "application/json"}})
-      // const res = await axios(config).then((response) => {
-        console.log(res.data);
-      // });
-      // await AsyncStorage.setItem({"@token":(await res).config.data['access-token']})
-      // console.log(AsyncStorage.getItem("token"))
-      // return {success:true , data: res.data }
-    }catch(error){
-      console.warn(error)
-      return{'success':false , error}
-    }
-  }
+  // const [email , setEmail] = useState();
+  // const [password , setPassword] = useState();
+
+
+  // const signin = async () => {
+  //   const config = {
+  //     method: "post",
+  //     data:{
+  //       email: email,
+  //       password: password,
+  //     },
+  //     url:`${baseURL}/login`,
+  //   }
+  //   try {
+  //     const res = axios.post(`${baseURL}/login`,config,
+  //       {headers:{
+  //         "Content-Type" : "application/json"
+  //       }});
+  //     console.log(res)
+  //     await AsyncStorage.setItem('@token', res.data.token);
+  //     console.log('hi')
+  //     return {success:true , data: res.data}
+  //   } catch (error) {
+  //     console.log(error.res);
+  //   }
+  // }
   
   return (
     <View style={styles.container}>
@@ -48,12 +47,12 @@ export default function Login({navigation}) {
       </Text>
       <View style={styles.boxContainer}>
         <View style={styles.inputContainer}>
-          <EmailInput email={email} setEmail={setEmail} />
-          <PasswordInput password={password} setPassword={setPassword} />
+          <EmailInput  />
+          <PasswordInput  />
         <Text style={styles.question}>Forgot password?</Text>
         </View>
         <View>        
-          <ContainedButton text={"Login"} onPress={signin}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+          <ContainedButton text={"Login"} onPress={() => navigation.navigate('Home')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
           <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
         </View>
       </View>

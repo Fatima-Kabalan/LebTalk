@@ -1,12 +1,37 @@
-import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
+import { StyleSheet, Button, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
 import { FontAwesome } from '@expo/vector-icons'; 
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
+import React, {useState,useEffect} from 'react';
 import { MaterialIcons } from '@expo/vector-icons'; 
-// import { Audio } from 'react-native-audio-recorder-player';
+// import audio from 'react-native-sound';
+import { Audio } from 'expo-av';
 
 
-export default function FlatCard({source,text1,text2,onPress,textStyle,name}) {
-    // const audio = new Audio('Transformation-sound-effect.mp3')
+export default function FlatCard({source,text1,text2,name}) {
+    const [sound, setSound] = React.useState();
+
+  async function playSound() {
+    console.log('Loading Sound');
+    const {sound } = await Audio.Sound.createAsync( require('../../assets/sounds/Transformation-sound-effect.mp3')
+    );
+    setSound(sound);
+
+    console.log('Playing Sound');
+    await sound.playAsync();
+  }
+
+  React.useEffect(() => {
+    return sound
+      ? () => {
+          console.log('Unloading Sound');
+          sound.unloadAsync();
+        }
+      : undefined;
+  }, [sound]);
+
+  
+
+   
     return (
       <View style={styles.FlatCardContainer}>
         <Image 
@@ -24,9 +49,10 @@ export default function FlatCard({source,text1,text2,onPress,textStyle,name}) {
             </View>
         </View>
         <View style={styles.bar}>
-            <TouchableOpacity>
+            <TouchableOpacity  onPress={playSound}>
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
+          
       
           <FontAwesome name="heart-o" size={24} color="white" />
         </View>
