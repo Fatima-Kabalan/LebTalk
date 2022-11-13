@@ -5,44 +5,41 @@ import TextButton from '../Components/Button/TextButton';
 import EmailInput from '../Components/Input/EmailInput';
 import PasswordInput from '../Components/Input/PasswordInput';
 import ContainedButton from '../Components/Button/ContainedButton';
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { useState } from 'react';
 
 
 // const { navigate } = this.props.data;
 
-// const baseURL = "http://192.168.43.152:80/api"
-// // const [email , setEmail] = useState('');
-// // const [password , setPassword] = useState('');
+const baseURL = "http://192.168.16.111:80/api"
 
-// export async function signin(data){
-//   console.log('hi88888');
-//   const config = {
-//     method: "post",
-//     data,
-//     url:`${baseURL}/login`,
-
-//   }
-//   try{
-//     const res = await axios({
-//       method: "post",
-//       data:{
-//         email:"hussien1@hussien",
-//         password:"1234567"
-//       },
-//       url:`${baseURL}/login`,
+export default function Login({navigation}) {
+  const [email , setEmail] = useState();
+  const [password , setPassword] = useState();
+ 
+  const signin = async () => {
+    const config = {
+      method: "post",
+      data:JSON.stringify({
+        email:email,
+        password:password,
+      }),
+      
+    }
+    try{
+      const res =  axios.post(`${baseURL}/login`,config,{headers:{"Content-Type" : "application/json"}})
+      // const res = await axios(config).then((response) => {
+        console.log(res.data);
+      // });
+      // await AsyncStorage.setItem({"@token":(await res).config.data['access-token']})
+      // console.log(AsyncStorage.getItem("token"))
+      // return {success:true , data: res.data }
+    }catch(error){
+      console.warn(error)
+      return{'success':false , error}
+    }
+  }
   
-//     }).then((response) => {
-//       console.log(response.data);
-//     });
-//     await AsyncStorage.setItem({"@token":res.data['access-token']})
-//     console.log(AsyncStorage.getItem("token"))
-//     return {success:true , data: res.data }
-//   }catch(error){
-//     console.warn(error)
-//     return{'success':false , error}
-//   }
-// }
-
-export default function LandingPage({navigation}) {
   return (
     <View style={styles.container}>
       <Logo/>
@@ -51,18 +48,18 @@ export default function LandingPage({navigation}) {
       </Text>
       <View style={styles.boxContainer}>
         <View style={styles.inputContainer}>
-          <EmailInput  />
-          <PasswordInput />
+          <EmailInput email={email} setEmail={setEmail} />
+          <PasswordInput password={password} setPassword={setPassword} />
         <Text style={styles.question}>Forgot password?</Text>
         </View>
         <View>        
-          <ContainedButton text={"Login"} onPress={() => navigation.navigate('Failed')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+          <ContainedButton text={"Login"} onPress={signin}  textStyle={styles.btnText} buttonStyle={styles.button}/>
           <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
         </View>
       </View>
     </View>
   );  
-}
+  }
 
 
 const styles = StyleSheet.create({

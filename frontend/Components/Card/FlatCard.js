@@ -24,7 +24,7 @@ export default function FlatCard({source,text1,text2,onPress,textStyle,name}) {
             </View>
         </View>
         <View style={styles.bar}>
-            <TouchableOpacity >
+            <TouchableOpacity>
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
       
