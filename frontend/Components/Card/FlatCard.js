@@ -52,8 +52,6 @@ export default function FlatCard({source,text1,text2,name}) {
             <TouchableOpacity  onPress={playSound}>
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
-          
-      
           <FontAwesome name="heart-o" size={24} color="white" />
         </View>
       </View>
