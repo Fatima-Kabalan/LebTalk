@@ -2,11 +2,11 @@ import { StyleSheet, View , TextInput} from 'react-native';
 import { MaterialCommunityIcons } from '@expo/vector-icons';
 
 
-export default function PhoneInput() {
+export default function PhoneInput({phoneNumber,setPhoneNumber}) {
   return (
         <View style={styles.inputIcon}>
             <MaterialCommunityIcons name="phone" size={20} color="#BD4543" />
-            <TextInput style={styles.input} type='phone-number' placeholder='Phone number'></TextInput>
+            <TextInput style={styles.input} type='phone-number' placeholder='Phone number' value={phoneNumber} onChangeText={setPhoneNumber}></TextInput>
         </View>
   );
 }
