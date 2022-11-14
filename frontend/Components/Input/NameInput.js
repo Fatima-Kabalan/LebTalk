@@ -2,11 +2,11 @@ import { StyleSheet, View , TextInput} from 'react-native';
 import { Entypo } from '@expo/vector-icons';
 
 
-export default function NameInput() {
+export default function NameInput({name,setName}) {
   return (
         <View style={styles.inputIcon}>
             <Entypo name="user" size={20} color="#BD4543" />
-            <TextInput style={styles.input} type='name' placeholder='Name'></TextInput>
+            <TextInput style={styles.input} type='name' placeholder='Name' value={name} onChangeText={setName}></TextInput>
         </View>
   );
 }
