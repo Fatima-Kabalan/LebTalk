@@ -6,8 +6,41 @@ import NameInput from '../Components/Input/NameInput';
 import PasswordInput from '../Components/Input/PasswordInput';
 import PhoneInput from '../Components/Input/PhoneInput';
 import  Logo from '../Components/Logo/MediumLogo';
+import { useState } from 'react';
 
 export default function SignupPage({navigation }) {
+  const baseURL = "http://192.168.16.111/api"
+  const [email , setEmail] = useState();
+  const [password , setPassword] = useState();
+  const [name , setName] = useState();
+  const [phoneNumber , setPhoneNumber] = useState();
+  
+  const signup = async () => {
+    const data = {
+      email:email,
+      password:password,
+      name:name,
+      phoneNumber:phoneNumber
+    }
+
+    console.log("data:", data)
+    const config = {
+      method: "post",
+      data,
+      url:`${baseURL}/register`,
+    }
+    try{
+      const res = await axios(config)
+      await AsyncStorage.setItem("@token", res.data.authorisation.token);
+      if(res.data.status == "success"){
+        navigation.navigate('Home')
+      }
+    }catch(error){
+      console.warn(error)
+      return error
+    }
+  }
+  
   return (
     
     <View style={styles.container}>
@@ -16,12 +49,12 @@ export default function SignupPage({navigation }) {
           Leb<Text style={styles.talkText}>Talk</Text>
       </Text>
       <View style={styles.boxContainer}>
-        <NameInput/>
-        <EmailInput />
-        <PasswordInput />
-        <ConfirmPassInput />
-        <PhoneInput />
-        <ContainedButton text={'Signup'} onPress={() => navigation.navigate('Login')} textStyle={styles.btnText} buttonStyle={styles.button} />
+        <NameInput setName={setName} name={name}/>
+        <EmailInput setEmail={setEmail} email={email}/>
+        <PasswordInput setPassword={setPassword} password={password}/>
+        {/* <ConfirmPassInput /> */}
+        <PhoneInput setPhoneNumber={setPhoneNumber} phoneNumber={phoneNumber}/>
+        <ContainedButton text={'Signup'} onPress={signup} textStyle={styles.btnText} buttonStyle={styles.button} />
       </View>
     </View>
   );
