@@ -15,7 +15,7 @@ return new class extends Migration
             $table->string('password');
             $table->string('phone_number');
             $table->string('user_image')->nullable();
-            $table->integer('user_roles_id');
+            $table->foreignId('user_roles_id')->constrained('user_roles')->onDelete('cascade');
             $table->timestamps();
         });
     }
