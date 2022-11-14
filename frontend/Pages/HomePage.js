@@ -6,17 +6,11 @@ import Card from '../Components/Card/CircularCard';
 import HeaderNav from '../Components/HeaderNav';
 
 export default function HomePage({navigation}) {
-  return (
+    // const baseUrl = 'http://192.168.16.111:80/auth/v1/api';
+    return (
         <View style={styles.container}>
-          
             <View style={styles.top}>
-          
                 <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
-                {/* <View styles={styles.logoBar}> 
-                    <Logo/>
-
-                </View> */}
-                
                 <View style={styles.textContainer}>
                     <Text style={styles.imgText}> “In learning you will teach, and in teaching you will learn.”
                     ― Phil Collins</Text>
@@ -24,7 +18,6 @@ export default function HomePage({navigation}) {
                 </ImageBackground>
             </View>
             <ScrollView >
-                {/* <Text style={styles.courseText}>Courses</Text> */}
                 <View style={styles.buttom}>
                     <View style={styles.cardFlex}>  
                         <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.cardText} onPress={()=>navigation.navigate('Food')} />
