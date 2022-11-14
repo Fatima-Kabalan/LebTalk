@@ -9,35 +9,36 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
 
 
-// const baseURL = "http://192.168.16.111/api"
+
 
 export default function Login({navigation}) {
-  // const [email , setEmail] = useState();
-  // const [password , setPassword] = useState();
+  const baseURL = "http://192.168.16.111/api"
+  const [email , setEmail] = useState();
+  const [password , setPassword] = useState();
+  
+  const signin = async () => {
+    const data = {
+      email:email,
+      password:password,
+    }
 
-
-  // const signin = async () => {
-  //   const config = {
-  //     method: "post",
-  //     data:{
-  //       email: email,
-  //       password: password,
-  //     },
-  //     url:`${baseURL}/login`,
-  //   }
-  //   try {
-  //     const res = axios.post(`${baseURL}/login`,config,
-  //       {headers:{
-  //         "Content-Type" : "application/json"
-  //       }});
-  //     console.log(res)
-  //     await AsyncStorage.setItem('@token', res.data.token);
-  //     console.log('hi')
-  //     return {success:true , data: res.data}
-  //   } catch (error) {
-  //     console.log(error.res);
-  //   }
-  // }
+    console.log("data:", data)
+    const config = {
+      method: "post",
+      data,
+      url:`${baseURL}/login`,
+    }
+    try{
+      const res = await axios(config)
+      await AsyncStorage.setItem("@token", res.data.authorisation.token);
+      if(res.data.status == "success"){
+        navigation.navigate('Home')
+      }
+    }catch(error){
+      console.warn(error)
+      return error
+    }
+  }
   
   return (
     <View style={styles.container}>
@@ -47,12 +48,12 @@ export default function Login({navigation}) {
       </Text>
       <View style={styles.boxContainer}>
         <View style={styles.inputContainer}>
-          <EmailInput  />
-          <PasswordInput  />
+          <EmailInput setEmail={setEmail} email={email}/>
+          <PasswordInput  setPassword={setPassword} password={password} />
         <Text style={styles.question}>Forgot password?</Text>
         </View>
         <View>        
-          <ContainedButton text={"Login"} onPress={() => navigation.navigate('Home')}  textStyle={styles.btnText} buttonStyle={styles.button}/>
+          <ContainedButton text={"Login"} onPress={signin}  textStyle={styles.btnText} buttonStyle={styles.button}/>
           <Text style={styles.signupText}>Don’t have an account?<TextButton onPress={() => navigation.navigate('Signup')} text={"Create one"} style={styles.redText} /></Text>
         </View>
       </View>
