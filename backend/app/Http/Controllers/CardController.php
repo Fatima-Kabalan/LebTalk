@@ -9,7 +9,7 @@ class CardController extends Controller
 {
     function getCards()
     {
-        $card = Card::select("*")->get();
+        $card = Card::all();
 
         return response()->json([
             "status"=>"success",
