@@ -6,6 +6,7 @@ use Illuminate\Http\Request;
 use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Hash;
 use App\Models\User;
+use App\Models\UserRoles;
 
 class AuthController extends Controller
 {
@@ -33,9 +34,11 @@ class AuthController extends Controller
         }
 
         $user = Auth::user();
+        $role = UserRoles::find(1);
         return response()->json([ 
                 'status' => 'success',
                 'user' => $user,
+                'role' => $role->name,
                 'authorisation' => [
                     'token' => $token,
                     'type' => 'bearer',
