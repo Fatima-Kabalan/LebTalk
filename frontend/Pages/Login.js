@@ -7,12 +7,10 @@ import PasswordInput from '../Components/Input/PasswordInput';
 import ContainedButton from '../Components/Button/ContainedButton';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 import { useState } from 'react';
-
-
+import { SERVER_URL } from "../env"
 
 
 export default function Login({navigation}) {
-  const baseURL = "http://192.168.16.111/api"
   const [email , setEmail] = useState();
   const [password , setPassword] = useState();
   
@@ -22,16 +20,16 @@ export default function Login({navigation}) {
       password:password,
     }
 
-    console.log("data:", data)
     const config = {
       method: "post",
       data,
-      url:`${baseURL}/login`,
+      url:`${SERVER_URL}/api/login`,
     }
     try{
       const res = await axios(config)
-      await AsyncStorage.setItem("@token", res.data.authorisation.token);
+      
       if(res.data.status == "success"){
+        await AsyncStorage.setItem("@token", res.data.authorisation.token);
         navigation.navigate('Home')
       }
     }catch(error){
