@@ -2,13 +2,16 @@ import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from '
 import TextButton from '../Button/TextButton';
 
 export default function CircularCard({source,text,onPress,textStyle}) {
+  const image = { uri : source }
   return (
     <View>
+      
         <TouchableOpacity  onPress={onPress}>
+      
         <ImageBackground 
             style={styles.category}  
             imageStyle={{ borderRadius: 80}}
-            source={source} 
+            source={image} 
         >
         <Text  style={textStyle}>{text}</Text>
         </ImageBackground>
