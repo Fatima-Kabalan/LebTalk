@@ -4,11 +4,64 @@ import * as Font from 'expo-font';
 import Logo from '../Components/Logo/SmallLogo';
 import Card from '../Components/Card/CircularCard';
 import HeaderNav from '../Components/HeaderNav';
+import { useState, useEffect } from 'react';
+import { IMAGE_URL, SERVER_URL } from "../env";
+import axios from "axios";
 
 export default function HomePage({navigation}) {
-    // const baseUrl = 'http://192.168.16.111:80/auth/v1/api';
+    
+    const [categories, setCategories] = useState([])
+
+    // let categories = [
+    //     {
+    //         category_image: require('../assets/Kibbeh.jpg'),
+    //         category_name: 'Food'
+    //     },
+    //     {
+    //         category_image: require('../assets/fam.jpg'),
+    //         category_name: 'Family'
+    //     },
+    //     {
+    //         category_image: require('../assets/dog.jpg'),
+    //         category_name: 'Animals'
+    //     },
+    //     {
+    //         category_image: require('../assets/sports.jpg'),
+    //         category_name: 'Sports'
+    //     },
+    // ]
+
+    // const getAllCategories = () => {
+    //     return(
+    //         axios({
+    //             method: "GET",
+    //             url: `${SERVER_URL}/api/v1/getAllCategories`,
+    //           }).then((res) => {
+    //             console.log(res.data);
+    //             setCategories(res.data);
+    //           })
+    //     )
+    // }
+
+    // useEffect(() => {
+    //     categories = getAllCategories();
+    //     console.log(categories)
+    // }, [])
+
+    useEffect(() => {
+        console.log(categories);
+        axios({
+          method: "GET",
+          url: `${SERVER_URL}/api/v1/getAllCategories`,
+        }).then((res) => {
+          console.log(res.data);   
+          setCategories(res.data.data);
+        });
+      }, [categories])
+
+    if (categories)
     return (
-        <View style={styles.container}>
+        <View>
             <View style={styles.top}>
                 <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
                 <View style={styles.textContainer}>
@@ -17,20 +70,21 @@ export default function HomePage({navigation}) {
                 </View>
                 </ImageBackground>
             </View>
-            <ScrollView >
-                <View style={styles.buttom}>
-                    <View style={styles.cardFlex}>  
-                        <Card source={require('../assets/Kibbeh.jpg')} text={'Food'} textStyle={styles.cardText} onPress={()=>navigation.navigate('Food')} />
-                        <Card source={require('../assets/fam.jpg')} text={'Family'}  textStyle={styles.cardText} />
+            <ScrollView>
+                <View >
+                    <View> 
+                    {categories?.map((category, index) => {
+                        console.log(categories)
+                        return(
+                            <Card source={ IMAGE_URL + category.category_image} text={category.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate(category.category_name)} />
+                        );
+                    })}
                     </View>
-                    <View style={styles.cardFlex}>
-                        <Card source={require('../assets/dog.jpg')}  text={'Animals'} textStyle={styles.cardText}  />
-                        <Card source={require('../assets/sports.jpg')} text={'Sports'} textStyle={styles.cardText} />
-                    </View>
-            </View>
+                </View>
             </ScrollView>
         </View>
   );
+  return <></>
 }
 
 const styles = StyleSheet.create({
@@ -39,21 +93,27 @@ const styles = StyleSheet.create({
         width:'100%',
     },
     cardFlex:{
-        flexDirection:'row',
+        // flexWrap: 'wrap',
+        // flexDirection:'column',
         justifyContent:'space-between',
         alignItems:'center',
-        padding:30,
-        // marginTop:60
+        // padding:30,
+        // marginTop:10
+        flexDirection: "column",
+        flexWrap: "wrap",
+      
     },
     buttom:{
-        height:'60%',
-        width:'100%',
-        flexDirection:'column',
+        // height:'10%',
+        // width:'100%',
+        flexWrap: 'wrap',
+        flexDirection:'row',
+        // flexDirection:'column',
         borderTopLeftRadius:50,
         borderTopRightRadius:50,
         alignItems:'center',
-        justifyContent:'space-evenly',
-        marginTop:30
+        // justifyContent:'space-evenly',
+        // marginTop:30
     },
     cards:{
         marginButtom:70,
@@ -61,8 +121,10 @@ const styles = StyleSheet.create({
     },
     container: {
         flex: 1,
-        flexDirection:'column',
+        // flexDirection:'row',
+        // padding:10,
         backgroundColor: 'white',
+        flexWrap: 'wrap',
     },
     img:{
         width: '100%',
