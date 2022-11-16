@@ -28,7 +28,7 @@ const styles = StyleSheet.create({
         height:150,
         width:150,
         opacity:0.7,
-        margin:20,
+        margin: 20,
         borderRadius:80,
    },
    text:{
