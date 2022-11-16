@@ -13,7 +13,7 @@ export default function SportsPage({navigation}) {
         <ScrollView>
             <View style={styles.flexRow}>
                 <Text style={styles.foodText}>Sports</Text>
-                <ContainedButton text={"NEXT:Family"} buttonStyle={styles.button} onPress={() => navigation.navigate('Fam')} textStyle={styles.btnText}/>
+                <ContainedButton text={"NEXT:FAMILY"} buttonStyle={styles.button} onPress={() => navigation.navigate('Family')} textStyle={styles.btnText}/>
             </View>
             <View style={styles.flatCards}>
                 <FlatCard source={require('../assets/RAFTASSI_large.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>
