@@ -7,6 +7,9 @@ import PasswordInput from '../Components/Input/PasswordInput';
 import PhoneInput from '../Components/Input/PhoneInput';
 import  Logo from '../Components/Logo/MediumLogo';
 import { useState } from 'react';
+import { SERVER_URL } from "../env";
+import axios from 'axios';
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function SignupPage({navigation }) {
   const [email , setEmail] = useState();
@@ -14,34 +17,34 @@ export default function SignupPage({navigation }) {
   const [name , setName] = useState();
   const [phoneNumber , setPhoneNumber] = useState();
   
-  // const signup = async () => {
-  //   const data = {
-  //     email:email,
-  //     password:password,
-  //     name:name,
-  //     phoneNumber:phoneNumber
-  //   }
+  
+  const signup = async () => {
+    const data = {
+      email:email,
+      password:password,
+      name:name,
+      phone_number:phoneNumber
+    }
 
-  //   console.log("data:", data)
-  //   const config = {
-  //     method: "post",
-  //     data,
-  //     url:`${baseURL}/register`,
-  //   }
-  //   try{
-  //     const res = await axios(config)
-  //     await AsyncStorage.setItem("@token", res.data.authorisation.token);
-  //     if(res.data.status == "success"){
-  //       navigation.navigate('Home')
-  //     }
-  //   }catch(error){
-  //     console.warn(error)
-  //     return error
-  //   }
-  // }
+    const config = {
+      method: "post",
+      data,
+      url:`${SERVER_URL}/api/register`,
+    }
+    try{
+      const res = await axios(config)
+
+      if(res.data.status == "success"){
+        await AsyncStorage.setItem("@token", res.data.authorisation.token);
+        navigation.navigate('Home')
+      }
+    }catch(error){
+      console.warn(error)
+      return error
+    }
+  }
   
   return (
-    
     <View style={styles.container}>
       <Logo/>
       <Text style={styles.lebText}>
@@ -53,7 +56,7 @@ export default function SignupPage({navigation }) {
         <PasswordInput setPassword={setPassword} password={password}/>
         {/* <ConfirmPassInput /> */}
         <PhoneInput setPhoneNumber={setPhoneNumber} phoneNumber={phoneNumber}/>
-        <ContainedButton text={'Signup'}  textStyle={styles.btnText} buttonStyle={styles.button} />
+        <ContainedButton text={'Signup'}  onPress={signup} textStyle={styles.btnText} buttonStyle={styles.button} />
       </View>
     </View>
   );
