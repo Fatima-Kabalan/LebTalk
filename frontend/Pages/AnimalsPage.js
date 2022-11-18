@@ -2,25 +2,44 @@ import { StyleSheet, View ,Text ,Image ,ImageBackground ,ScrollView} from 'react
 import ContainedButton from '../Components/Button/ContainedButton';
 import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import { IMAGE_URL, SERVER_URL } from "../env";
 
 
 export default function AnimalsPage({navigation}) {
+    const [cards, setCards] = useState([])
+
+    useEffect(() => {
+        axios({
+          method: "GET",
+          url: `${SERVER_URL}/api/v1/getCards`,
+        }).then((res) => { 
+          setCards(res.data.data);
+        }).catch((error) => console.error(error))
+        .finally(() => setLoading(false));
+      }, [])
+
+    console.log(cards);
+
+    if (cards)
   return (
     <View style={styles.container}> 
-        <HeaderNav text={'Animals'}/> 
+        <HeaderNav text={'Animals'} onPress={() => navigation.navigate('Family')}/> 
         <Image  source={require('../assets/animals.png')} style={styles.img}>
         </Image>
         <ScrollView>
             <View style={styles.flexRow}>
                 <Text style={styles.foodText}>Animals</Text>
-                {/* <ContainedButton text={"NEXT:Animals"} buttonStyle={styles.button} onPress={() => navigation.navigate('Animals')}  textStyle={styles.btnText}/> */}
             </View>
             <View style={styles.flatCards}>
-                <FlatCard source={require('../assets/chipmunk.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>
-                <FlatCard source={require('../assets/chipmunk.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>
-                <FlatCard source={require('../assets/chipmunk.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>
-                <FlatCard source={require('../assets/chipmunk.jpg')} name="car-sports" text1={'Rafting'}  text2={'تجديف'}/>
-                
+                  { cards?.map((card,index) =>{
+                    console.log(cards)
+                    if(card.categories_id == 4)
+                    return(
+                        <FlatCard source={ IMAGE_URL + card.card_image} text1={card.english_text}  text2={card.arabic_text}  voice={card.voice_note}/>
+                    )
+                })}
             </View>   
             <View style={styles.testContainer}>
                 <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} />
