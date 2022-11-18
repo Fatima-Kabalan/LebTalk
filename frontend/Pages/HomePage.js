@@ -10,7 +10,7 @@ export default function HomePage({navigation}) {
     const [isLoading, setLoading] = useState(true);
 
     const Item = ({ item }) => (
-        <Card source={ IMAGE_URL + item.category_image} text={item.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate(item.category_name)}  />
+        <Card source={ IMAGE_URL + item.category_image} text={item.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate("Category", {category: item})}  />
     );
 
     const renderItem = ( {item} ) => { 
