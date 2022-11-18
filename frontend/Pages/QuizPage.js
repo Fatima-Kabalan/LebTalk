@@ -7,34 +7,29 @@ import axios from 'axios';
 import { IMAGE_URL, SERVER_URL } from "../env";
 
 
-export default function QuizPage({navigation}) {
+export default function QuizPage({route, navigation}) {
+  const category_id = route.params.category_id
 
   const [cards, setCards] = useState([])
 
   useEffect(() => {
     axios({
       method: "GET",
-      url: `${SERVER_URL}/api/v1/getQuiz`,
+      url: `${SERVER_URL}/api/v1/getQuiz/${category_id}`,
     }).then((res) => { 
       setCards(res.data.data);
-    }).catch((error) => console.error(error))
-    .finally(() => setLoading(false));
+    }).catch((error) => console.error(error));
   }, [])
-
-console.log(cards);
 
 if (cards)
   return (
     <View style={styles.container} >
       <HeaderNav text={'Quiz'} />
-
         <ScrollView>
         <View style={styles.questionContainer}>
             { cards?.map((card,index) =>{
-                    console.log(cards)
-                    if(card.categories_id == 1)
                     return(
-                        <QuestionCard onPress={() => navigation.navigate('Question')} source={ IMAGE_URL + card.card_image} quizNum={card.title} />
+                        <QuestionCard onPress={() => navigation.navigate('Question', {quiz_id: card.id})} source={ IMAGE_URL + card.card_image} quizNum={card.title} />
                     )
                 })}
                 </View>
