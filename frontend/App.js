@@ -17,6 +17,7 @@ import SportsPage from './Pages/SportsPage';
 import FamPage from './Pages/FamPage';
 import AnimalsPage from './Pages/AnimalsPage';
 import Voice from './Pages/Voice';
+import CategoryPage from './Pages/CategoryPage';
 
 
 
@@ -139,6 +140,11 @@ const TabStack = () => {
           component={FailedPage}
         />
        
+        <Stack.Screen
+          name="Category"
+          component={CategoryPage}
+        />
+
         <Stack.Screen
           name="Food"
           component={FoodPage}
