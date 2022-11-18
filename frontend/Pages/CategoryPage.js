@@ -4,46 +4,55 @@ import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-import { IMAGE_URL, SERVER_URL } from "../env";
+import { IMAGE_URL, SERVER_URL, VOICE_URL } from "../env";
 
-export default function CategoryPage({navigation}) {
+export default function CategoryPage({route, navigation}) {
     const [cards, setCards] = useState([])
 
-    useEffect(() => {
-        axios({
-          method: "GET",
-          data: {category_id: category_id},
-          url: `${SERVER_URL}/api/v1/getCards`,  
-        }).then((res) => { 
-          setCards(res.data.data);
-        }).catch((error) => console.error(error))
-        .finally(() => setLoading(false));
-      }, [])
+    const { category } = route.params;
 
-    console.log(cards);
+    const getCategoryCards = async () => {
+        const config = {
+            method: "GET",
+            url: `${SERVER_URL}/api/v1/getCategoryCards/${category.id}`, 
+        }
+
+        try{
+            const res = await axios(config)
+      
+            if(res.data.status == "success"){
+              setCards(res.data.data);
+            }
+          }catch(error){
+            console.warn(error)
+            return error
+          }
+    }
+
+    useEffect(() => {
+       getCategoryCards()
+      }, [])
 
     if (cards)
     return (
     <View style={styles.container}> 
-        <HeaderNav text={'Sports'} onPress={() => navigation.navigate('Food')}/> 
-        <Image  source={require('../assets/sportPic.jpg')} style={styles.img}>
+        <HeaderNav text={category.category_name} onPress={() => navigation.navigate('Category')}/> 
+        <Image source={{uri: IMAGE_URL + category.category_image}} style={styles.img}>
         </Image>
         <ScrollView>
             <View style={styles.flexRow}>
-                <Text style={styles.foodText}>Sports</Text>
-                <ContainedButton text={"NEXT:FAMILY"} buttonStyle={styles.button} onPress={() => navigation.navigate('Family')} textStyle={styles.btnText}/>
+                <Text style={styles.foodText}>{category.category_name}</Text>
+                {/* <ContainedButton text={"NEXT:FAMILY"} buttonStyle={styles.button} onPress={() => navigation.navigate('Family')} textStyle={styles.btnText}/> */}
             </View>
             <View style={styles.flatCards}>
                  { cards?.map((card,index) =>{
-                    console.log(cards)
-                    if(card.categories_id == 2)
                     return(
-                        <FlatCard source={ IMAGE_URL + card.card_image} text1={card.english_text}  text2={card.arabic_text} voice={card.voice_note} />
+                        <FlatCard source={ IMAGE_URL + card.card_image} text1={card.english_text}  text2={card.arabic_text} voice_note={ VOICE_URL + card.voice_note} card_id={card.id} />
                     )
                 })}
             </View>   
             <View style={styles.testContainer}>
-                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} />
+                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} onPress={() => navigation.navigate('Quiz', {category_id: category.id})}/>
             </View>
         </ScrollView>
     </View>
