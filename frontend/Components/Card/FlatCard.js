@@ -7,25 +7,21 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 
 
-export default function FlatCard({source,source1,text1,text2,name}) {
+export default function FlatCard({source,voice_note,text1,text2,name, card_id}) {
   const [sound, setSound] = React.useState();
   const image = { uri : source }
-  const voice = { uri: source1}
+  const voice = { uri: voice_note}
+
 
   async function playSound() {
-    console.log('Loading Sound');
     const { sound } = await Audio.Sound.createAsync(voice)
-    console.log(sound)
     setSound(sound);
-
-    console.log('Playing Sound');
     await sound.playAsync();
   }
 
   React.useEffect(() => {
     return sound
       ? () => {
-          console.log('Unloading Sound');
           sound.unloadAsync();
         }
       : undefined;
