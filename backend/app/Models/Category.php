@@ -19,4 +19,12 @@ class Category extends Model
     function users(){
         return $this->belongsTo(User::class);
     }    
+    
+    function cards(){
+        return $this->hasMany(Card::class);
+    }
+
+    function quiz(){
+        return $this->hasMany(Quiz::class);
+    }
 }
