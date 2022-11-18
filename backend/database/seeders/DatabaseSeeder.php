@@ -140,6 +140,8 @@ class DatabaseSeeder extends Seeder
           'username'=>'Ali Karem',
           'profile_picture'=>'/Ali.jpg'
         ]);
-
+       
     }
+
+
 }
