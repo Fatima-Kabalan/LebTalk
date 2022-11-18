@@ -3,23 +3,26 @@ import ContainedButton from '../Button/ContainedButton';
 import { Entypo } from '@expo/vector-icons'; 
 import TextButton from '../Button/TextButton';
 
-export default function CircularCard({questionNum,question,onPress}) {
+export default function CircularCard({quizNum,question,onPress}) {
   return (
     <View style={styles.container}>
         <View style={styles.btnFlex}>
-            <Text style={styles.questionNum}>{questionNum}</Text>
-            <TouchableOpacity onPress={onPress}>
-                <Entypo name="chevron-small-right" size={28} color="black" /> 
-            </TouchableOpacity>
+           
+                <Text style={styles.quizNum}>{quizNum}</Text>
+                <TouchableOpacity onPress={onPress}>
+                    <Entypo name="chevron-small-right" size={40} color="black" /> 
+                </TouchableOpacity>
+         
+           
         </View> 
-        <View>
+        {/* <View>
              <Text style={styles.questionText}>{question}</Text>
-        </View>
-        <View style={styles.btnFlex}>  
+        </View> */}
+        {/* <View style={styles.btnFlex}>   */}
+            {/* <ContainedButton buttonStyle={styles.button}/>
             <ContainedButton buttonStyle={styles.button}/>
-            <ContainedButton buttonStyle={styles.button}/>
-            <ContainedButton buttonStyle={styles.statusButton} textStyle={styles.statusText} text={'Answered'}/>
-        </View>
+            <ContainedButton buttonStyle={styles.statusButton} textStyle={styles.statusText} text={'Answered'}/> */}
+        {/* </View> */}
     </View>
   );
 }
@@ -36,10 +39,10 @@ container:{
     backgroundColor:'#dcdcdc',
     margin:10
 },
-questionNum:{
+quizNum:{
     color:'#BB271A',
     fontWeight:'bold',
-    fontSize:18
+    fontSize:20
 },
 questionText:{
     color:'#BB271A',
@@ -55,6 +58,7 @@ button:{
 btnFlex:{
     flexDirection:'row',
     justifyContent:'space-between',
+    padding:10
 },
 statusButton:{
     height:28,
