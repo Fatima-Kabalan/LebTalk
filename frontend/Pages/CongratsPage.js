@@ -5,13 +5,13 @@ import ContainedButton from '../Components/Button/ContainedButton';
 export default function CongratsPage({navigation}) {
   return (
     <View style={styles.congratsContainer}>
-        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Login')}> 
+        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Question')}> 
             <AntDesign name="close" size={24} color="black" />
         </TouchableOpacity>
         <Image source={require('../assets/trophy.gif')} style={styles.trophy}></Image>
         <Text style={styles.congratsText}>Congratulations!</Text>
         <Text style={styles.scoreText}>You scored 5 points out of 5!</Text>
-        <ContainedButton text={'NEXT: SPORTS'} buttonStyle={styles.nextButton} textStyle={styles.nextText}></ContainedButton>
+        {/* <ContainedButton text={'NEXT: SPORTS'} buttonStyle={styles.nextButton} textStyle={styles.nextText}></ContainedButton> */}
     </View>
   );
 }
