@@ -138,6 +138,7 @@ const TabStack = () => {
           name="Failed"
           component={FailedPage}
         />
+       
         <Stack.Screen
           name="Food"
           component={FoodPage}
