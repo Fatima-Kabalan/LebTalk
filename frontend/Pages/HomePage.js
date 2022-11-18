@@ -1,4 +1,4 @@
-import { StyleSheet, View, Text, ImageBackground, FlatList } from 'react-native';
+import { StyleSheet, View, Text, ImageBackground, FlatList ,ScrollView} from 'react-native';
 import Card from '../Components/Card/CircularCard';
 import { useState, useEffect } from 'react';
 import { IMAGE_URL, SERVER_URL } from "../env";
@@ -10,14 +10,16 @@ export default function HomePage({navigation}) {
     const [isLoading, setLoading] = useState(true);
 
     const Item = ({ item }) => (
-        <Card source={ IMAGE_URL + item.category_image} text={item.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate(item.category_name)} />
+        <Card source={ IMAGE_URL + item.category_image} text={item.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate(item.category_name)}  />
     );
 
     const renderItem = ( {item} ) => { 
         return (
+            <View>
           <Item
             item={item}
           />
+          </View>
         );
     };
 
@@ -31,27 +33,27 @@ export default function HomePage({navigation}) {
         .finally(() => setLoading(false));
       }, [])
 
+    // console.log(categories);
+
     if (categories)
     return (
-        <View>
-            <View style={styles.top}>
-                <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
-                <View style={styles.textContainer}>
-                    <Text style={styles.imgText}> “In learning you will teach, and in teaching you will learn.”
-                    ― Phil Collins</Text>
+            <ScrollView style={{flexGrow:1}}>
+                <View style={styles.top}>
+                    <ImageBackground  source={require('../assets/lebanon.jpg')} style={styles.img}>
+                    <View style={styles.textContainer}>
+                        <Text style={styles.imgText}> “In learning you will teach, and in teaching you will learn.”
+                        ― Phil Collins</Text>
+                    </View>
+                    </ImageBackground>
                 </View>
-                </ImageBackground>
-            </View>
-            
-            <View style={styles.list}>
+
                 <FlatList
                     data={categories}
                     renderItem={renderItem}
                     keyExtractor={item => item.id}
                     numColumns={2}
                 />
-            </View>
-         </View>
+            </ScrollView>
   );
   return <></>
 }
@@ -61,8 +63,8 @@ const styles = StyleSheet.create({
         height:'50%',
         width:'100%',
     },
-    list: {
-        justifyContent: 'space-between',
+    container: {
+        maxHeight: '100%'
     },
     img:{
         width: '100%',
