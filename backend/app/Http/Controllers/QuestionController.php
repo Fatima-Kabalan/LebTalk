@@ -6,13 +6,13 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
-    function getQuestion()
+    function getQuestion($id)
     {
-        $question = Question::all();
+        $questions = Question::where("quizzes_id", $id)->get();
 
         return response()->json([
             "status"=>"success",
-            "data"=>$question,
+            "data"=>$questions,
         ]);
     } 
 
