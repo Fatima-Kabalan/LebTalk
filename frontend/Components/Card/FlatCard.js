@@ -7,13 +7,15 @@ import { MaterialIcons } from '@expo/vector-icons';
 import { Audio } from 'expo-av';
 
 
-export default function FlatCard({source,text1,text2,name}) {
-    const [sound, setSound] = React.useState();
+export default function FlatCard({source,source1,text1,text2,name}) {
+  const [sound, setSound] = React.useState();
+  const image = { uri : source }
+  const voice = { uri: source1}
 
   async function playSound() {
     console.log('Loading Sound');
-    const {sound } = await Audio.Sound.createAsync( require('../../assets/sounds/Transformation-sound-effect.mp3')
-    );
+    const { sound } = await Audio.Sound.createAsync(voice)
+    console.log(sound)
     setSound(sound);
 
     console.log('Playing Sound');
@@ -29,14 +31,11 @@ export default function FlatCard({source,text1,text2,name}) {
       : undefined;
   }, [sound]);
 
-  
-
-   
-    return (
+  return (
       <View style={styles.FlatCardContainer}>
         <Image 
             style={styles.imageCard}  
-            source={source} 
+            source={image} 
         ></Image>
         <View  style={styles.row} >
             <View style={styles.bar1}>
@@ -49,7 +48,7 @@ export default function FlatCard({source,text1,text2,name}) {
             </View>
         </View>
         <View style={styles.bar}>
-            <TouchableOpacity  onPress={playSound}>
+            <TouchableOpacity  source1={voice} onPress={playSound}>
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
           <FontAwesome name="heart-o" size={24} color="white" />
