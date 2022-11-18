@@ -1,12 +1,13 @@
 import { StyleSheet, View ,TouchableOpacity ,Text} from 'react-native';
 import Logo from '../Components/Logo/SmallLogo';
 import { AntDesign } from '@expo/vector-icons'; 
+import BackButton from '../Components/Button/BackButton';
 
-export default function HeaderNav({text}){
+export default function HeaderNav({text , onPress}){
     return(
         <View style={styles.container}>
             <View style={styles.flex}>
-                <AntDesign name="left" size={23} color="white" />
+                <BackButton onPress={onPress} />
                 <Text style={styles.text}>{text}</Text>   
                 <Logo/>
             </View>  
