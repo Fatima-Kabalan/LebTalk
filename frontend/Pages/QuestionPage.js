@@ -9,7 +9,7 @@ export default function QuestionPage({navigation , source }) {
   return (
     <View style={styles.container}>
         <View style={styles.nav}>
-            <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Login')}> 
+            <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Quiz')}> 
                 <AntDesign name="close" size={24} color="black" />
             </TouchableOpacity>
             <MaterialCommunityIcons name="alarm-multiple" size={24} color="black" />
@@ -22,9 +22,9 @@ export default function QuestionPage({navigation , source }) {
             <Text style={styles.question}>What is the name of the above meal?</Text>
         </View>
         <View style={styles.btnFlex}>
-            <ContainedButton buttonStyle={styles.btnSuccess} text={'كبة'} textStyle={styles.text}/>
-            <ContainedButton buttonStyle={styles.btnFail} text={'فتوش'} textStyle={styles.text2}/>
-            <ContainedButton buttonStyle={styles.btnFail} text={'حمص'} textStyle={styles.text2}/>
+            <ContainedButton buttonStyle={styles.btnSuccess} text={'كبة'} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats')} />
+            <ContainedButton buttonStyle={styles.btnFail} text={'فتوش'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
+            <ContainedButton buttonStyle={styles.btnFail} text={'حمص'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
         </View>
     </View>
   );
