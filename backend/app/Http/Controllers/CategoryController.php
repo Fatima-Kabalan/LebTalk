@@ -1,8 +1,12 @@
 <?php
 
 namespace App\Http\Controllers;
+
+use App\Models\Card;
 use App\Models\Category;
+use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Log;
 
 class CategoryController extends Controller
 {
@@ -50,5 +54,17 @@ class CategoryController extends Controller
             "status"=>"success",
             "data"=>$category,
         ]);
+    }
+
+    function getCategoryCards(Request $request, $id){
+
+        $cards = Card::where("categories_id", $id)->get();
+
+        if($cards){
+            return response()->json([
+                "status"=>"success",
+                "data"=>$cards,
+            ]);
+        }
     }
 }
