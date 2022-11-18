@@ -1,16 +1,16 @@
-import { StyleSheet, View ,Image, Text,ImageBackground, TouchableOpacity} from 'react-native';
+import { StyleSheet, View ,Image, Text,ImageBackground, Linking , TouchableOpacity} from 'react-native';
 import ContainedButton from '../Button/ContainedButton';
 import { Entypo } from '@expo/vector-icons'; 
 import TextButton from '../Button/TextButton';
 
-export default function ChatCard({username,source}) {
+export default function ChatCard({username,source ,onPress, to}) {
   return (
     <View style={styles.container}>
         <View style={styles.picContainer}>
             <Image style={styles.pic} source={source}></Image>
             <Text style={styles.text}>{username}</Text> 
         </View>
-      <ContainedButton buttonStyle={styles.btn} textStyle={styles.btnText} text='Connect' /> 
+      <ContainedButton buttonStyle={styles.btn} textStyle={styles.btnText} text='Connect' onPress={onPress} to={to}/> 
     </View>
   );
 }
