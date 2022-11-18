@@ -3,31 +3,46 @@ import { AntDesign } from '@expo/vector-icons';
 import { MaterialCommunityIcons } from '@expo/vector-icons'; 
 import Logo from '../Components/Logo/SmallLogo';
 import ContainedButton from '../Components/Button/ContainedButton';
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import { IMAGE_URL, SERVER_URL } from "../env";
 
+export default function QuestionPage({route, navigation}) {
+    const quiz_id = route.params.quiz_id;
 
-export default function QuestionPage({navigation , source }) {
-  return (
-    <View style={styles.container}>
-        <View style={styles.nav}>
-            <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Quiz')}> 
-                <AntDesign name="close" size={24} color="black" />
-            </TouchableOpacity>
-            <MaterialCommunityIcons name="alarm-multiple" size={24} color="black" />
-            <Logo/>
+    const [questions, setQuestions] = useState([])
+
+    useEffect(() => {
+      axios({
+        method: "GET",
+        url: `${SERVER_URL}/api/v1/getQuestion/${quiz_id}`,
+      }).then((res) => { 
+        setQuestions(res.data.data);
+      }).catch((error) => console.error(error));
+    }, [])
+
+    return (
+        <View style={styles.container}>
+            <View style={styles.nav}>
+                <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('')}> 
+                    <AntDesign name="close" size={24} color="black" />
+                </TouchableOpacity>
+                <MaterialCommunityIcons name="alarm-multiple" size={24} color="black" />
+                <Logo/>
+            </View>
+            <Image source={require('../assets/Kibbeh.jpg')} style={styles.image}>
+            </Image>
+            <View>
+                <Text style={styles.questionNum}>Question1</Text>
+                <Text style={styles.question}>What is the name of the above meal?</Text>
+            </View>
+            <View style={styles.btnFlex}>
+                <ContainedButton buttonStyle={styles.btnSuccess} text={'كبة'} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats')} />
+                <ContainedButton buttonStyle={styles.btnFail} text={'فتوش'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
+                <ContainedButton buttonStyle={styles.btnFail} text={'حمص'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
+            </View>
         </View>
-        <Image source={require('../assets/Kibbeh.jpg')} style={styles.image}>
-        </Image>
-        <View>
-            <Text style={styles.questionNum}>Question1</Text>
-            <Text style={styles.question}>What is the name of the above meal?</Text>
-        </View>
-        <View style={styles.btnFlex}>
-            <ContainedButton buttonStyle={styles.btnSuccess} text={'كبة'} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats')} />
-            <ContainedButton buttonStyle={styles.btnFail} text={'فتوش'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
-            <ContainedButton buttonStyle={styles.btnFail} text={'حمص'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
-        </View>
-    </View>
-  );
+    );
 }
 const styles = StyleSheet.create({
     container:{
