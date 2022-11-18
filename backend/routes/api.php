@@ -29,8 +29,10 @@ Route::group(["prefix"=> "v1"], function(){
 
             Route::get("/getCategory/{id}", [CategoryController::class, "getCategory"])->name("getCategory");  
             Route::get("/getAllCategories", [CategoryController::class, "getALlCategories"])->name("getALlCategories"); 
-            Route::get("/getQuiz", [QuizController::class, "getQuiz"])->name("getQuiz"); 
-            Route::get("/getQuestion", [QuestionController::class, "getQuestion"])->name("getQuestion"); 
+            Route::get("/getCategoryCards/{id}", [CategoryController::class, "getCategoryCards"])->name("getCategoryCards"); 
+
+            Route::get("/getQuiz/{id}", [QuizController::class, "getQuiz"])->name("getQuiz"); 
+            Route::get("/getQuestion/{id}", [QuestionController::class, "getQuestion"])->name("getQuestion"); 
             Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
             Route::post("/addInstructor", [InstructorController::class, "addInstructor"])->name("addInstructor");
             Route::get("/getInstructors", [InstructorController::class, "getInstructors"])->name("getInstructors");
