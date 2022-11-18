@@ -2,12 +2,29 @@ import { StyleSheet, View ,Text ,Image ,ImageBackground ,ScrollView} from 'react
 import ContainedButton from '../Components/Button/ContainedButton';
 import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
-
+import { useState,useEffect } from 'react';
+import axios from 'axios';
+import { IMAGE_URL, SERVER_URL ,VOICE_URL} from "../env";
 
 export default function FoodPage({navigation}) {
-  return (
+    const [cards, setCards] = useState([])
+
+    useEffect(() => {
+        axios({
+          method: "GET",
+          url: `${SERVER_URL}/api/v1/getCards`,
+        }).then((res) => { 
+          setCards(res.data.data);
+        }).catch((error) => console.error(error))
+        .finally(() => setLoading(false));
+      }, [])
+
+    // console.log(cards);
+
+    if (cards)
+    return (
     <View style={styles.container}> 
-        <HeaderNav text={'Food'}/> 
+        <HeaderNav text={'Food'} onPress={() => navigation.navigate('Home')}/> 
         <Image  source={require('../assets/food.png')} style={styles.img}>
         </Image>
         <ScrollView>
@@ -16,13 +33,16 @@ export default function FoodPage({navigation}) {
                 <ContainedButton text={"NEXT:SPORTS"} buttonStyle={styles.button} onPress={() => navigation.navigate('Sports')} textStyle={styles.btnText}/>
             </View>
             <View style={styles.flatCards}>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'} name="food-fork-drink"  text2={'فتوش'}/>
-                <FlatCard source={require('../assets/fatoush.jpg')} text1={'Fatoush'} name="food-fork-drink" text2={'فتوش'}/>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'}  name="food-fork-drink" text2={'فتوش'}/>
-                <FlatCard source={require('../assets/Kibbeh.jpg')} text1={'Fatoush'}  name="food-fork-drink" text2={'فتوش'}/>
+                { cards?.map((card,index) =>{
+                    console.log(cards)
+                    if(card.categories_id == 1)
+                    return(
+                        <FlatCard source={ IMAGE_URL + card.card_image} text1={card.english_text}  text2={card.arabic_text}  source1={VOICE_URL + card.voice_note}/>
+                    )
+                })}
             </View>   
             <View style={styles.testContainer}>
-                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} />
+                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText}  onPress={() => navigation.navigate('Quiz')}/>
             </View>
         </ScrollView>
     </View>
