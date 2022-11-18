@@ -23,14 +23,16 @@ class QuizController extends Controller
         ]);
     }
 
-    function getQuiz(Request $request)
+    function getQuiz(Request $request, $id)
     {
-        $quiz = Quiz::all();
+        $quizzes = Quiz::where("categories_id", $id)->get();
 
-        return response()->json([
-            "status"=>"success",
-            "data"=>$quiz,
-        ]);
+        if($quizzes){
+            return response()->json([
+                "status"=>"success",
+                "data"=>$quizzes,
+            ]);
+        }
     }
 
     function deleteQuiz(Request $request)
