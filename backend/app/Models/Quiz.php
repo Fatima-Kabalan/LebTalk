@@ -19,10 +19,18 @@ class Quiz extends Model
         'time_delivered',
         'status'
     ];
+
+    function users(){
+        return $this->belongsTo(User::class);
+    }
+
+    function categories(){
+        return $this->belongsTo(Category::class);
+    }
+
+    function questions(){
+        return $this->hasMany(Question::class);
+    } 
 }
-function users(){
-    return $this->belongsTo(User::class);
-}
-function categories(){
-    return $this->belongsTo(Category::class);
-}
+
+
