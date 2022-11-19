@@ -4,10 +4,11 @@ import { Entypo } from '@expo/vector-icons';
 import TextButton from '../Button/TextButton';
 
 export default function ChatCard({username,source ,onPress, to}) {
-  return (
+    const image = { uri : source }
+    return (
     <View style={styles.container}>
         <View style={styles.picContainer}>
-            <Image style={styles.pic} source={source}></Image>
+            <Image style={styles.pic} source={image} ></Image>
             <Text style={styles.text}>{username}</Text> 
         </View>
       <ContainedButton buttonStyle={styles.btn} textStyle={styles.btnText} text='Connect' onPress={onPress} to={to}/> 
