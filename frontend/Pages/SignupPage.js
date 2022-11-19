@@ -29,7 +29,7 @@ export default function SignupPage({navigation }) {
     const config = {
       method: "post",
       data,
-      url:`${SERVER_URL}/api/register`,
+      url:`${SERVER_URL}/api/v1/register`,
     }
     try{
       const res = await axios(config)
