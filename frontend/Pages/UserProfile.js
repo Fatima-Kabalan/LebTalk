@@ -1,55 +1,77 @@
-import { StyleSheet, Text, TouchableOpacity, TextInput, View ,Label , Input} from 'react-native';
+import { StyleSheet, Text,  View } from 'react-native';
 import Logo from '../Components/Logo/MediumLogo';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
-import { IMAGE_URL, SERVER_URL } from "../env";
-import CircularCard from '../Components/Card/CircularCard';
+import { SERVER_URL } from "../env";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function UserProfile({username}){
-//   const [user, setUser] = useState()
+  const [user, setUser] = useState([]);
 
-//   const token = AsyncStorage.getItem("@token");
+  const getProfile = async () => {
+    const token = await AsyncStorage.getItem("@token");
 
-//   console.log('token:', token)
+    const config = {
+      method: "GET",
+      headers:{Authorization: `Bearer ${token}`},
+      url: `${SERVER_URL}/api/v1/profile`,
+    }
+    try{
+      const res = await axios(config)
+      if(res.data.status == "success"){
+        setUser(res.data.data);
+      }
+      
+    }catch(error){
+      console.warn(error.response.data)
+      return error
+    }
+  }
 
-//   const getProfile = async () => {
-//       const config = {
-//         method: "GET",
-//         headers:{Authorization: `Bearer ${token}`},
-//         url: `${SERVER_URL}/auth/api/v1/profile`,
-//       }
-//       try{
-//         const res = await axios(config)
-//         console.log("res: ", res)
-        
-//       }catch(error){
-//         console.warn(error.response.data)
-//         return error
-//       }
-//   }
+  useEffect(() => {
+      getProfile();
+  })
 
-//   useEffect(() => {
-//       getProfile();
-//   })
 
-// console.log(user);
+  if (user)
+    return (
+      <View style={styles.container}>
+        <Logo/>
+        <Text style={styles.lebText}>
+            Leb<Text style={styles.talkText}>Talk</Text>
+        </Text>
+        <View style={styles.boxContainer}>
+          <View style={{marginBottom: 30}}>
+            <Text style={styles.subtitle}>Account Details</Text>
+            <View style={styles.flexRow}>
+              <Text style={styles.label}>Email</Text>
+              <Text style={styles.content}>{user.email}</Text>
+            </View>
+            <View style={styles.flexRow}>
+              <Text style={styles.label}>Username</Text>
+              <Text style={styles.content}>{user.name}</Text>
+            </View>
+            <View style={styles.flexRow}>
+              <Text style={styles.label}>Phone Number</Text>
+              <Text style={styles.content}>{user.phone_number}</Text>
+            </View>
+          </View>
+          <View style={{marginBottom: 30}}>
+            <Text style={styles.subtitle}>Additional Details</Text>
+            <View style={styles.flexRow}>
+              <Text style={styles.label}>Favorites</Text>
+              <Text style={styles.content}>{5}</Text>
+            </View>
+            <View style={styles.flexRow}>
+              <Text style={styles.label}>Score</Text>
+              <Text style={styles.content}>{30}</Text>
+            </View>
+          </View>
 
-// if (user)
-
-  return (
-    <View style={styles.container}>
-      <Logo/>
-      <Text style={styles.lebText}>
-          Leb<Text style={styles.talkText}>Talk</Text>
-      </Text>
-      <View style={styles.boxContainer}>
-        <Text style={styles.text}>Welcome!</Text> 
-        <TextInput style={styles.input} type='' placeholder='Favorites:' ></TextInput>
-      </View>
-    </View>
-  )
-}
+        </View>
+      </View> 
+    )
+  }
 
 const styles = StyleSheet.create({
   container: {
@@ -59,8 +81,28 @@ const styles = StyleSheet.create({
     alignItems: 'center',
   },
   input:{
-    fontSize:25,
+    fontSize:20,
     color:'#E1943C'
+  },
+  subtitle:{
+    fontSize: 18,
+    fontWeight: 'bold',
+    marginBottom: 10,
+  },
+  label:{
+    fontSize: 16,
+    color:'#A9A9A9',
+    fontWeight: 'bold',
+  },
+  flexRow:{
+    display:'flex',
+    flexDirection:'row',
+    justifyContent:'space-between',
+    marginTop:10
+  },
+  content:{
+    fontSize: 16,
+    color:'#A9A9A9',
   },
   lebText:{
     fontWeight:'bold',
