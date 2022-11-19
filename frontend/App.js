@@ -6,17 +6,12 @@ import HomePage from './Pages/HomePage';
 import Login from './Pages/Login';
 import SignupPage from './Pages/SignupPage';
 import FailedPage from './Pages/FailedPage';
-import FoodPage from './Pages/FoodPage';
 import QuizPage from './Pages/QuizPage';
 import QuestionPage from './Pages/QuestionPage';
 import UserProfile from './Pages/UserProfile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
-import SportsPage from './Pages/SportsPage';
-import FamPage from './Pages/FamPage';
-import AnimalsPage from './Pages/AnimalsPage';
-import Voice from './Pages/Voice';
 import CategoryPage from './Pages/CategoryPage';
 
 
@@ -144,30 +139,9 @@ const TabStack = () => {
           name="Category"
           component={CategoryPage}
         />
-
-        <Stack.Screen
-          name="Food"
-          component={FoodPage}
-        />
-        <Stack.Screen
-          name="Family"
-          component={FamPage}
-        />
-        <Stack.Screen
-          name="Animals"
-          component={AnimalsPage}
-        />
-        {/* <Stack.Screen
-          name="Voice"
-          component={Voice}
-        /> */}
         <Stack.Screen
           name="Quiz"
           component={QuizPage}
-        />
-        <Stack.Screen
-          name="Sports"
-          component={SportsPage}
         />
         <Stack.Screen
           name="Question"
