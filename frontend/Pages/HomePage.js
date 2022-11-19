@@ -60,7 +60,7 @@ export default function HomePage({navigation}) {
 
 const styles = StyleSheet.create({
     top:{
-        height:'50%',
+        height:'35%',
         width:'100%',
     },
     container: {
