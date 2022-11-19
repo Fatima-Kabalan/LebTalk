@@ -36,13 +36,18 @@ export default function CategoryPage({route, navigation}) {
     if (cards)
     return (
     <View style={styles.container}> 
-        <HeaderNav text={category.category_name} onPress={() => navigation.navigate('Category')}/> 
-        <Image source={{uri: IMAGE_URL + category.category_image}} style={styles.img}>
-        </Image>
+        <HeaderNav text={category.category_name} onPress={() => navigation.navigate('Home')}/> 
+        { category.category_name == "Family" ? (
+            <Image source={require("../assets/fam.gif")} style={styles.img} />
+        )
+        : <Image source={{uri: IMAGE_URL + category.category_image}} style={styles.img} />
+        }
+        
+           
+        
         <ScrollView>
             <View style={styles.flexRow}>
                 <Text style={styles.foodText}>{category.category_name}</Text>
-                {/* <ContainedButton text={"NEXT:FAMILY"} buttonStyle={styles.button} onPress={() => navigation.navigate('Family')} textStyle={styles.btnText}/> */}
             </View>
             <View style={styles.flatCards}>
                  { cards?.map((card,index) =>{
