@@ -5,7 +5,7 @@ import ContainedButton from '../Components/Button/ContainedButton';
 export default function CongratsPage({navigation}) {
   return (
     <View style={styles.congratsContainer}>
-        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Question')}> 
+        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Quiz')}> 
             <AntDesign name="close" size={24} color="black" />
         </TouchableOpacity>
         <Image source={require('../assets/trophy.gif')} style={styles.trophy}></Image>
