@@ -5,7 +5,7 @@ import ContainedButton from '../Components/Button/ContainedButton';
 export default function FailedPage({navigation}) {
   return (
     <View style={styles.failedContainer}>
-        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Question')}> 
+        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Quiz')}> 
             <AntDesign name="close" size={24} color="black" />
         </TouchableOpacity>
         <Image source={require('../assets/giphy.gif')} style={styles.giphy}></Image>
