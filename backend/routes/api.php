@@ -9,40 +9,50 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuestionController;
 
+Route::prefix('v1')->group(function (){
+    Route::controller(AuthController::class)->group(function (){
+        Route::post("/login", "login");
+        Route::post("/register",  "register");
+    });
 
-Route::post("/login", [AuthController::class, "login"])->name("login");
-Route::post("/register", [AuthController::class, "register"])->name("register");
+    Route::controller(UserController::class)->group(function (){
+        Route::get("/profile", "profile");
+    });
 
-Route::group(["prefix"=> "v1"], function(){
-        // Route::group(["middleware" => "auth:api"], function(){
-            Route::group(["middleware" => ["admin.type"]], function(){
-                Route::post("/addCategory", [CategoryController::class, "addCategory"])->name("addCategory"); 
-                Route::post("/deleteCategory", [CategoryController::class, "deleteCategory"])->name("deleteCategory"); 
-                Route::post("/addQuiz", [QuizController::class, "addQuiz"])->name("addQuiz"); 
-                Route::post("/deleteQuiz", [QuizController::class, "deleteQuiz"])->name("deleteQuiz"); 
-                Route::post("/addQuestion", [QuestionController::class, "addQuestion"])->name("addQuestion"); 
-                Route::post("/deleteQuestion", [QuestionController::class, "deleteQuestion"])->name("deleteQuestion"); 
-            
-                Route::post("/addCard", [CardController::class, "addCard"])->name("addCard"); 
-                Route::post("/deleteCard", [CardController::class, "deleteCard"])->name("deleteCard"); 
-            }); 
+    Route::controller(CardController::class)->group(function (){
+        Route::post("/addCard", "addCard"); 
+        Route::post("/deleteCard", "deleteCard");
+        Route::post("/favCard", "favCard"); 
+        Route::post("/unFavCard", "unFavCard");
+        Route::get("/getCards", "getCards");
+    });
 
-            Route::get("/getCategory/{id}", [CategoryController::class, "getCategory"])->name("getCategory");  
-            Route::get("/getAllCategories", [CategoryController::class, "getALlCategories"])->name("getALlCategories"); 
-            Route::get("/getCategoryCards/{id}", [CategoryController::class, "getCategoryCards"])->name("getCategoryCards"); 
+    Route::controller(CategoryController::class)->group(function (){
+        Route::get("/getCategory/{id}", "getCategory");  
+        Route::get("/getAllCategories", "getALlCategories"); 
+        Route::get("/getCategoryCards/{id}", "getCategoryCards");
+        Route::post("/addCategory", "addCategory"); 
+        Route::post("/deleteCategory", "deleteCategory"); 
+    });
 
-            Route::get("/getQuiz/{id}", [QuizController::class, "getQuiz"])->name("getQuiz"); 
-            Route::get("/getQuestion/{id}", [QuestionController::class, "getQuestion"])->name("getQuestion"); 
-            Route::get("/getCards", [CardController::class, "getCards"])->name("getCards"); 
-            Route::post("/addInstructor", [InstructorController::class, "addInstructor"])->name("addInstructor");
-            Route::get("/getInstructors", [InstructorController::class, "getInstructors"])->name("getInstructors");
+    Route::controller(QuizController::class)->group(function (){
+        Route::post("/addQuiz", "addQuiz"); 
+        Route::post("/deleteQuiz", "deleteQuiz"); 
+        Route::get("/getQuiz/{id}", "getQuiz"); 
+    });
 
-            Route::get("/addUserRole", [UserRoleController::class, "addUserRole"])->name("addUserRole"); 
-            // Route::get("/getUser/{id}", [UserController::class, "getUser"])->name("getUser"); 
-        
-            Route::group(["middleware" => ["user.type"]], function(){
-                Route::post("/favCard", [CardController::class, "favCard"])->name("favCard"); 
-                Route::post("/unFavCard", [CardController::class, "unFavCard"])->name("unFavCard"); 
-            });
-    });    
-// });
+    Route::controller(QuestionController::class)->group(function (){
+        Route::post("/addQuestion", "addQuestion"); 
+        Route::post("/deleteQuestion", "deleteQuestion"); 
+        Route::get("/getQuestion/{id}", "getQuestion"); 
+    });
+
+    Route::controller(InstructorController::class)->group(function (){
+        Route::post("/addInstructor", "addInstructor");
+        Route::get("/getInstructors", "getInstructors");
+    });
+
+    Route::controller(UserRoleController::class)->group(function (){
+        Route::get("/addUserRole", "addUserRole"); 
+    });
+});
