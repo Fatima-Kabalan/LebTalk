@@ -1,41 +1,38 @@
 <?php
 
 namespace App\Http\Controllers;
-use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
 use Illuminate\Http\Request;
 use App\Models\User;
+use Auth;
 
 class UserController extends Controller{
-    
     function profile()
     {
-        // $user = dd(auth()->user());
-        // //Log::info("user: ", $user->toArray());
+        $user = Auth::user();
 
-        // if(!is_null($user)){
-        //     $profile = User::where('id',$user->id)->get();
-        //     Log::info("user: ", $profile->toArray());
-        //     if($profile){
-        //         return response()->json([
-        //             "status"=>"success",
-        //             "data"=>$profile,
-        //         ]);
-        //     }
-        // }else{
-        //     return response()->json([
-        //         "status"=>"failed",
-        //         "message"=>"Unauthorized"
-        //     ]);
-        // }
-        function getUser($id)
-        {
-            $user = User::find($id);
-    
+        //Log::info("user: ", $user->toArray());
+
+        if($user){
             return response()->json([
                 "status"=>"success",
                 "data"=>$user,
             ]);
+        }else{
+            return response()->json([
+                "status"=>"failed",
+                "message"=>"Unauthorized"
+            ]);
         }
+    }
+
+    function getUser($id)
+    {
+        $user = User::find($id);
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$user,
+        ]);
     }
 }
