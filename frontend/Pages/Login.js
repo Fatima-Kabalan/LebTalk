@@ -23,7 +23,7 @@ export default function Login({navigation}) {
     const config = {
       method: "post",
       data,
-      url:`${SERVER_URL}/api/login`,
+      url:`${SERVER_URL}/api/v1/login`,
     }
     try{
       const res = await axios(config)
