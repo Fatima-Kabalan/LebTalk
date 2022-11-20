@@ -22,9 +22,9 @@ class Card extends Model
         return $this->belongsTo(Category::class);
     }  
     
-    public function users()
+    public function favoritedUsers()
     {
-        return $this->belongsToMany(User::class);
+        return $this->belongsToMany(User::class, 'favorites');
     }
 }
 
