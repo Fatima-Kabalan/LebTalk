@@ -8,16 +8,17 @@ use App\Models\Instructor;
 use App\Models\User;
 use App\Models\Card;
 use App\Models\Category;
+use App\Models\UserRoles;
 
 class DatabaseSeeder extends Seeder
 {
     public function run()
     {
-        // \App\Models\User::factory(10)->create();
+        //  \App\Models\User::factory(10)->create();
 
        
         // UserRoles::create([
-        //     'name' => 'Ahmad2',
+        //     'name' => 'user',
         //     'id' => '2'
         // ]);
 
