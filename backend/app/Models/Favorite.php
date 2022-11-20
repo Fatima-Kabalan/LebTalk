@@ -10,6 +10,7 @@ class Favorite extends Model
     use HasFactory;
 
     protected $fillable = [
+        'id',
         'card_id',
         'user_id',
     ];
