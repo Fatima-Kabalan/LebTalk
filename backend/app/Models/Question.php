@@ -12,16 +12,16 @@ class Question extends Model
 
     protected $fillable = [
         'id',
-        'quizzes_id',
-        'title',
         'question',
         'question_image',
-        'time_out',
-        'time_delivered',
-        'status'
+        'categories_id',
     ];
 
-    function quiz(){
-        return $this->belongsTo(Quiz::class);
+    // function quiz(){
+    //     return $this->belongsTo(Quiz::class);
+    // }     
+
+    function users(){
+        return $this->belongsTo(User::class);
     }     
 }
