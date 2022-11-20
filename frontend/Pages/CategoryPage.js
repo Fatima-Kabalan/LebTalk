@@ -5,6 +5,7 @@ import HeaderNav from '../Components/HeaderNav';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { IMAGE_URL, SERVER_URL, VOICE_URL } from "../env";
+import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function CategoryPage({route, navigation}) {
     const [cards, setCards] = useState([])
@@ -12,8 +13,10 @@ export default function CategoryPage({route, navigation}) {
     const { category } = route.params;
 
     const getCategoryCards = async () => {
+        const token = await AsyncStorage.getItem("@token");
         const config = {
             method: "GET",
+            headers:{Authorization: `Bearer ${token}`},
             url: `${SERVER_URL}/api/v1/getCategoryCards/${category.id}`, 
         }
 
@@ -21,6 +24,7 @@ export default function CategoryPage({route, navigation}) {
             const res = await axios(config)
       
             if(res.data.status == "success"){
+                console.log("res: ", res)
               setCards(res.data.data);
             }
           }catch(error){
