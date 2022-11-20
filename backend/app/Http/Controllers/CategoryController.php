@@ -6,7 +6,9 @@ use App\Models\Card;
 use App\Models\Category;
 use App\Models\User;
 use Illuminate\Http\Request;
+use Illuminate\Support\Facades\Auth;
 use Illuminate\Support\Facades\Log;
+
 
 class CategoryController extends Controller
 {
@@ -59,11 +61,16 @@ class CategoryController extends Controller
     function getCategoryCards(Request $request, $id){
 
         $cards = Card::where("categories_id", $id)->get();
+        Log::info("cards: ", $cards->toArray());
+
+        $favoritedCards = Auth::user()->favoriteCards;
+        Log::info("fav: ", $favoritedCards->toArray());
 
         if($cards){
             return response()->json([
                 "status"=>"success",
                 "data"=>$cards,
+                "favorites"=>$favoritedCards
             ]);
         }
     }
