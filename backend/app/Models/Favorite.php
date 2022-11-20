@@ -10,8 +10,8 @@ class Favorite extends Model
     use HasFactory;
 
     protected $fillable = [
-        'cards_id',
-        'users_id',
+        'card_id',
+        'user_id',
     ];
 
     function card(){
