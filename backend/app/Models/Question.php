@@ -15,13 +15,20 @@ class Question extends Model
         'question',
         'question_image',
         'categories_id',
-    ];
-
-    // function quiz(){
-    //     return $this->belongsTo(Quiz::class);
-    // }     
+    ];     
 
     function users(){
-        return $this->belongsTo(User::class);
-    }     
+        return $this->hasMany(User::class);
+    } 
+
+    function answers(){
+        return $this->hasMany(Answer::class);
+    }  
+    
+    
+    function AnsweredByUser(){
+        return $this->belongsToMany(User::class);
+    }       
+
+
 }
