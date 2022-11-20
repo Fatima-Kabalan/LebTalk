@@ -9,9 +9,9 @@ class Instructor extends Model
 {
     use HasFactory;
     protected $fillable = [
+        'id',
         'username',
         'phone_number',
         'profile_picture',
-        // 'admin_id',
     ];
 }
