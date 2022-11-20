@@ -44,8 +44,8 @@ class User extends Authenticatable implements JWTSubject
         return $this->belongsTo(UserRoles::class);
     } 
 
-    public function cards()
+    public function favoriteCards()
     {
-        return $this->belongsToMany(Card::class);
+        return $this->belongsToMany(Card::class, 'favorites');
     }
 }
