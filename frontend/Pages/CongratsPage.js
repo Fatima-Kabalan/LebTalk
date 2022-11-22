@@ -10,7 +10,7 @@ export default function CongratsPage({navigation}) {
         </TouchableOpacity>
         <Image source={require('../assets/trophy.gif')} style={styles.trophy}></Image>
         <Text style={styles.congratsText}>Congratulations!</Text>
-        <Text style={styles.scoreText}>You scored 5 points out of 5!</Text>
+        <Text style={styles.scoreText}>You scored 1 points out of 5!</Text>
         {/* <ContainedButton text={'NEXT: SPORTS'} buttonStyle={styles.nextButton} textStyle={styles.nextText}></ContainedButton> */}
     </View>
   );
