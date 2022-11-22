@@ -4,6 +4,7 @@ import FlatCard from '../Components/Card/FlatCard';
 import HeaderNav from '../Components/HeaderNav';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
+import QuestionPage from './QuestionPage';
 import { IMAGE_URL, SERVER_URL, VOICE_URL } from "../env";
 import AsyncStorage from '@react-native-async-storage/async-storage';
 
@@ -24,7 +25,6 @@ export default function CategoryPage({route, navigation}) {
             const res = await axios(config)
       
             if(res.data.status == "success"){
-                console.log("res: ", res)
               setCards(res.data.data);
             }
           }catch(error){
@@ -61,7 +61,7 @@ export default function CategoryPage({route, navigation}) {
                 })}
             </View>   
             <View style={styles.testContainer}>
-                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} onPress={() => navigation.navigate('Quiz', {category_id: category.id})}/>
+                <ContainedButton text={"Test Now"} buttonStyle={styles.testButton} textStyle={styles.btnText} onPress={() => navigation.navigate('Questions', {category_id: category.id})}/>
             </View>
         </ScrollView>
     </View>
