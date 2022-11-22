@@ -7,6 +7,8 @@ import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { IMAGE_URL, SERVER_URL } from "../env";
 import btn from '../Components/Button/btn';
+import { Audio } from 'expo-av';
+import wrong from '../assets/sounds/wrong.mp3'
 
 export default function AnswersPage({route, navigation}) {
     const question_id = route.params.question_id;
@@ -46,6 +48,9 @@ export default function AnswersPage({route, navigation}) {
         )
        
         else{
+             Audio.Sound.createAsync({
+                uri : wrong
+            })
             console.log('wrong')
         }
     }
@@ -69,7 +74,7 @@ export default function AnswersPage({route, navigation}) {
             <View style={styles.btnFlex}>
             { answers?.map((answer,index) =>{
                     return(
-                        <ContainedButton buttonStyle={styles.btn} text={answer.name} textStyle={styles.text} onPress={()=>{success(answer.is_correct)}} />
+                        <ContainedButton buttonStyle={styles.btn} text={answer.name} textStyle={styles.text} isCorrect = {answer.is_correct} onPress={()=>{success(answer.is_correct)}} />
                     )
                 })} 
                  {/* <ContainedButton buttonStyle={styles.btn} text={"كبة"} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats') } />
