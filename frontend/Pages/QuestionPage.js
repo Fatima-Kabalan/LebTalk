@@ -1,104 +1,58 @@
-import { StyleSheet, Text, View, Image , TouchableOpacity } from 'react-native';
-import { AntDesign } from '@expo/vector-icons'; 
-import { MaterialCommunityIcons } from '@expo/vector-icons'; 
-import Logo from '../Components/Logo/SmallLogo';
+import { ScrollView, StyleSheet, Text, TouchableOpacity, View } from 'react-native';
 import ContainedButton from '../Components/Button/ContainedButton';
+import QuestionCard from '../Components/Card/QuestionCard';
+import HeaderNav from '../Components/HeaderNav';
 import { useState,useEffect } from 'react';
 import axios from 'axios';
 import { IMAGE_URL, SERVER_URL } from "../env";
+import AnswersPage from './AnswersPage';
+
 
 export default function QuestionPage({route, navigation}) {
-    const quiz_id = route.params.quiz_id;
+  const category_id = route.params.category_id
 
-    const [questions, setQuestions] = useState([])
+  const [cards, setCards] = useState([])
 
-    useEffect(() => {
-      axios({
-        method: "GET",
-        url: `${SERVER_URL}/api/v1/getQuestion/${quiz_id}`,
-      }).then((res) => { 
-        setQuestions(res.data.data);
-      }).catch((error) => console.error(error));
-    }, [])
+  useEffect(() => {
+    axios({
+      method: "GET",
+      url: `${SERVER_URL}/api/v1/getQuestion/${category_id}`,
+    }).then((res) => { 
+      setCards(res.data.data);
+    }).catch((error) => console.error(error));
+  }, [])
+ 
 
-    return (
-        <View style={styles.container}>
-            <View style={styles.nav}>
-                <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('')}> 
-                    <AntDesign name="close" size={24} color="black" />
-                </TouchableOpacity>
-                <MaterialCommunityIcons name="alarm-multiple" size={24} color="black" />
-                <Logo/>
-            </View>
-            <Image source={require('../assets/Kibbeh.jpg')} style={styles.image}>
-            </Image>
-            <View>
-                <Text style={styles.questionNum}>Question1</Text>
-                <Text style={styles.question}>What is the name of the above meal?</Text>
-            </View>
-            <View style={styles.btnFlex}>
-                <ContainedButton buttonStyle={styles.btnSuccess} text={'كبة'} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats')} />
-                <ContainedButton buttonStyle={styles.btnFail} text={'فتوش'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
-                <ContainedButton buttonStyle={styles.btnFail} text={'حمص'} textStyle={styles.text2} onPress={() => navigation.navigate('Failed')}/>
-            </View>
-        </View>
-    );
+if (cards)
+  return (
+    <View style={styles.container} >
+      <HeaderNav text={'Questions'} />
+        <ScrollView>
+        <View style={styles.questionContainer}>
+            { cards?.map((card,index) =>{
+                    return(
+                        <QuestionCard onPress={() => navigation.navigate('Answers', {question_id: card.id})}  quizNum={card.title} />
+                    )
+                })}
+                </View>
+        </ScrollView>
+       
+      
+    </View>
+  );
 }
+
 const styles = StyleSheet.create({
-    container:{
-        flex:1,
-    },
-    nav:{
-        flexDirection:'row',
-        justifyContent:'space-between',
-        padding:20,
-        marginTop:25,
-    },
-    image:{
-        height:'30%',
-        width:' 90%', 
-        borderRadius:30,
-        marginLeft:15,
-        marginRight:20
-    },
-    questionNum:{
-        color:'#BB271A',
-        fontWeight:'bold',
-        fontSize:18,
-        marginTop:20,
-        marginRight:20,
-        marginLeft:20,
-    },
-    question:{
-        fontSize:16,
-        marginRight:20,
-        marginTop:20,
-        marginLeft:20,
-    },
-    btnSuccess:{
-        backgroundColor:'#F29D38',
-        width:'90%',
-        marginLeft:20,
-        marginTop:20,
-        borderRadius:40
-    },
-    btnFail:{
-        backgroundColor:'#d3d3d3',
-        width:'90%',
-        marginLeft:20,
-        marginTop:20,
-        borderRadius:40
-    },
-    text:{
-        fontSize:35,
-        color:'#BB271A',
-        textAlign:'center',
-        padding:10
-    },
-    text2:{
-        fontSize:35,
-        color:'#778899',
-        textAlign:'center',
-        padding:10
-    }
-})
+  container:{
+    flex: 1,
+    flexDirection:'column',
+    backgroundColor: 'white',
+    
+  },
+  questionContainer:{
+    flexDirection:'column',
+    justifyContent:'center',
+    alignItems:'center',
+    padding:20,
+  },
+});
