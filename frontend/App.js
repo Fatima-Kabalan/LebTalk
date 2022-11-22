@@ -6,13 +6,13 @@ import HomePage from './Pages/HomePage';
 import Login from './Pages/Login';
 import SignupPage from './Pages/SignupPage';
 import FailedPage from './Pages/FailedPage';
-import QuizPage from './Pages/QuizPage';
 import QuestionPage from './Pages/QuestionPage';
 import UserProfile from './Pages/UserProfile';
 import { createBottomTabNavigator } from '@react-navigation/bottom-tabs';
 import Ionicons from 'react-native-vector-icons/Ionicons';
 import InstructorChatPage from './Pages/InstructorChatPage';
 import CategoryPage from './Pages/CategoryPage';
+import AnswersPage from './Pages/AnswersPage';
 
 
 
@@ -140,11 +140,11 @@ const TabStack = () => {
           component={CategoryPage}
         />
         <Stack.Screen
-          name="Quiz"
-          component={QuizPage}
+          name="Answers"
+          component={AnswersPage}
         />
         <Stack.Screen
-          name="Question"
+          name="Questions"
           component={QuestionPage}
         />
         <Stack.Screen
