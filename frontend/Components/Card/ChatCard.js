@@ -28,9 +28,9 @@ const styles = StyleSheet.create({
         
     },
     pic:{
-        borderRadius:50,
-        height:'90%',
-        width:'40%',
+        borderRadius:80,
+        height:'100%',
+        width:'30%',
         backgroundColor:'black',
         marginRight:10,
         marginLeft:10,
