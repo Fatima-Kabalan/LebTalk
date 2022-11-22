@@ -64,7 +64,7 @@ export default function UserProfile({username}){
             </View>
             <View style={styles.flexRow}>
               <Text style={styles.label}>Score</Text>
-              <Text style={styles.content}>{30}</Text>
+              <Text style={styles.content}>{1}</Text>
             </View>
           </View>
 
