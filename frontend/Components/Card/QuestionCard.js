@@ -3,7 +3,7 @@ import ContainedButton from '../Button/ContainedButton';
 import { Entypo } from '@expo/vector-icons'; 
 import TextButton from '../Button/TextButton';
 
-export default function CircularCard({quizNum,question,onPress}) {
+export default function QuestionCard({quizNum,question,onPress}) {
   return (
     <View style={styles.container}>
         <View style={styles.btnFlex}>
