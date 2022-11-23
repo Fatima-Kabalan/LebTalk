@@ -8,6 +8,7 @@ export default function ContainedButton({text,textStyle, buttonStyle ,onPress , 
       <TouchableOpacity  onPress={
         ()=>{
           setPressed(true);
+          
           onPress();
         }
       } style={pressed && isCorrect===0 ?  styles.btnWrong : pressed && isCorrect===1 ?  styles.btnCorrect : buttonStyle}>
