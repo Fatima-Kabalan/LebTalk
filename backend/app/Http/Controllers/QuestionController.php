@@ -2,17 +2,39 @@
 
 namespace App\Http\Controllers;
 use App\Models\Question;
+use App\Models\Answer;
 use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
     function getQuestion($id)
     {
-        $questions = Question::where("quizzes_id", $id)->get();
+        $questions = Question::where("categories_id", $id)->get();
+        $results = [];
+        foreach ($questions as $question)
+        {
+            $answers = Answer::where('question_id',$question->id)->get();
+            $full = array(
+                "question" => $question,
+                "answers" => $answers,
+            );
+            $results[] = $full;
+        }
+        
+        return response()->json([
+            "status"=>"success",
+            "data"=>$results,
+        ]);
+    } 
+
+
+    function getAnswers($id)
+    {
+        $answers = Answer::where("question_id", $id)->get();
 
         return response()->json([
             "status"=>"success",
-            "data"=>$questions,
+            "data"=>$answers,
         ]);
     } 
 
