@@ -12,7 +12,6 @@ return new class extends Migration
             $table->id();
             $table->string('category_name');
             $table->string('category_image');
-            $table->string('admin_id');
             $table->timestamps();
         });
     }
