@@ -10,28 +10,40 @@ import btn from '../Components/Button/btn';
 import { Audio } from 'expo-av';
 import wrong from '../assets/sounds/wrong.mp3'
 
-export default function AnswersPage({route, navigation}) {
-    const question_id = route.params.question_id;
-    const category_id = route.params.category_id;
 
-    const [questions, setQuestions] = useState([]);
+export default function AnswersPage({question}) {
+    // const question_id = route.params.question_id;
+    // const category_id = route.params.category_id;
+
+    // const [questions, setQuestions] = useState([]);
     const [answers, setAnswers] = useState([]);
+    // const [sound, setSound] = useState();
+  
+  
+    // async function playSound() {
+    //   const { sound } = await Audio.Sound.createAsync(
+    //     require('../assets/sounds/wrong.mp3')
+    //   )
+    //   setSound(sound);
+    //   await sound.playAsync();
+    // }
+  
     
 
-    useEffect(() => {
-      axios({
-        method: "GET",
-        url: `${SERVER_URL}/api/v1/getQuestion/${question_id}`,
-      }).then((res) => { 
-        setQuestions(res.data.data);
-        console.log('questions:', res.data.data)
-      }).catch((error) => console.error(error));
-    }, [])
+    // useEffect(() => {
+    //   axios({
+    //     method: "GET",
+    //     url: `${SERVER_URL}/api/v1/getQuestion/${question.id}`,
+    //   }).then((res) => { 
+    //     setQuestions(res.data.data);
+    //     console.log('question:', res.data.data)
+    //   }).catch((error) => console.error(error));
+    // }, [])
 
     useEffect(() => {
       axios({
         method: "GET",
-        url: `${SERVER_URL}/api/v1/getAnswers/${question_id}`,
+        url: `${SERVER_URL}/api/v1/getAnswers/${question.id}`,
       }).then((res) => { 
         setAnswers(res.data.data);
         console.log('answers:', res.data.data)
@@ -48,28 +60,25 @@ export default function AnswersPage({route, navigation}) {
         )
        
         else{
-             Audio.Sound.createAsync({
-                uri : wrong
-            })
+            //  playSound();
             console.log('wrong')
         }
     }
 
-  if(questions)
+  if(question)
     return (
         <View style={styles.container}>
             <View style={styles.nav}>
-                <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Questions')}> 
+                <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Category')}> 
                     <AntDesign name="close" size={24} color="black" />
                 </TouchableOpacity>
                 <MaterialCommunityIcons name="alarm-multiple" size={24} color="black" />
                 <Logo/>
             </View>
-            <Image source={require('../assets/Kibbeh.jpg')} style={styles.image}>
+            <Image source={{uri : IMAGE_URL + question.question_image}} style={styles.image}>
             </Image>
             <View>
-                
-                <Text style={styles.question}>What is the name of this meal?</Text>
+                <Text style={styles.question}>{question.title}</Text>
             </View>
             <View style={styles.btnFlex}>
             { answers?.map((answer,index) =>{
@@ -77,10 +86,6 @@ export default function AnswersPage({route, navigation}) {
                         <ContainedButton buttonStyle={styles.btn} text={answer.name} textStyle={styles.text} isCorrect = {answer.is_correct} onPress={()=>{success(answer.is_correct)}} />
                     )
                 })} 
-                 {/* <ContainedButton buttonStyle={styles.btn} text={"كبة"} textStyle={styles.text} onPress={()=>navigation.navigate('Congrats') } />
-                 <ContainedButton buttonStyle={styles.btn} text={"فتوش"} textStyle={styles.text} onPress={()=>navigation.navigate('Failed') } />
-                 <ContainedButton buttonStyle={styles.btn} text={"حمص"} textStyle={styles.text} onPress={()=>navigation.navigate('Failed')} />
-               */}
             </View>
         </View>
     );
