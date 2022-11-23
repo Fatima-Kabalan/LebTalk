@@ -8,9 +8,9 @@ return new class extends Migration
 {
     public function up()
     {
-        Schema::create('users_questions', function (Blueprint $table) {
+        Schema::create('answered_questions', function (Blueprint $table) {
             $table->id();
-            $table->integer('users_id')->unsigned();
+            $table->integer('user_id')->unsigned();
             $table->integer('question_id')->unsigned();
             $table->integer('score')->unsigned();
             $table->timestamps();
