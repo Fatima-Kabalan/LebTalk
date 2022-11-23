@@ -24,7 +24,4 @@ class Category extends Model
         return $this->hasMany(Card::class);
     }
 
-    // function quiz(){
-    //     return $this->hasMany(Quiz::class);
-    // }
 }
