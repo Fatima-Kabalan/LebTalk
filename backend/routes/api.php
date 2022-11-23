@@ -45,6 +45,7 @@ Route::prefix('v1')->group(function (){
         Route::post("/addQuestion", "addQuestion"); 
         Route::post("/deleteQuestion", "deleteQuestion"); 
         Route::get("/getQuestion/{id}", "getQuestion"); 
+        Route::get("/getAnswers/{id}", "getAnswers"); 
     });
 
     Route::controller(InstructorController::class)->group(function (){
