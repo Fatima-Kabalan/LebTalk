@@ -140,4 +140,25 @@ class CardController extends Controller
     //     ]);
     // }
 
+    // function getFavNumber()
+    // {
+
+    // }
+
+        function getFavNumber() {
+            $cards = Favorite::where(
+                        'user_id' , Auth::user()->id
+                    )->get();
+
+                 return response()->json([
+            "status"=>"success",
+
+            "data"=>count($cards),
+
+        ]);      
+        }
+
+
+    
+
 }
