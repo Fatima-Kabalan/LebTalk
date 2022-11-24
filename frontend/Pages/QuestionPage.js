@@ -37,12 +37,40 @@ export default function QuestionPage({ route, navigation }) {
 
   const [time, setTime] = useState(true);
 
-  async function playSound() {
+  async function playWrongSound() {
     const { sound } = await Audio.Sound.createAsync(
-      require("../assets/sounds/wrong.mp3")
+      require("../assets/sounds/wrong-answer.mp3")
     );
     setSound(sound);
     await sound.playAsync();
+  }
+
+
+  async function playSuccessSound() {
+    const { sound } = await Audio.Sound.createAsync(
+      require("../assets/sounds/yay.mp3")
+    );
+    setSound(sound);
+    await sound.playAsync();
+  }
+
+
+  function randomize(values) {
+    let index = values.length,  randomIndex;
+  
+    // While there remain elements to shuffle.
+    while (index != 0) {
+  
+      // Pick a remaining element.
+      randomIndex = Math.floor(Math.random() * index);
+      index--;
+  
+      // And swap it with the current element.
+      [values[index], values[randomIndex]] = [
+        values[randomIndex], values[index]];
+    }
+  
+    return values;
   }
 
   useEffect(async () => {
@@ -51,18 +79,21 @@ export default function QuestionPage({ route, navigation }) {
       url: `${SERVER_URL}/api/v1/getQuestion/${category_id}`,
     })
       .then((res) => {
-        setCards(res.data.data);
+        setCards(randomize(res.data.data));
         setlengthh(Object.keys(res.data.data).length);
         console.log(Object.keys(res.data.data).length);
       })
       .catch((error) => console.error(error));
   }, []);
+
+
+
   const success = (x) => {
     if (x === 1) {
       setScore(score + 1);
-      console.log(score);
+      playSuccessSound();
     } else {
-      playSound();
+      playWrongSound();
       
     }
   };
@@ -84,7 +115,7 @@ export default function QuestionPage({ route, navigation }) {
             color="black"
           /> */}
           <CountDown
-            until={100}
+            until={1000}
             timeToShow={["M",'S']}
             digitStyle={{
               backgroundColor: "#FFF",
@@ -93,7 +124,7 @@ export default function QuestionPage({ route, navigation }) {
               borderColor: "#1CC625",
             }}
             onFinish={() => {
-              playSound();
+              playWrongSound();
               // setAnswered(true);
               // setFinishTimer(true);
             }}
@@ -191,8 +222,6 @@ export default function QuestionPage({ route, navigation }) {
 
                   :setCurrentQuestion(currentQuestion + 1);
                   console.log(score);
-
-                 
                 }}
               />
             </View>
