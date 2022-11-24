@@ -3,37 +3,37 @@ import Button from "../../Components/Button/Button";
 import Input from "../../Components/Input/Input";
 import TopBar from "../../Components/TopBar/TopBar";
 import "../LoginPage/LoginPage.css";
-import request from "../../config/axios";
 import { useNavigate } from "react-router-dom";
-
+import { SERVER_URL } from "../env"
 
 const LoginPage = () => { 
-  const [email, setEmail] = useState("");
-  const [password, setPassword] = useState("");
   const navigate = useNavigate();
-
-
-  const SignIn = () => {
+  const [email , setEmail] = useState();
+  const [password , setPassword] = useState();
+  
+  const signin = async () => {
     const data = {
-      email,
-      password,
-    };
-    request({
+      email:email,
+      password:password,
+    }
+
+    const config = {
       method: "post",
-      url: "http://192.168.16.106:5000/api/v1/login",
       data,
-    })
-      .then((response) => {
-        console.log(response);
-        localStorage.setItem("token", response.authorisation.token);
-        console.log('token');
-        localStorage.setItem("user", JSON.stringify(response.user));
-        navigate("/user");
-      })
-      .catch((error) => {
-        console.log(error);
-      });
-  };
+      url:`${SERVER_URL}/api/v1/login`,
+    }
+    try{
+      const res = await axios(config)
+      
+      if(res.data.status == "success"){
+        await AsyncStorage.setItem("@token", res.data.authorisation.token);
+        navigation.navigate('/user')
+      }
+    }catch(error){
+      console.warn(error)
+      return error
+    }
+  }
   return (
     <>
       <TopBar />
