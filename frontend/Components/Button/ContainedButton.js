@@ -1,17 +1,22 @@
 import { useState } from 'react';
 import { StyleSheet, View ,TouchableOpacity ,Text} from 'react-native';
 
-export default function ContainedButton({text,textStyle, buttonStyle ,onPress , isCorrect}) {
-  const [pressed , setPressed] = useState(false);
+export default function ContainedButton({text,textStyle, buttonStyle ,onPress , isCorrect , disabled  , onTime}) {
+  const [pressed , setPressed] = useState(disabled);
+  
   return (
     <View >
       <TouchableOpacity  onPress={
         ()=>{
-          setPressed(true);
+          setPressed(!pressed);
           
           onPress();
         }
-      } style={pressed && isCorrect===0 ?  styles.btnWrong : pressed && isCorrect===1 ?  styles.btnCorrect : buttonStyle}>
+      } 
+      disabled={disabled}
+      style={
+        // (pressed || onTime) && isCorrect===0 ?  styles.btnWrong : (pressed || onTime) && isCorrect===1 ?  styles.btnCorrect :  
+      buttonStyle }>
         <Text style={textStyle}>{text}</Text>
       </TouchableOpacity>
     </View>
