@@ -26,6 +26,8 @@ Route::prefix('v1')->group(function (){
         Route::post("/favCard", "triggerFav"); 
         Route::post("/checkFavCard", "checkFav"); 
         Route::get("/getCards", "getCards");
+        Route::get("/getFavNumber", "getFavNumber");
+        
     });
 
     Route::controller(CategoryController::class)->group(function (){
