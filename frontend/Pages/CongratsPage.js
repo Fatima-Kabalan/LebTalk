@@ -1,8 +1,27 @@
 import { StyleSheet, Text, View,Image ,height,TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 import ContainedButton from '../Components/Button/ContainedButton';
+import { useState,useEffect } from 'react';
+import {Audio} from "expo-av";
 
-export default function CongratsPage({navigation}) {
+export default function CongratsPage({navigation }) {
+
+  const [sound, setSound] = useState();
+    
+  async function playWinSound() {
+    const { sound } = await Audio.Sound.createAsync(
+      require("../assets/sounds/success.mp3")
+    );
+    setSound(sound);
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    playWinSound();
+  }, []);
+
+
+
   return (
     <View style={styles.congratsContainer}>
         <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Home')}> 
@@ -10,7 +29,7 @@ export default function CongratsPage({navigation}) {
         </TouchableOpacity>
         <Image source={require('../assets/trophy.gif')} style={styles.trophy}></Image>
         <Text style={styles.congratsText}>Congratulations!</Text>
-        <Text style={styles.scoreText}>You scored 1 points out of 5!</Text>
+        <Text style={styles.scoreText} >You scored 1 points out of 5!</Text>
         {/* <ContainedButton text={'NEXT: SPORTS'} buttonStyle={styles.nextButton} textStyle={styles.nextText}></ContainedButton> */}
     </View>
   );
