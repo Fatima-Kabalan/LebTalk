@@ -5,13 +5,21 @@ import React, {useState,useEffect} from 'react';
 import { MaterialIcons } from '@expo/vector-icons'; 
 // import audio from 'react-native-sound';
 import { Audio } from 'expo-av';
+import axios from 'axios';
+import { SERVER_URL} from "../../env";
+
+import AsyncStorage from '@react-native-async-storage/async-storage';
+import { TabRouter } from '@react-navigation/native';
+
 
 
 export default function FlatCard({source,voice_note,text1,text2,name, card_id}) {
   const [sound, setSound] = React.useState();
   const image = { uri : source }
   const voice = { uri: voice_note}
-
+  const[fav,setFav] = useState(false);
+//   const [clicked , setClicked] = useState(false);
+  console.log(card_id);
 
   async function playSound() {
     const { sound } = await Audio.Sound.createAsync(voice)
@@ -27,6 +35,60 @@ export default function FlatCard({source,voice_note,text1,text2,name, card_id}) 
       : undefined;
   }, [sound]);
 
+
+  React.useEffect(() => {
+    const fetchDatas = async() =>{
+        const token = await AsyncStorage.getItem("@token");
+        await axios({
+            method: "POST",
+            headers:{Authorization: `Bearer ${token}`},
+            url: `${SERVER_URL}/api/v1/checkFavCard`,
+            data:{
+              card_id : `${card_id}`,
+            }
+          }).then((res) => { 
+              if(res.data.data === false)
+              {
+                  setFav(false);
+              }
+              else{
+                  setFav(true);
+                  console.log(res.data.data);
+              }
+          }).catch((error) => console.error(error));
+    }
+    fetchDatas();
+  }, [fav]);
+
+  
+
+
+    async function fetchData(){
+        const token = await AsyncStorage.getItem("@token");
+        console.log(token);
+        await axios({
+          method: "POST",
+          headers:{Authorization: `Bearer ${token}`},
+          url: `${SERVER_URL}/api/v1/favCard`,
+          data:{
+            card_id : `${card_id}`,
+          }
+        }).then((res) => { 
+            if(res.data === 'deleted')
+            {
+                setFav(false);
+            }
+            else{
+                setFav(true);
+            }
+        }).catch((error) => console.error(error));
+    }
+ 
+    
+
+
+
+ 
   return (
       <View style={styles.FlatCardContainer}>
         <Image 
@@ -47,7 +109,16 @@ export default function FlatCard({source,voice_note,text1,text2,name, card_id}) 
             <TouchableOpacity  source1={voice} onPress={playSound}>
                     <MaterialIcons name="audiotrack" size={24} color="white" />
             </TouchableOpacity>
-          <FontAwesome name="heart-o" size={24} color="white" />
+            <TouchableOpacity   onPress={()=>{
+                // setClicked(!clicked);
+                fetchData();
+                setFav(!fav);
+
+                
+            }}>
+            <FontAwesome name={fav ? 'heart' : 'heart-o'} size={24} color="white" />
+            </TouchableOpacity>
+          
         </View>
       </View>
     );
