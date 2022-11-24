@@ -13,6 +13,7 @@ export default function HomePage({navigation}) {
         <Card source={ IMAGE_URL + item.category_image} text={item.category_name} textStyle={styles.cardText} onPress={()=>navigation.navigate("Category", {category: item})}  />
     );
 
+
     const renderItem = ( {item} ) => { 
         return (
             <View>
