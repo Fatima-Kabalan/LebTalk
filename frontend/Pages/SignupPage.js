@@ -95,4 +95,14 @@ const styles = StyleSheet.create({
     fontSize:18,
     fontWeight:'bold',
   },
+  lebText:{
+    fontWeight:'bold',
+    fontSize:30,
+    color:'white',
+  },
+  talkText:{
+    fontWeight: 'bold',
+    fontSize:30,
+    color:'#E1943C',
+  },
 })
