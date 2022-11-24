@@ -5,13 +5,13 @@ import ContainedButton from '../Components/Button/ContainedButton';
 export default function FailedPage({navigation}) {
   return (
     <View style={styles.failedContainer}>
-        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Quiz')}> 
+        <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Home')}> 
             <AntDesign name="close" size={24} color="black" />
         </TouchableOpacity>
         <Image source={require('../assets/giphy.gif')} style={styles.giphy}></Image>
         <Text style={styles.congratsText}>You Lost!</Text>
         <Text style={styles.scoreText}>Better Luck next try!</Text>
-        <ContainedButton text={'Retry'} buttonStyle={styles.retryButton} textStyle={styles.retryText}></ContainedButton>
+        <ContainedButton text={'Retry'} buttonStyle={styles.retryButton} textStyle={styles.retryText} onPress={() => navigation.navigate('Home')}></ContainedButton>
     </View>
   );
 }
