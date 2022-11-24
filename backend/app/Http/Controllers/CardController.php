@@ -4,6 +4,7 @@ namespace App\Http\Controllers;
 use App\Models\Card;
 use App\Models\Favorite;
 use Illuminate\Http\Request;
+use Auth;
 
 class CardController extends Controller
 {
@@ -45,28 +46,98 @@ class CardController extends Controller
         ]);
     }
 
-    function favCard(Request $request)
-    {
-        $favcard = Favorite::create($request->all(), [
-            'users_id',
-            'cards_id',
-        ]);
-        return response()->json([
-            "status"=>"success",
-            "data"=>$favcard,
-        ]);
-    }
+    // function favCard(Request $request)
+    // {
+    //     $favcard = Favorite::create($request->all(), [
+    //         'users_id',
+    //         'cards_id',
+    //     ]);
+    //     return response()->json([
+    //         "status"=>"success",
+    //         "data"=>$favcard,
+    //     ]);
+    // }
 
-    function unFavCard(Request $request)
+    // function unFavCard(Request $request)
+    // {
+    //     $card = Favorite::where([
+    //         ['cards_id', '=', $request->cards_id],
+    //         ['users_id', '=', $request->users_id],
+    //     ])->delete();
+
+    //     return response()->json([
+    //         "status"=>"success",
+    //         "data"=>$card,
+    //     ]);
+    // }
+
+
+
+    function triggerFav(Request $request)
     {
         $card = Favorite::where([
-            ['cards_id', '=', $request->cards_id],
-            ['users_id', '=', $request->users_id],
-        ])->delete();
+            ['card_id', '=', $request->card_id],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+        
+        if (count($card) == 0) {
+            $favcard = new Favorite;
+            $favcard->user_id = Auth::user()->id;
+            $favcard->card_id = $request->card_id;
+            $favcard->save();
 
-        return response()->json([
-            "status"=>"success",
-            "data"=>$card,
-        ]);
+
+            return response()->json([
+                "status"=>"success",
+                "data"=>$favcard,
+            ]);
+        }
+        else{
+            Favorite::where([
+                ['card_id', '=', $request->card_id],
+                ['user_id', '=', Auth::user()->id],
+            ])->delete();
+            return response()->json([
+                "status"=>"success",
+                "data"=> 'deleted',
+            ]);
+        }
+
+
     }
+
+    function checkFav(Request $request)
+    {
+        $card = Favorite::where([
+            ['card_id', '=', $request->card_id],
+            ['user_id', '=', Auth::user()->id],
+        ])->get();
+
+        if (count($card) == 0) {
+            return response()->json([
+                "status"=>"success",
+                "data"=>false,
+            ]); }
+            else{
+                return response()->json([
+                    "status"=>"success",
+                    "data"=>true,
+                ]);
+            }
+    }
+
+
+    // function getFav(Request $request)
+    // {
+    //     $cards = Favorite::where(
+    //         'user_id' , Auth::user()->id
+    //     )->get();
+    //     return response()->json([
+    //         "status"=>"success",
+
+    //         "data"=>$cards,
+
+    //     ]);
+    // }
+
 }
