@@ -1,8 +1,26 @@
 import { StyleSheet, Text, View,Image ,height,TouchableOpacity } from 'react-native';
 import { AntDesign } from '@expo/vector-icons'; 
 import ContainedButton from '../Components/Button/ContainedButton';
+import { useState,useEffect } from 'react';
+import {Audio} from "expo-av";
+
 
 export default function FailedPage({navigation}) {
+
+  const [sound, setSound] = useState();
+    
+  async function playWinSound() {
+    const { sound } = await Audio.Sound.createAsync(
+      require("../assets/sounds/thunder.mp3")
+    );
+    setSound(sound);
+    await sound.playAsync();
+  }
+
+  useEffect(() => {
+    playWinSound();
+  }, []);
+
   return (
     <View style={styles.failedContainer}>
         <TouchableOpacity style={styles.close} onPress={() => navigation.navigate('Home')}> 
