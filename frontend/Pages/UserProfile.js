@@ -62,10 +62,6 @@ export default function UserProfile({username}){
               <Text style={styles.label}>Favorites</Text>
               <Text style={styles.content}>{5}</Text>
             </View>
-            <View style={styles.flexRow}>
-              <Text style={styles.label}>Score</Text>
-              <Text style={styles.content}>{1}</Text>
-            </View>
           </View>
 
         </View>
