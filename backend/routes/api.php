@@ -17,13 +17,14 @@ Route::prefix('v1')->group(function (){
 
     Route::controller(UserController::class)->group(function (){
         Route::get("/profile", "profile");
+        Route::get("/getUsers", "getUsers");
     });
 
     Route::controller(CardController::class)->group(function (){
         Route::post("/addCard", "addCard"); 
         Route::post("/deleteCard", "deleteCard");
-        Route::post("/favCard", "favCard"); 
-        Route::post("/unFavCard", "unFavCard");
+        Route::post("/favCard", "triggerFav"); 
+        Route::post("/checkFavCard", "checkFav"); 
         Route::get("/getCards", "getCards");
     });
 
