@@ -63,19 +63,43 @@ export default function SideBar({handleDrawerClose, open}) {
 
             <ListItem key={"Categories"} disablePadding>
               <ListItemButton>
+
                 <ListItemIcon>
                   <PersonIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Categories"} />
+
+                <Link to ="/category">
+                  <ListItemText primary={"Categories"} />
+                </Link>
+
               </ListItemButton>
             </ListItem>
 
-            <ListItem key={"Quizzes"} disablePadding>
+           <ListItem key={"Questions"} disablePadding>
               <ListItemButton>
+                
                 <ListItemIcon>
                   <PersonIcon />
                 </ListItemIcon>
-                <ListItemText primary={"Quizzes"} />
+
+                <Link to ="/question">
+                  <ListItemText primary={"Questions"} />
+                </Link>
+
+              </ListItemButton>
+            </ListItem>
+
+            <ListItem key={"Cards"} disablePadding>
+              <ListItemButton>
+                
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+
+                <Link to ="/card">
+                  <ListItemText primary={"Cards"} />
+                </Link>
+
               </ListItemButton>
             </ListItem>
         </List>
