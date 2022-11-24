@@ -35,4 +35,14 @@ class UserController extends Controller{
             "data"=>$user,
         ]);
     }
+
+    function getUsers()
+    {
+        $user = User::all();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$user,
+        ]);
+    }
 }
