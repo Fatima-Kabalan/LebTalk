@@ -102,6 +102,22 @@ export default function SideBar({handleDrawerClose, open}) {
 
               </ListItemButton>
             </ListItem>
+
+            <ListItem key={"Instructors"} disablePadding>
+              <ListItemButton>
+                
+                <ListItemIcon>
+                  <PersonIcon />
+                </ListItemIcon>
+
+                <Link to ="/instructor">
+                  <ListItemText primary={"Instructors"} />
+                </Link>
+
+              </ListItemButton>
+            </ListItem>
+
+
         </List>
       </Drawer>
   );
