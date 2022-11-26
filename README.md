@@ -1,4 +1,4 @@
-<<<<<<< HEAD
+
 <img src="./readme/title1.svg"/>
 
 <div align="center">
