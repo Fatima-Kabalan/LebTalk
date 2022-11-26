@@ -10,6 +10,7 @@ import AddPopup from '../../Components/AddPopup/AddPopup';
 import PopupStyle from "../../Components/AddPopup/PopupStyle.css";
 import Popup from 'reactjs-popup';
 import CategoryStyle from  '../CategoryPAge/CategoryStyle.css';
+import CardDialog from '../../Components/FormDialog/CardDialog'
 
 export default function CardsPage() {
 
@@ -38,7 +39,8 @@ export default function CardsPage() {
             </Box> 
         </div>
         <div>
-        <Popup trigger={<button className='btn'> Add Card </button>} 
+          <CardDialog/>
+        {/* <Popup trigger={<button className='btn'> Add Card </button>} 
      position="center" >
       <div className="form-popup" id="myForm">
         <form action="/action_page.php" class="form-container">
@@ -64,9 +66,9 @@ export default function CardsPage() {
 
             <button type="submit" className="btn">Save</button>
             <button type="button" className="btn cancel" onclick="closeForm()">Close</button>
-        </form>
-      </div>
-    </Popup>
+        </form> */}
+      {/* </div>
+    </Popup> */}
             </div>
     </div>
   );
