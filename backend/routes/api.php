@@ -10,6 +10,7 @@ use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuestionController;
 
 Route::prefix('v1')->group(function (){
+
     Route::controller(AuthController::class)->group(function (){
         Route::post("/login", "login");
         Route::post("/register",  "register");
@@ -48,6 +49,7 @@ Route::prefix('v1')->group(function (){
         Route::post("/addQuestion", "addQuestion"); 
         Route::post("/deleteQuestion", "deleteQuestion"); 
         Route::get("/getQuestion/{id}", "getQuestion"); 
+        Route::get("/getQuestions", "getQuestions"); 
         Route::get("/getAnswers/{id}", "getAnswers"); 
     });
 
