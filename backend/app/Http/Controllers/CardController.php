@@ -46,32 +46,6 @@ class CardController extends Controller
         ]);
     }
 
-    // function favCard(Request $request)
-    // {
-    //     $favcard = Favorite::create($request->all(), [
-    //         'users_id',
-    //         'cards_id',
-    //     ]);
-    //     return response()->json([
-    //         "status"=>"success",
-    //         "data"=>$favcard,
-    //     ]);
-    // }
-
-    // function unFavCard(Request $request)
-    // {
-    //     $card = Favorite::where([
-    //         ['cards_id', '=', $request->cards_id],
-    //         ['users_id', '=', $request->users_id],
-    //     ])->delete();
-
-    //     return response()->json([
-    //         "status"=>"success",
-    //         "data"=>$card,
-    //     ]);
-    // }
-
-
 
     function triggerFav(Request $request)
     {
@@ -125,25 +99,6 @@ class CardController extends Controller
                 ]);
             }
     }
-
-
-    // function getFav(Request $request)
-    // {
-    //     $cards = Favorite::where(
-    //         'user_id' , Auth::user()->id
-    //     )->get();
-    //     return response()->json([
-    //         "status"=>"success",
-
-    //         "data"=>$cards,
-
-    //     ]);
-    // }
-
-    // function getFavNumber()
-    // {
-
-    // }
 
         function getFavNumber() {
             $cards = Favorite::where(
