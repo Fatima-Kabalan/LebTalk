@@ -7,6 +7,7 @@ import AsyncStorage from '@react-native-async-storage/async-storage';
 
 export default function UserProfile({username}){
   const [user, setUser] = useState([]);
+  const [nbFav  , setNbFav] = useState(0);
 
   const getProfile = async () => {
     const token = await AsyncStorage.getItem("@token");
@@ -30,6 +31,11 @@ export default function UserProfile({username}){
 
   useEffect(() => {
       getProfile();
+  })
+
+  useEffect(() => {
+
+    
   })
 
 
