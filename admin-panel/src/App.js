@@ -4,7 +4,8 @@ import CategoryPage from "./Pages/CategoryPAge/CategoryPage";
 import {Route,BrowserRouter,Routes} from 'react-router-dom';
 import LoginPage from './Pages/LoginPage/LoginPage';
 import CardsPage from './Pages/CardsPage/CardsPage';
-// import SideBarStyle from './Pages/SideBarStyle/SideBarStyle';
+import InstructorPage from '../src/Pages/InstructorPage/InstructorPage';
+import QuestionPage from '../src/Pages/QuestionPage/QuestionPage'
 
 function App() {
   return (
@@ -12,13 +13,12 @@ function App() {
     <BrowserRouter>
     <div className="App">
         <Routes>
-        {/* <Route element={<SideBarStyle />}> */}
           <Route path="/" element={<LoginPage />} />
-              {/* <Route element={<SideBar />} */}
               <Route path='/user'  element={<UserPage/>} />
               <Route path='/category'  element={<CategoryPage/>} />
               <Route path='/card'  element={<CardsPage/>} />
-              {/* <Route path='/question'  element={<QuestionPage/>} /> */}
+              <Route path='/instructor'  element={<InstructorPage/>} />
+              <Route path='/question'  element={<QuestionPage/>} />
         {/* </Route> */}
         </Routes>
     </div>
