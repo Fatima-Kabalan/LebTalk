@@ -19,7 +19,18 @@
 
 ### User Stories
 - As a user, I want to learn lebanese in a fast way, so that I can benifit from it
-- As a user, I want to get notifications for having new categories added, so that I can check it quickly 
+- As a user, I want to listen to audio that teaches me the words spelling correctly
+- As a user, I want to be able to favorite cards that I like the most 
+- As a user, I want to be able to do a quiz game inorder to make sure that I've learned well
+- As a user, I want to be able to see my score 
+- As a user, I want to chat with instructors that can help me out if I didn't understand the app well
+<br><br>
+
+### Admin Stories
+- As an admin, I want to be able to add categories,cards,questions,answers
+- As an admin, I want to be able to add instructors that help users
+- As an admin, I want to be able to see all the users that logged in 
+- As an admin, I want to be able to see all the categories,cards,questions,answers,instructors found in the app 
 <br><br>
 
 <img src="./readme/title3.svg"/>
