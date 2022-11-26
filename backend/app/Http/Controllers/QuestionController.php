@@ -7,6 +7,17 @@ use Illuminate\Http\Request;
 
 class QuestionController extends Controller
 {
+
+    function getQuestions(Request $request)
+    {
+        $question = Question::all();
+
+        return response()->json([
+            "status"=>"success",
+            "data"=>$question,
+        ]);
+    }
+
     function getQuestion($id)
     {
         $questions = Question::where("categories_id", $id)->get();
