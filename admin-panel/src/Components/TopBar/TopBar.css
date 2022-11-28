@@ -7,12 +7,22 @@
     align-items: center;
   }
   
-  .top-bar__logo {
-    width:2rem;
-    height: 1rem;
-    /* background-size: cover; */
+  .top-bar img {
+    width:6rem;
+    height:6rem;
+    border-radius:50px
   }
 
   .leb-text {
     color:White;
+    font-size:40px;
+    margin-Left:20px;
   }
+
+  .talk-text {
+    color:#E1943C;
+  }
+
+ 
+
+  
