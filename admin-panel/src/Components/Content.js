@@ -1,6 +1,5 @@
 import * as React from 'react';
 import { styled } from '@mui/material/styles';
-import Button from "../Components/Button/Button";
 
 const drawerWidth = 200;
 
@@ -26,8 +25,6 @@ const Main = styled('main', { shouldForwardProp: (prop) => prop !== 'open' })(
 export default function Content({open}) {
     return(
         <Main open={open}>
-           
         </Main>
     );
-   
 }
