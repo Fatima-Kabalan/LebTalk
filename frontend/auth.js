@@ -13,7 +13,7 @@ export function getApiToken(){
     };
     
     setToken('#your_secret_token');
-    getToken().then(token => console.log(token)); // output '#your_secret_token'
+    getToken().then(token => console.log(token)); 
 
 }
 

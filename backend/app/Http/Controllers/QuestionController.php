@@ -78,4 +78,26 @@ class QuestionController extends Controller
             "data"=>$question,
         ]);
     }
+
+
+    function getAllQuestions()
+    {
+        $questions = Question::all();
+        $results = [];
+        foreach ($questions as $question)
+        {
+            $answers = Answer::where('question_id',$question->id)->get();
+            $full = array(
+                "question" => $question,
+                "answers" => $answers,
+            );
+            $results[] = $full;
+        }
+        
+        return response()->json([
+            "status"=>"success",
+            "data"=>$results,
+        ]);
+    } 
+
 }

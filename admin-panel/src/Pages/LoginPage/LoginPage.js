@@ -43,13 +43,13 @@ const LoginPage = () => {
           <Input
             type={"email"}
             label={"Email"}
-            placeholder={"Enter your Email"}
+            placeholder={"Email"}
             onChange={(e) => setEmail(e.target.value)}
           />
           <Input
             type={"password"}
             label={"Password"}
-            placeholder={"Enter your Password"}
+            placeholder={"Password"}
             onChange={(e) => setPassword(e.target.value)}
           />
           <Button

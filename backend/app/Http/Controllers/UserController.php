@@ -10,9 +10,7 @@ class UserController extends Controller{
     function profile()
     {
         $user = Auth::user();
-
-        //Log::info("user: ", $user->toArray());
-
+        
         if($user){
             return response()->json([
                 "status"=>"success",

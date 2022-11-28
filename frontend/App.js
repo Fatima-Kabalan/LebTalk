@@ -1,6 +1,5 @@
 import { NavigationContainer } from '@react-navigation/native';
 import { createNativeStackNavigator } from '@react-navigation/native-stack';
-import { StyleSheet, View ,Text } from 'react-native';
 import CongratsPage from './Pages/CongratsPage';
 import HomePage from './Pages/HomePage';
 import Login from './Pages/Login';
@@ -159,10 +158,3 @@ const TabStack = () => {
     </NavigationContainer>
   );
 }
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    flexDirection:'column',
-    backgroundColor: '#BD4543',
-  },
-});

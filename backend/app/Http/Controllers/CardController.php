@@ -76,8 +76,6 @@ class CardController extends Controller
                 "data"=> 'deleted',
             ]);
         }
-
-
     }
 
     function checkFav(Request $request)
@@ -112,8 +110,4 @@ class CardController extends Controller
 
         ]);      
         }
-
-
-    
-
 }

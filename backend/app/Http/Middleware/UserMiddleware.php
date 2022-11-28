@@ -10,7 +10,7 @@ class UserMiddleware
     public function handle(Request $request, Closure $next)
     {
         if($user = Auth::user()){
-            if($user->user_roles_id == 3){
+            if($user->user_roles ="user"){
             return $next($request);
         }
             return response()->json([

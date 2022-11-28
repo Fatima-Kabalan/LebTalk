@@ -31,7 +31,7 @@ export default function DataTable() {
     useEffect(() => {
         request({
         method: "GET",
-        url: `${REACT_APP_BASE_URL}/api/v1/getQuestions`,
+        url: `${REACT_APP_BASE_URL}/api/v1/getAllQuestions`,
         })
         .then((response) => {
             console.log(response);
@@ -41,6 +41,8 @@ export default function DataTable() {
             console.log(error);
         });
     }, []);
+
+
 
   return (
     <div style={{ height: 400, width: '100%' }}>

@@ -2,7 +2,7 @@ import * as React from 'react';
 import Box from '@mui/material/Box';
 import CssBaseline from '@mui/material/CssBaseline';
 import NavBar from '../../Components/NavBar';
-import SideBar from '../../Components/SideBar';
+import SideBar from '../../Components/SideBar/SideBar';
 import Content from '../../Components/Content';
 import { Link } from 'react-router-dom';
 import InstructorTable from '../InstructorPage/InstructorTable';

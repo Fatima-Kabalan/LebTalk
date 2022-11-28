@@ -1,16 +1,8 @@
-import { StyleSheet, View ,TouchableOpacity ,Text, Button, TouchableHighlight} from 'react-native';
+import { StyleSheet, View ,Text,TouchableHighlight} from 'react-native';
 
 
-export default function PressedButton({text,textStyle, buttonStyle ,onPress ,type,props}) {
+export default function PressedButton({text,textStyle,onPress}) {
 
-  // const[confirmed,setComfirmed] = useState(false);
-    // function btnStyle(type){
-    //   if(type === "successBtn") return styles.successBtn;
-    //   if(type === "failedBtn") return styles.failedBtn;
-    //   if(type === "normalBtn") return styles.normalBtn;
-    // }
-
-  
   return (
     <View >
       <TouchableHighlight
@@ -24,27 +16,3 @@ export default function PressedButton({text,textStyle, buttonStyle ,onPress ,typ
     </View>
   );
 }
-const styles = StyleSheet.create({
-    successBtn:{
-      backgroundColor:'#F29D38',
-      borderRadius:30,
-      marginBottom:20,
-    },
-    failedBtn:{
-      backgroundColor:'red',
-      borderRadius:30,
-      marginBottom:20,
-    },
-    normalBtn:{
-      backgroundColor:'grey',
-      borderRadius:30,
-      marginBottom:20,
-    },
-    btnText:{
-      color:'white',
-      textAlign:'center',
-      padding:6,
-      fontSize:18,
-      fontWeight:'bold',
-    },
-});

@@ -1,1 +1,1 @@
-export const  REACT_APP_BASE_URL= "http://192.168.16.106:5000";
+export const  REACT_APP_BASE_URL= "http://192.168.1.70:5000";

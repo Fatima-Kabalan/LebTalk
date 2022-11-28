@@ -9,12 +9,12 @@ use App\Http\Controllers\CardController;
 use App\Http\Controllers\QuizController;
 use App\Http\Controllers\QuestionController;
 
-Route::prefix('v1')->group(function (){
+Route::controller(AuthController::class)->group(function (){
+    Route::post("/login", "login");
+    Route::post("/register",  "register");
+});
 
-    Route::controller(AuthController::class)->group(function (){
-        Route::post("/login", "login");
-        Route::post("/register",  "register");
-    });
+Route::prefix('v1')->group(function (){
 
     Route::controller(UserController::class)->group(function (){
         Route::get("/profile", "profile");
@@ -51,6 +51,7 @@ Route::prefix('v1')->group(function (){
         Route::get("/getQuestion/{id}", "getQuestion"); 
         Route::get("/getQuestions", "getQuestions"); 
         Route::get("/getAnswers/{id}", "getAnswers"); 
+        Route::get("/getAllQuestions", "getAllQuestions"); 
     });
 
     Route::controller(InstructorController::class)->group(function (){

@@ -1,5 +1,8 @@
+<<<<<<< Updated upstream
 
 <img src="./readme/title1.svg"/>
+=======
+>>>>>>> Stashed changes
 
 <div align="center">
 
@@ -139,6 +142,4 @@ _Below is an example of how you can instruct your audience on installing and set
     ```sh
         php artisan serve
     ```
-=======
 
->>>>>>> 4a2f0ebadd167a58b9e7becb366581979103e222
