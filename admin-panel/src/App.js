@@ -1,5 +1,5 @@
 import './App.css';
-import UserPage from "./Pages/UserPage";
+import UserPage from "./Pages/UserPage/UserPage";
 import CategoryPage from "./Pages/CategoryPAge/CategoryPage";
 import {Route,BrowserRouter,Routes} from 'react-router-dom';
 import LoginPage from './Pages/LoginPage/LoginPage';
