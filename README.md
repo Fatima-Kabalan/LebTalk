@@ -63,7 +63,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Landing                                       | Home                                            | Quiz                                        | Instructors                                            |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
-| <img src="./readme/screeshots/signup.jpg" width="200"/> | <img src="./readme/screeshots/home.jpg" width="200"/> | <img src="./readme/screeshots/question.jpg" width="200"/> | <img src="./readme/screeshots/instructors.jpg" width="200"/> |
+| <img src="./readme/screenshots/signup.jpg" width="200"/> | <img src="./readme/screenshots/home.jpg" width="200"/> | <img src="./readme/screenshots/question.jpg" width="200"/> | <img src="./readme/screenshots/instructors.jpg" width="200"/> |
 
 <br><br>
 <img src="./readme/title6.svg"/>
