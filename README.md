@@ -70,12 +70,12 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Landing  | Home  |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/Signup.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/home.jpg) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/Signup.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/readme/screenshots/home.jpg) |
 
 
 |   Quiz |  Instructors |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/question.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/instructors.jpg) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/question.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/screenshots/signup.jpg) |
 
 <br><br>
 <img src="./readme/title6.svg"/>
