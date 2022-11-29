@@ -3,7 +3,7 @@
 
 <div align="center">
 
-> Hello world! This is the project’s summary that describes the project plain and simple, limited to the space available. 
+> Hello ! This is the project’s summary that describes the project plain and simple, limited to the space available. 
 
 **[PROJECT PHILOSOPHY](https://github.com/Fatima-Kabalan/LebTalk/tree/develop#-project-philosophy) • [WIREFRAMES](https://github.com/Fatima-Kabalan/LebTalk/tree/develop#-mockups) • [TECH STACK](https://github.com/Fatima-Kabalan/LebTalk/tree/develop#-tech-stack) • [IMPLEMENTATION](https://github.com/Fatima-Kabalan/LebTalk/tree/develop#-impplementation) • [HOW TO RUN?](https://github.com/Fatima-Kabalan/LebTalk/tree/develop#-how-to-run)**
 
@@ -46,7 +46,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Food Category  | Question Page  |
 | -----------------| -----|
-| <img src="./readme/Signin.png" alt="drawing" style="width:200px;"/> | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
+| <img src="./readme/figma/Signin.png" alt="drawing" style="width:200px;"/> | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
 
 
 
