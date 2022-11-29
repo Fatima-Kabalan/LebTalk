@@ -67,7 +67,7 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 | Chating                                       | Voice Note                                            | Quiz                                        |
 |-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|
-| <img src="./readme/screenshots/chat.mp4" width="200"/> | <img src="./readme/screenshots/2022-11-29-04-30-25.mp4" width="200"/> | <img src="./readme/screenshots/you lose.mp4" width="200"/> |
+| <img src="./readme/screenshots/chat.gif" width="200"/> | <img src="./readme/screenshots/voicenote.mp4" width="200"/> | <img src="./readme/screenshots/quiz.mp4" width="200"/> |
 
 <br><br>
 <img src="./readme/title6.svg"/>
