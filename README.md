@@ -40,22 +40,16 @@
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
 
-<!-- 
-| Landing  | Home | Question Page  |
+| Landing  | Home  |
 | -----------------| -----|
-| <img src="./readme/figma/Signin.png" alt="drawing" style="width:200px;"/> |  <img src="./readme/figma/Home.png" alt="drawing" style="width:200px;"/> |  <img src="./readme/figma/Question.png" alt="drawing" style="width:200px;"/>
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
 
- -->
-| Login  | Login  |
+
+|   Quiz |  Instructors |
 | -----------------| -----|
-| ![Landing](/readme/figma/login.png)|![Landing](/readme/figma/signup.png)|
-|![Landing](/readme/figma/onboarding3.png)|![Landing](/readme/figma/onboarding4.png)|
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Instrucors.png) |
 
-| LogIn  | SignUp  |
-| -----------------| -----|
-|![Login](/readme/figma/login.png)|![Signup](/readme/figma/signup.png)|
 
-| Feed  | Profile  |
 <br><br>
 
 <img src="./readme/title4.svg"/>
