@@ -44,7 +44,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Landing  | Home  || Food Category  | Question Page  |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |![Food Category](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.png) | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |![Food Category](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/FoodPage.svg) | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
 
 
 | Food Category  | Question Page  |
