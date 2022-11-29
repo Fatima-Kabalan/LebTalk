@@ -39,16 +39,9 @@
 > This design was planned before on paper, then moved to Figma app for the fine details.
 Note that i didn't use any styling library or theme, all from scratch and using pure css modules
 
-
-| Landing  | Home  |
-| -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Signin.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/Home.png) |
-
-
-|   Quiz |  Instructors |
-| -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/figma/Instructors.png) |
-
+| Landing                                       | Home                                            | Quiz                                        | Instructors                                            |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
+| <img src="./readme/figma/Signin.png" width="200"/> | <img src="./readme/figma/Home.png" width="200"/> | <img src="./readme/figma/question.png" width="200"/> | <img src="./readme/figma/Instructors.png" width="200"/> |
 
 <br><br>
 
