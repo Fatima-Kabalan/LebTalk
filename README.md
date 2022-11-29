@@ -47,7 +47,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 |   Quiz |  Instructors |
 | -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/figma/Instrucors.png) |
+| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/figma/Instructors.png) |
 
 
 <br><br>
