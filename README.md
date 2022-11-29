@@ -46,7 +46,7 @@ Note that i didn't use any styling library or theme, all from scratch and using 
 
 | Food Category  | Question Page  |
 | -----------------| -----|
-| <img src="Home.png" alt="drawing" style="width:200px;"/> | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
+| <img src="./figma/Home.png" alt="drawing" style="width:200px;"/> | ![Question Page](https://github.com/Fatima-Kabalan/LebTalk/blob/develop/readme/figma/question.png) |
 
 
 
