@@ -61,14 +61,9 @@ Here's a brief high-level overview of the tech stack the Well app uses:
 
 > Uing the above mentioned tecch stacks and the mockups build with figma from the user sotries we have, the implementation of the app is shown as below, these are screenshots from the real app
 
-| Landing  | Home  |
-| -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/screenshots/signup.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/screenshots/home.jpg) |
-
-
-|   Quiz |  Instructors |
-| -----------------| -----|
-| ![Landing](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/screenshots/question.jpg) | ![Home](https://github.com/Fatima-Kabalan/LebTalk/blob/main/readme/screenshots/instructors.jpg) |
+| Landing                                       | Home                                            | Quiz                                        | Instructors                                            |
+|-----------------------------------------------|----------------------------------------------------|----------------------------------------------------|-------------------------------------------------------|
+| <img src="./readme/screeshots/signup.jpg" width="200"/> | <img src="./readme/screeshots/home.jpg" width="200"/> | <img src="./readme/screeshots/question.jpg" width="200"/> | <img src="./readme/screeshots/instructors.jpg" width="200"/> |
 
 <br><br>
 <img src="./readme/title6.svg"/>
